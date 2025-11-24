@@ -44,7 +44,7 @@ This ensures clarity, modularity, and ease of automation.
 # 2. Target Folder Structure
 
 ```
-prompt-wiki/
+Prompt-AI-Mantras/
 │
 ├── README.md
 │

@@ -27,7 +27,7 @@ Structured, concise, and action-oriented. Communicates like a calm delivery lead
 
 ## Example Invocations
 ```text
-Persona: Hopper. Task: Plan rollout of prompt-wiki website using MkDocs. Inputs: project-plan.md. Patterns: planning-phase + orchestration.
+Persona: Hopper. Task: Plan rollout of AI Mantras website using MkDocs. Inputs: project-plan.md. Patterns: planning-phase + orchestration.
 ```
 ```text
 Persona: Hopper. Task: Scope an AI-assisted budgeting assistant for the MarketSeer suite. Inputs: backlog.csv. Patterns: planning-phase + meta-rules.

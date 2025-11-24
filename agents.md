@@ -1,29 +1,56 @@
-# Agents Quickstart
+# AI Mantras – Agents Quickstart
 
 This file captures the current coordination context so any new AI agent can resume work quickly.
 
 ## Repository
 - Path: `/mnt/d/development/ai-personas-and-patterns`
-- Primary references: `personas-and-patterns-context.md`, `project-plan.md`, `prompt-wiki/`
+- Project Name: **AI Mantras** (formerly Personas & Patterns Prompt Wiki)
+- Primary references: `ai-mantras-updated-plan.md`, `personas-and-patterns-context.md`, `project-plan.md`, `Prompt-AI-Mantras/`
 
 ## Latest State
-- Layer 1 patterns complete: planning-phase, orchestration, recursive-self-eval, meta-rules.
-- Layer 2 patterns complete: chain-of-thought, rule-based reasoning, guardrail creative.
-- Core personas established: Clara-Financial-Analyst, Kestra-Systems-Architect, Goeth-Philosophical-Synthesizer, Hopper-Project-Planner, Lovell-Crisis-Planner, Bernstein-Orchestrator, Ada-QA-Reviewer, Franklin-Deep-Reasoner.
-- `prompt-wiki/README.md` documents usage and workflow.
+
+### Patterns Complete
+- **Layer 1:** planning-phase, orchestration, recursive-self-eval, meta-rules
+- **Layer 2:** chain-of-thought, rule-based reasoning, guardrail creative
+- **Location:** `Prompt-AI-Mantras/patterns/`
+
+### Personas Established (Three Categories)
+- **Orchestration** (`Prompt-AI-Mantras/personas/orchestration/`):
+  - Bernstein-Orchestrator
+  - Hopper-Project-Planner
+  - Lovell-Crisis-Planner
+- **Domain Experts** (`Prompt-AI-Mantras/personas/domain/`):
+  - Clara-Financial-Analyst
+  - Franklin-Deep-Reasoner
+  - Goeth-Philosophical-Synthesizer
+  - Kestra-Systems-Architect
+- **Evaluation** (`Prompt-AI-Mantras/personas/evaluation/`):
+  - Ada-QA-Reviewer
+
+### Architecture
+- **Two-phase workflow:** Plan → Evaluate → Approve, then Execute → QA → Evaluate
+- **Separation of Powers:** Domain personas don't self-evaluate; orchestrators don't score their own plans; evaluators don't generate content
+- **Guiding Principles:** Noble Intelligence (Wisdom, Justice, Courage, Temperance) + Brother to Humanity framework + Love
+- **Location:** `Prompt-AI-Mantras/principles/guiding-principles.md`
 
 ## Active Focus
-1. Design additional personas (Judge, Lawyer, Policeman, Nurse, Doctor, Scholar, Mathematician, Politician, CEO) with rich inspirations.
-2. (Future) Populate `projects/` with applied orchestration examples.
+1. **Evaluation Personas:** Design Goal-Satisfaction, Safety, Clarity, Efficiency evaluators + Evaluator-Orchestrator
+2. **Domain Personas (Backlog):** Judge, Lawyer, Doctor, Scholar, Mathematician, Politician, CEO, etc. (see `persona-backlog.md`)
+3. **Orchestration Personas (Backlog):** Director, Mediator, Overseer
+4. **Projects:** Populate `projects/` with applied orchestration examples
+5. **Commercial Path:** Microsoft Founders Hub application, patent strategy
 
 ## Working Agreements
-- Follow naming convention `Name-Role.md` for personas.
-- Use patterns from `prompt-wiki/patterns/` per persona recommendations.
-- Default workflow: Bernstein → Hopper/Lovell (planning) → worker personas (Clara/Kestra/etc.) → Ada (QA) with recursive self-eval.
-- Prefer additive edits; preserve historical context.
+- **Naming:** `Name-Role.md` for persona files
+- **Location:** Place personas in `orchestration/`, `domain/`, or `evaluation/` folders
+- **Workflow:** Bernstein → Hopper/Lovell (planning) → Evaluators approve plan → Domain personas execute → Ada (QA) → Evaluators approve results
+- **Separation of Powers:** No self-evaluation; humans retain final approval authority
+- **Patterns:** Use from `Prompt-AI-Mantras/patterns/` per persona recommendations
+- **Edits:** Prefer additive changes; preserve historical context
 
 ## Reboot Instructions
-1. Read `agents.md` (this file) plus `personas-and-patterns-context.md` and `project-plan.md` to load mental model.
-2. Inspect `prompt-wiki/README.md` and `prompt-wiki/personas/` to refresh persona capabilities.
-3. Check open tasks from “Active Focus” and confirm with user which to tackle first.
-4. Use orchestration pattern to plan next steps before executing.
+1. Read `agents.md` (this file) plus `ai-mantras-updated-plan.md` for architecture overview
+2. Review `personas-and-patterns-context.md`, `project-plan.md`, and `Prompt-AI-Mantras/principles/guiding-principles.md` for philosophical foundation
+3. Inspect `Prompt-AI-Mantras/personas/` (orchestration, domain, evaluation folders) to understand available personas
+4. Check "Active Focus" above and confirm with user which priority to tackle
+5. Use orchestration pattern and two-phase evaluation workflow before executing

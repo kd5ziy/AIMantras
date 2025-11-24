@@ -5,7 +5,7 @@ A modular library of personas (who), patterns (how), and orchestration workflows
 
 ## Repository Layout
 ```
-prompt-wiki/
+Prompt-AI-Mantras/
 ├── README.md              # This file
 ├── personas/              # Persona definitions (one file per persona)
 ├── patterns/              # Prompt patterns/playbooks

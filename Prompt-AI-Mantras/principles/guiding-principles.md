@@ -204,7 +204,7 @@ These principles are not constraints on *capability*, only on *intent and postur
 
 # 9. Summary
 
-These guiding principles serve as the **ethical and stylistic backbone** for the entire prompt-wiki. All personas, patterns, and orchestrated flows should implicitly reflect these principles.
+These guiding principles serve as the **ethical and stylistic backbone** for the entire AI Mantras system. All personas, patterns, and orchestrated flows should implicitly reflect these principles.
 
 They are:
 
