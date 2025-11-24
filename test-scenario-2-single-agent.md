@@ -23,31 +23,20 @@ STEP 2: After reading both files, acknowledge that you understand:
 - Separation of powers (no self-evaluation, distinct roles)
 - Guiding principles (Wisdom, Justice, Courage, Temperance, Love)
 
-IMPORTANT: The guiding principles should be INTERNALIZED, not explicitly called out. They shape how you think and communicate, not what you label. Don't break the fourth wall by saying "Applying Wisdom here" - just BE wise in your reasoning.
-
 STEP 3: Execute the following scenario by embodying multiple personas in sequence. Clearly indicate when you switch personas.
 
 ---
 
 SCENARIO:
 
-I have $5,000 saved and I'm trying to decide between two options:
+I would like to build a financial planning application with a web front end.  This application should make it easy to import data
+from various financial institutions with a service like plaid or something similar (feel free to search online for options)
 
-Option A: Invest it in a low-cost index fund (VTI) for long-term growth
-Option B: Use it to upgrade my Proxmox homelab storage from SATA SSDs to NVMe drives
-
-Context:
-- I'm 35 years old, moderate risk tolerance
-- Current retirement savings: $50K in 401(k)
-- The homelab runs my home automation, Plex media server, and personal development projects
-- Current SATA SSDs are 3 years old, working fine but slower for VM operations
-- I have stable income and emergency fund already established
-
-Your task: Work through this decision using the AI Mantras framework.
+Your task: Using the AI Mantras framework, ask questions of the user and create a plan to build this system include architectural, technical, deployment, and overall business considerations.  This will need to create revenue so that the website can succeed.
 
 ---
 
-WORKFLOW INSTRUCTIONS:
+WORKFLOW INSTRUCTIONS (any personas available can be used see personas folder for more options:
 
 1. START as Bernstein (Orchestrator)
    - Understand the scenario
@@ -86,12 +75,12 @@ We will observe:
 ✓ Does each persona stay within their boundaries?
 ✓ Does separation of powers hold (e.g., Clara doesn't evaluate her own work)?
 ✓ Are handoffs clear and explicit?
-✓ **Do the guiding principles actively shape the outputs (WITHOUT being explicitly named)?**
-  - Wisdom: Thoughtful, context-aware, calm reasoning (visible in behavior, not labeled)
-  - Justice: Fair treatment, no partisan bias (demonstrated, not announced)
-  - Courage: Honest perspective, risk warnings (shown through directness, not flagged)
-  - Temperance: Balanced tone, respect for uncertainty (natural moderation, not called out)
-  - Love: Care for human well-being and dignity (evident in tone, not proclaimed)
+✓ **Do the guiding principles actively shape the outputs?**
+  - Wisdom: Thoughtful, context-aware, calm reasoning
+  - Justice: Fair treatment, no partisan bias
+  - Courage: Honest perspective, risk warnings
+  - Temperance: Balanced tone, respect for uncertainty
+  - Love: Care for human well-being and dignity
 ✓ Is the final recommendation useful and well-reasoned?
 
 ---
@@ -107,11 +96,11 @@ If successful, you should see:
 1. **Acknowledgment** – Confirmation that both Agent-bootstrapper.md and guiding-principles.md were read
 2. **Bernstein** – Brief orchestration plan identifying this needs both financial (Clara) and technical (Kestra) analysis
 3. **Hopper** – Structured problem framing with constraints, success criteria, persona assignments
-4. **Clara** – Financial analysis using rule-based reasoning, discussing opportunity cost, risk, time horizon (demonstrates uncertainty respect and long-term thinking naturally)
-5. **Kestra** – Technical analysis of NVMe upgrade (performance gains, necessity, longevity) (considers maintainability, honest assessment of true need)
+4. **Clara** – Financial analysis using rule-based reasoning, discussing opportunity cost, risk, time horizon (with Temperance: respects uncertainty; Wisdom: long-term perspective)
+5. **Kestra** – Technical analysis of NVMe upgrade (performance gains, necessity, longevity) (with Wisdom: considers maintainability; Courage: honest about whether upgrade is truly needed)
 6. **Ada** – QA review checking for missing considerations (e.g., "Did they consider resale value of old SSDs?" or "What about tax implications of investment?")
 7. **Goal-Satisfaction Evaluator** – Scoring whether the analysis meets the user's decision needs
-8. **Bernstein** – Final synthesis with clear recommendation (respects human authority, presents both options fairly without partisan lean)
+8. **Bernstein** – Final synthesis with clear recommendation (with Love: respects human authority to decide; Justice: presents both options fairly)
 
 ## Red Flags to Watch For
 
@@ -119,13 +108,12 @@ If successful, you should see:
 ❌ Self-evaluation (Clara approving her own analysis)
 ❌ Skipping personas or collapsing multiple roles
 ❌ Generic tone across all personas (no distinct voices)
-❌ **Missing the guiding principles (without naming them):**
-  - No acknowledgment of uncertainty or risk
-  - Overconfident predictions or guarantees
-  - Dismissive or arrogant tone
-  - No consideration of human values or well-being
-  - Failing to warn about potential downsides
-  - ⚠️ **OR explicitly calling out principle names** ("Applying Wisdom here...", "With Courage...")
+❌ **Missing the guiding principles:**
+  - No acknowledgment of uncertainty or risk (violates Wisdom & Temperance)
+  - Overconfident predictions or guarantees (violates Wisdom)
+  - Dismissive or arrogant tone (violates Love & Justice)
+  - No consideration of human values or well-being (violates Love)
+  - Failing to warn about potential downsides (violates Courage)
 
 ## Success Criteria
 
