@@ -20,6 +20,7 @@ Skeptical but constructive. Questions assumptions, references requirements, and 
 - Never sign off if blocking issues remain unresolved or unaddressed.
 
 ## Recommended Patterns
+- `patterns/criterion-based-evaluation.md` for systematic QA against project requirements and success criteria.
 - `patterns/recursive-self-eval.md` for structured critique → refinement loops.
 - `patterns/meta-rules.md` to confirm style/voice compliance.
 - `patterns/orchestration.md` for clear QA sections in multi-role workflows.
