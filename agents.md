@@ -17,7 +17,8 @@ This file captures the current coordination context so any new AI agent can resu
 
 ### Patterns Complete
 - **Layer 1:** planning-phase, orchestration, recursive-self-eval, meta-rules
-- **Layer 2:** chain-of-thought, rule-based reasoning, guardrail creative
+- **Layer 2:** chain-of-thought, rule-based-reasoning, guardrail-creative
+- **Layer 3 (NEW - 2025-12-05):** criterion-based-evaluation, threat-modeling
 - **Location:** `Prompt-AI-Mantras/patterns/`
 
 ### Personas Established (Three Categories)
@@ -30,8 +31,11 @@ This file captures the current coordination context so any new AI agent can resu
   - Franklin-Deep-Reasoner
   - Goeth-Philosophical-Synthesizer
   - Kestra-Systems-Architect
+  - Watson-Medical-Advisor (NEW - 2025-12-05)
 - **Evaluation** (`Prompt-AI-Mantras/personas/evaluation/`):
-  - Ada-QA-Reviewer
+  - Ada-QA-Reviewer (updated with criterion-based-evaluation pattern)
+  - Drucker-Goal-Satisfaction-Evaluator (NEW - 2025-12-05)
+  - Rickover-Safety-Evaluator (NEW - 2025-12-05)
 
 ### Architecture & Principles
 - **Two-phase workflow:** Plan → Evaluate → Approve, then Execute → QA → Evaluate
@@ -60,9 +64,16 @@ This file captures the current coordination context so any new AI agent can resu
    - Show "Now applying chain-of-thought.md pattern: Step 1..." format
 3. **Principle Application Review:** Ensure all personas demonstrate internalized principles naturally
 
-### Phase 2: Expansion (Next)
-1. **Evaluation Personas:** Goal-Satisfaction (exists informally), Safety, Clarity, Efficiency, Evaluator-Orchestrator
-2. **Domain Personas (Backlog):** Judge, Lawyer, Doctor, Scholar, Mathematician, Politician, CEO (see `persona-backlog.md`)
+### Phase 2: Expansion (IN PROGRESS - 2025-12-05)
+1. **Evaluation Personas:**
+   - ✅ Drucker (Goal-Satisfaction Evaluator) - COMPLETE
+   - ✅ Rickover (Safety Evaluator) - COMPLETE
+   - ⏳ Clarity Evaluator - IN PROGRESS
+   - ⏳ Efficiency Evaluator - PENDING
+   - ⏳ Evaluator-Orchestrator - PENDING
+2. **Domain Personas (Backlog):**
+   - ✅ Watson (Doctor/Medical Advisor) - COMPLETE
+   - Judge, Lawyer, Scholar, Mathematician, Politician, CEO (see `persona-backlog.md`)
 3. **Orchestration Personas (Backlog):** Director, Mediator, Overseer
 
 ### Phase 3: Production & Commercial (Future)
@@ -86,6 +97,33 @@ This file captures the current coordination context so any new AI agent can resu
 4. **Complex scenarios showcase framework strengths** - simple binary decisions feel academic
 5. **Framework is robust** - adapted to mid-stream user corrections while maintaining structure
 6. **Personas remain distinct** through 7 persona switches in 60+ minute generation (single-agent)
+
+## Recent Sessions
+
+### Session 2025-12-05: Evaluation Personas & Pattern Development
+**Accomplishments:**
+- **Demonstrated AI Mantras framework** - Solved infant sleep problem using full orchestration workflow
+- **Created 2 new patterns:**
+  - `criterion-based-evaluation.md` - Systematic evaluation against success criteria
+  - `threat-modeling.md` - Proactive risk discovery and failure mode analysis
+- **Created 3 new personas:**
+  - Watson (Medical Advisor) - Domain persona with medical reasoning expertise
+  - Drucker (Goal-Satisfaction Evaluator) - Measures objective achievement
+  - Rickover (Safety Evaluator) - Uncompromising safety through threat modeling
+- **Updated Ada** - Added criterion-based-evaluation pattern to QA Reviewer
+- **Updated tracking** - persona-backlog.md reflects completed work
+
+**Key Insights:**
+- New patterns needed to emerge organically when persona requirements reveal gaps
+- Evaluation personas require distinct methodologies (goal-checking vs. threat-discovery)
+- Pattern applicability review ensures consistency across framework
+
+**Next Session:**
+- Continue with remaining evaluation personas: Clarity, Efficiency, Evaluator-Orchestrator
+- Consider pattern applicability for each new persona
+- Maintain name → traits → patterns → write persona workflow
+
+---
 
 ## Reboot Instructions
 1. Read `agents.md` (this file) plus `ai-mantras-updated-plan.md` for architecture overview

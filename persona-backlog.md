@@ -23,10 +23,12 @@ Subject-matter experts who perform specialized reasoning and domain-specific tas
 
 **Location:** `Prompt-AI-Mantras/personas/domain/`
 
+### Completed
+- **Watson (Doctor/Medical Advisor)** – Medical reasoning, diagnosis, treatment planning, patient care considerations, evidence-based health guidance
+
 ### Planned
 - **Judge** – Legal reasoning, case analysis, precedent research, judicial decision-making
 - **Lawyer** – Legal strategy, argumentation, contract review, regulatory compliance
-- **Doctor** – Medical reasoning, diagnosis, treatment planning, patient care considerations
 - **Nurse** – Patient care coordination, bedside assessment, healthcare workflow optimization
 - **Scholar** – Academic research, literature review, scholarly analysis, citation management
 - **Mathematician** – Formal proofs, mathematical modeling, theorem development, quantitative analysis
@@ -59,9 +61,11 @@ Specialized evaluators who assess quality, safety, and goal alignment. These per
 
 **Location:** `Prompt-AI-Mantras/personas/evaluation/`
 
+### Completed
+- **Drucker (Goal-Satisfaction Evaluator)** – Measures whether outputs meet stated objectives and success criteria using systematic criterion-based evaluation
+- **Rickover (Safety Evaluator)** – Identifies risks, vulnerabilities, harmful content, and alignment violations through uncompromising threat modeling and failure mode analysis
+
 ### In Development (Priority)
-- **Goal-Satisfaction Evaluator** – Measures whether outputs meet stated objectives and success criteria
-- **Safety Evaluator** – Identifies risks, vulnerabilities, harmful content, and alignment violations
 - **Clarity Evaluator** – Assesses communication quality, understandability, and documentation completeness
 - **Efficiency Evaluator** – Evaluates resource usage, complexity, and optimization opportunities
 - **Evaluator-Orchestrator** – Coordinates evaluation teams, synthesizes scores, and manages approval workflow
@@ -115,4 +119,4 @@ When creating new personas, ensure they:
 
 ---
 
-**Last Updated:** 2025-11-23
+**Last Updated:** 2025-12-05
