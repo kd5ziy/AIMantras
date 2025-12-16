@@ -46,3 +46,18 @@ Prompt-AI-Mantras/
 ## Next Steps
 - Populate the remaining pattern layers (chain-of-thought, rule-based reasoning, guardrail creative).
 - Add project-specific playbooks under `projects/` folders once personas/patterns stabilize.
+
+## Support This Project
+
+AI Mantras is free and open source under the [MIT License](LICENSE).
+
+If this project helps you, consider:
+- Giving it a star on GitHub
+- [Sponsoring on GitHub](https://github.com/sponsors/kd5ziy)
+- Sharing it with others who might benefit
+
+**Need help implementing AI Mantras for your team?** I'm available for consulting and custom development. [Contact me](mailto:your.email@example.com).
+
+## License
+
+MIT License - see [LICENSE](LICENSE) for details.

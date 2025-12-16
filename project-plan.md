@@ -337,6 +337,53 @@ Eventually, use MkDocs + Material to:
 * auto-generate navigation and search
 * publish via GitHub Pages
 
+### MCP Server Integration
+
+Build a Model Context Protocol (MCP) server to expose AI Mantras as callable tools:
+
+**Architecture:**
+```
+MCP Server
+├── mantras_triage      →  Entry point (loads AIMantra.md, routes by complexity)
+├── mantras_orchestrate →  Full Bernstein orchestration for Complex tier
+│
+├── Orchestration Tools
+│   ├── bernstein       →  Strategy & coordination
+│   ├── hopper          →  Project planning
+│   └── lovell          →  Crisis planning
+│
+├── Domain Tools
+│   ├── clara           →  Financial analysis
+│   ├── kestra          →  Systems/infrastructure
+│   ├── goeth           →  Philosophy/ethics
+│   ├── franklin        →  Deep multi-domain reasoning
+│   └── watson          →  Medical advisory
+│
+└── Evaluation Tools
+    ├── ada             →  QA review
+    ├── drucker         →  Goal satisfaction
+    └── rickover        →  Safety evaluation
+```
+
+**Benefits:**
+* Each persona runs as an isolated tool (true separation)
+* Direct persona access bypasses triage when user knows what they need
+* Evaluation personas can be called independently for review
+* Enables multi-agent architectures with actual process separation
+* Works across all Claude interfaces (CLI, API, integrations)
+
+**Implementation phases:**
+1. Basic MCP server with `mantras_triage` tool
+2. Add individual persona tools (domain first)
+3. Add orchestration tools with handoff protocols
+4. Add evaluation tools with scoring/approval flows
+5. Implement persona memory/context persistence (RAG layer)
+
+**Dependencies:**
+* `ai-mantras-manifest.yaml` provides tool metadata
+* `AIMantra.md` provides triage logic
+* Individual persona files provide tool behavior
+
 ---
 
 # 9. Next Steps
