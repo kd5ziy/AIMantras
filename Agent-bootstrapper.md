@@ -1,6 +1,8 @@
 # AI Mantras – Agent Bootstrapper (Operator Manual for AI Models)
 
-**Purpose:** This document teaches AI models how to operate within the AI Mantras framework. If you are an AI model being asked to work on a task using AI Mantras, read this file first.
+**Purpose:** This document teaches AI models how to operate within the AI Mantras framework for **Complex tier tasks** requiring full orchestration, multi-persona coordination, and evaluation workflows.
+
+> **Note:** This file is loaded on-demand for Complex tier tasks. If you arrived here directly, start with `AIMantra.md` instead – it will triage your request and route to the appropriate tier (Simple, Moderate, or Complex).
 
 **This is NOT a development guide.** For development/contribution instructions, see `agents.md` instead.
 
