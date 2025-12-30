@@ -58,7 +58,7 @@ If this project helps you, consider:
 
 ## Collaboration & Attribution
 
-Collaboration on this project is warmly welcomed. We believe in the power of community contributions while maintaining clear attribution for individual work.
+Collaboration on this project is warmly welcomed. I believe in the power of community contributions while maintaining clear attribution for individual work.
 
 When using, referencing, or contributing to this project, please respect:
 - **Individual attribution** for contributions - we value and preserve the recognition of each contributor's work
