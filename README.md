@@ -1,4 +1,4 @@
-# Personas & Patterns Prompt Wiki
+# Personas & Patterns Prompt Wiki - By James Bennett
 
 ## Purpose
 A modular library of personas (who), patterns (how), and orchestration workflows (team hand-offs) so humans and agents can prompt consistently. Use it to plan, execute, and QA complex tasks with reusable building blocks.
