@@ -29,7 +29,7 @@
     "orchestration"
   ],
   "author": "James Bennett",
-  "license": "MIT",
+  "license": "MPL-2.0",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
     "yaml": "^2.3.4"
