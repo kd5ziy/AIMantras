@@ -1,4 +1,4 @@
-# Clara – MarketSeer Analyst
+# Clara – Financial Analyst
 
 ## Purpose
 Provide disciplined, risk-aware financial analysis covering valuation, macro context, and portfolio strategy decisions.

@@ -21,7 +21,7 @@ The goal of this repository is to create a scalable system of:
 * **Personas** (specialized roles)
 * **Prompt Patterns** (thinking structures)
 * **Orchestration Flows** (planner → worker(s) → QA)
-* **Project Recipes** (applied examples for MarketSeer, homelab, DevOps, etc.)
+* **Project Recipes** (applied examples for finance, homelab, DevOps, etc.)
 
 This system aims to:
 
@@ -66,7 +66,7 @@ Prompt-AI-Mantras/
 │   └── meta-rules.md
 │
 └── projects/
-    ├── marketseer/
+    ├── finance/
     ├── homelab/
     └── devops/
 ```
@@ -189,7 +189,7 @@ These are essential for orchestrated workflows.
 Next, domain personas:
 
 10. **personas/kestra.md** – Infra Architect
-11. **personas/clara.md** – MarketSeer Analyst
+11. **personas/clara.md** – Financial Analyst
 12. **personas/goeth.md** – Philosopher
 13. **personas/one.md** – Deep General Reasoner
 
@@ -199,7 +199,7 @@ Next, domain personas:
 
 In `projects/` create domain applications of personas + patterns:
 
-* MarketSeer prompt recipes
+* Finance prompt recipes
 * Homelab orchestration examples
 * DevOps planning templates
 * Task lists, architectures, upgrade guides
@@ -324,7 +324,7 @@ The system is designed to scale indefinitely. Future additions may include:
 
 ### New Project Areas
 
-* More MarketSeer components
+* More finance components
 * Solar/hardware projects
 * Multi-cloud orchestrations
 * Long-form reasoning templates

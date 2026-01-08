@@ -1,0 +1,45 @@
+{
+  "name": "@ai-mantras/mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for the AI Mantras prompt framework - personas, patterns, and orchestration for Claude",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "ai-mantras-mcp": "./dist/index.js"
+  },
+  "scripts": {
+    "copy-content": "node scripts/copy-content.js",
+    "prebuild": "npm run copy-content",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "test": "node test-content.js && node test-tools.js"
+  },
+  "files": [
+    "dist/",
+    "content/"
+  ],
+  "keywords": [
+    "mcp",
+    "claude",
+    "ai",
+    "personas",
+    "patterns",
+    "prompts",
+    "orchestration"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "yaml": "^2.3.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
