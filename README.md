@@ -13,7 +13,7 @@ Prompt-AI-Mantras/
 
 ## How to Use Personas
 1. Read `personas-and-patterns-context.md` + `project-plan.md` for shared context.
-2. Pick a persona whose name-purpose file matches your need (e.g., `Clara-MarketSeer-Analyst`).
+2. Pick a persona whose name-purpose file matches your need (e.g., `Clara-Financial-Analyst`).
 3. Follow its sections: Purpose, Domain Expertise, Style, Rules, Recommended Patterns, Example Invocations, Output Expectations, Failure Modes.
 4. Cite the persona explicitly in prompts (`Persona: Hopper …`).
 

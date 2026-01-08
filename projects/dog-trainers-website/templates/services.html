@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}Services{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Our Services</h1>
+        <p>Customized training programs for every dog and family.</p>
+    </div>
+</section>
+
+<section class="services-content">
+    <div class="container">
+        <div class="service-card">
+            <h2>Puppy Training</h2>
+            <p class="price">Starting at $150</p>
+            <p>Set your puppy up for a lifetime of good behavior! Our puppy program covers:</p>
+            <ul>
+                <li>House training fundamentals</li>
+                <li>Bite inhibition and mouthing</li>
+                <li>Basic commands (sit, down, stay, come)</li>
+                <li>Leash walking introduction</li>
+                <li>Socialization guidance</li>
+                <li>Crate training</li>
+            </ul>
+            <p><strong>Format:</strong> 4-week program, one 60-minute session per week</p>
+        </div>
+
+        <div class="service-card">
+            <h2>Basic Obedience</h2>
+            <p class="price">Starting at $200</p>
+            <p>Build a foundation of reliable commands and good manners:</p>
+            <ul>
+                <li>Reliable sit, down, stay, and come</li>
+                <li>Loose leash walking</li>
+                <li>Polite greetings (no jumping)</li>
+                <li>Leave it and drop it</li>
+                <li>Place/go to bed command</li>
+                <li>Door manners</li>
+            </ul>
+            <p><strong>Format:</strong> 6-week program, one 60-minute session per week</p>
+        </div>
+
+        <div class="service-card">
+            <h2>Behavior Modification</h2>
+            <p class="price">Starting at $300</p>
+            <p>Specialized help for challenging behaviors:</p>
+            <ul>
+                <li>Reactivity (leash aggression)</li>
+                <li>Separation anxiety</li>
+                <li>Fear and phobias</li>
+                <li>Resource guarding</li>
+                <li>Excessive barking</li>
+                <li>Destructive behavior</li>
+            </ul>
+            <p><strong>Format:</strong> Customized program based on assessment. Includes initial 90-minute consultation.</p>
+        </div>
+
+        <div class="service-card">
+            <h2>Group Classes</h2>
+            <p class="price">$175 for 6-week session</p>
+            <p>Learn alongside other dog owners in a supportive environment:</p>
+            <ul>
+                <li>Small class sizes (max 6 dogs)</li>
+                <li>Socialization opportunities</li>
+                <li>Distraction training</li>
+                <li>Community and support</li>
+            </ul>
+            <p><strong>Available classes:</strong> Puppy Kindergarten, Basic Manners, Canine Good Citizen Prep</p>
+        </div>
+
+        <div class="service-card">
+            <h2>Board & Train</h2>
+            <p class="price">Starting at $1,200/week</p>
+            <p>Intensive training while your dog stays with us:</p>
+            <ul>
+                <li>Daily training sessions</li>
+                <li>24/7 care in a home environment</li>
+                <li>Progress videos and updates</li>
+                <li>Owner transfer sessions included</li>
+                <li>30-day follow-up support</li>
+            </ul>
+            <p><strong>Format:</strong> 2-4 week programs available</p>
+        </div>
+
+        <div class="service-card highlight">
+            <h2>Free Consultation</h2>
+            <p class="price">No Cost</p>
+            <p>Not sure which program is right for you? Schedule a free 30-minute phone or video consultation to discuss your goals and get personalized recommendations.</p>
+            <a href="{{ url_for('contact') }}" class="btn btn-primary">Book Your Free Consultation</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
