@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <h1>Transform Your Dog's Behavior</h1>
+        <p class="hero-subtitle">Professional, compassionate training that builds lasting bonds between you and your furry friend.</p>
+        <a href="{{ url_for('contact') }}" class="btn btn-primary">Get Started Today</a>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <h2>Why Choose Us?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">&#128054;</div>
+                <h3>Certified Trainers</h3>
+                <p>Our team consists of certified professional dog trainers with years of experience and proven results.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#10084;</div>
+                <h3>Positive Methods</h3>
+                <p>We use science-based, positive reinforcement techniques that are effective and humane.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#127968;</div>
+                <h3>Flexible Training</h3>
+                <p>Choose from in-home sessions, group classes, or board-and-train programs to fit your lifestyle.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#127775;</div>
+                <h3>Lasting Results</h3>
+                <p>We don't just train dogs - we teach you the skills to maintain great behavior for life.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="container">
+        <h2>Ready to Start Your Training Journey?</h2>
+        <p>Contact us today for a free consultation and learn how we can help your dog become the best companion they can be.</p>
+        <a href="{{ url_for('contact') }}" class="btn btn-secondary">Schedule Consultation</a>
+    </div>
+</section>
+{% endblock %}

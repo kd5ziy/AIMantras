@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "ai-mantras": {
+      "command": "node",
+      "args": ["./ai-mantras-mcp/dist/index.js"],
+      "env": {}
+    }
+  }
+}

@@ -74,7 +74,7 @@ This can happen in a single prompt or in multiple steps.
 
 Detailed definitions live in `personas/*.md`. This section is a quick map.
 
-### 3.1 Clara – MarketSeer Analyst
+### 3.1 Clara – Financial Analyst
 
 - **Domain:** investing, valuation, macro context, portfolio thinking.
 - **Style:** calm, analytical, risk-aware; like a mix of librarian, data scientist, and cautious mentor.
