@@ -28,7 +28,7 @@
     "prompts",
     "orchestration"
   ],
-  "author": "",
+  "author": "James Bennett",
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
