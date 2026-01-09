@@ -5,7 +5,9 @@ This file captures the current coordination context so any new AI agent can resu
 ## Repository
 - Path: `/mnt/d/development/ai-personas-and-patterns`
 - Project Name: **AI Mantras** (formerly Personas & Patterns Prompt Wiki)
-- Primary references: `ai-mantras-updated-plan.md`, `personas-and-patterns-context.md`, `project-plan.md`, `Prompt-AI-Mantras/`
+- Primary references: `development/` folder for planning docs, `Prompt-AI-Mantras/` for framework content
+- Entry point: `AIMantra.md` (triage and routing)
+- Setup guide: `HowToUse.md`
 
 ## Latest State
 
@@ -110,27 +112,44 @@ This file captures the current coordination context so any new AI agent can resu
 
 ## Recent Sessions
 
-### Session 2025-01-09: Skills Framework Implementation
+### Session 2025-01-09: Skills Framework & Project Organization
 **Accomplishments:**
-- **Created Skills Framework** - New capability layer for personas
+- **Created Skills Framework** - New capability layer for personas (Fourth Pillar)
   - `skills/toolset.md` - Master index of all skills
   - 24 skills across 6 categories (research, analysis, creation, evaluation, orchestration, utility)
-  - Consistent skill file template (Purpose, Inputs, Outputs, Invocation, Examples)
-- **Updated All Personas** - Each persona now references available skills
-  - Primary skills: Core capabilities for the persona's domain
-  - Secondary skills: Supporting capabilities
+  - 12 fully implemented skill files with consistent template
+  - Each persona updated with "Available Skills" section (primary + secondary)
 - **Updated Manifest** - `ai-mantras-manifest.yaml` v0.3.0 with full skills section
 - **Created Help Utility** - `skills/utility/help.md` for framework discovery
+- **Project Reorganization:**
+  - Created `development/` folder for planning/development docs
+  - Moved: agents.md, project-plan.md, AI-Mantras-Updated-plan.md, persona-backlog.md, personas-and-patterns-context.md
+  - Renamed TLDR.md → about.md
+- **Documentation Overhaul:**
+  - README.md: Added Four Pillars explanation, Quick Start section, Contributing guidelines
+  - Created `HowToUse.md`: Setup instructions for MCP server, Claude command, and manual loading (any AI)
+  - Updated all file references across the project
+
+**The Four Pillars (now documented):**
+| Pillar | Question | Purpose |
+|--------|----------|---------|
+| Personas | WHO | Specialized identities with expertise, style, and constraints |
+| Patterns | HOW | Reusable reasoning structures and thinking templates |
+| Principles | WHY | Guiding values that shape behavior |
+| Skills | WHAT | Actionable capabilities personas can invoke |
 
 **Key Insights:**
-- Skills complete the framework: Personas (WHO) + Patterns (HOW) + Principles (WHY) + Skills (WHAT)
-- Skills prepare framework for multi-agent architecture where each persona becomes a separate agent
-- Help skill enables self-documentation and discoverability
+- Skills complete the framework architecture
+- Framework now supports three integration methods: MCP server, Claude command, manual loading
+- Project structure is cleaner with user-facing files at root, development docs in `development/`
+
+**Branch:** `feature/skills-integration` (6 commits, pushed to GitLab + GitHub)
 
 **Next Session:**
+- Merge feature branch to master
 - Implement multi-agent architecture (personas as separate agents)
 - Update MCP server to expose skills as tools
-- Consider pattern organization into layer subfolders
+- Create remaining placeholder skill files
 
 ---
 
@@ -160,8 +179,17 @@ This file captures the current coordination context so any new AI agent can resu
 ---
 
 ## Reboot Instructions
-1. Read `agents.md` (this file) plus `ai-mantras-updated-plan.md` for architecture overview
-2. Review `personas-and-patterns-context.md`, `project-plan.md`, and `Prompt-AI-Mantras/principles/guiding-principles.md` for philosophical foundation
-3. Inspect `Prompt-AI-Mantras/personas/` (orchestration, domain, evaluation folders) to understand available personas
-4. Check "Active Focus" above and confirm with user which priority to tackle
-5. Use orchestration pattern and two-phase evaluation workflow before executing
+1. Read `development/agents.md` (this file) for current state and recent session notes
+2. Read `development/AI-Mantras-Updated-plan.md` for architecture overview
+3. Review `Prompt-AI-Mantras/principles/guiding-principles.md` for philosophical foundation
+4. Check `Prompt-AI-Mantras/skills/toolset.md` for available skills
+5. Inspect `Prompt-AI-Mantras/personas/` (orchestration, domain, evaluation folders) for available personas
+6. Check "Active Focus" above and confirm with user which priority to tackle
+7. Use orchestration pattern and two-phase evaluation workflow before executing
+
+**Key Files (updated locations):**
+- Development docs: `development/` folder
+- Framework content: `Prompt-AI-Mantras/` folder
+- Entry point: `AIMantra.md`
+- Setup guide: `HowToUse.md`
+- About/overview: `about.md`
