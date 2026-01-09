@@ -650,19 +650,24 @@ project_structure:
   root_files:
     - path: Agent-bootstrapper.md
       purpose: Operational manual for AI agents
-    - path: agents.md
-      purpose: Development quickstart for contributors
     - path: README.md
       purpose: Usage guide
     - path: TLDR.md
       purpose: Quick reference
-    - path: project-plan.md
+    - path: AIMantra.md
+      purpose: Entry point - triage and routing
+
+  development_folder: development
+  development_files:
+    - path: development/agents.md
+      purpose: Development quickstart for contributors
+    - path: development/project-plan.md
       purpose: Strategic and operational planning
-    - path: AI-Mantras-Updated-plan.md
+    - path: development/AI-Mantras-Updated-plan.md
       purpose: Latest architectural insights
-    - path: persona-backlog.md
+    - path: development/persona-backlog.md
       purpose: Pipeline of planned personas
-    - path: personas-and-patterns-context.md
+    - path: development/personas-and-patterns-context.md
       purpose: Conceptual foundation
 
   framework_folder: Prompt-AI-Mantras

@@ -38,7 +38,7 @@ Prompt-AI-Mantras/
 ```
 
 ## How to Use Personas
-1. Read `personas-and-patterns-context.md` + `project-plan.md` for shared context.
+1. Read `development/personas-and-patterns-context.md` + `development/project-plan.md` for shared context.
 2. Pick a persona whose name-purpose file matches your need (e.g., `Clara-Financial-Analyst`).
 3. Follow its sections: Purpose, Domain Expertise, Style, Rules, Recommended Patterns, Example Invocations, Output Expectations, Failure Modes.
 4. Cite the persona explicitly in prompts (`Persona: Hopper …`).
@@ -113,7 +113,7 @@ Use descriptive branch names:
 - Keep files atomic (one concept per file)
 - Prefer additive changes over destructive rewrites
 - Update `ai-mantras-manifest.yaml` if adding new components
-- Update relevant index files (`toolset.md`, `agents.md`)
+- Update relevant index files (`toolset.md`, `development/agents.md`)
 
 ### 3. Commit with Clear Messages
 ```bash

@@ -4,7 +4,7 @@
 
 > **Note:** This file is loaded on-demand for Complex tier tasks. If you arrived here directly, start with `AIMantra.md` instead – it will triage your request and route to the appropriate tier (Simple, Moderate, or Complex).
 
-**This is NOT a development guide.** For development/contribution instructions, see `agents.md` instead.
+**This is NOT a development guide.** For development/contribution instructions, see `development/agents.md` instead.
 
 ---
 
@@ -481,7 +481,7 @@ CONSTRAINTS: Do not recommend individual stocks without discussing concentration
 → Declare this limitation and hand off to an orchestration persona to reassign
 
 ### "I'm an orchestrator and no domain persona fits the task"
-→ Escalate to human; may need to create a new persona (see persona-backlog.md)
+→ Escalate to human; may need to create a new persona (see development/persona-backlog.md)
 
 ---
 
@@ -523,9 +523,9 @@ CONSTRAINTS: Do not recommend individual stocks without discussing concentration
 - Success criteria provided by orchestration personas
 
 ### Optional but Helpful
-- `ai-mantras-updated-plan.md` – High-level architecture overview
-- `personas-and-patterns-context.md` – Conceptual foundation
-- `persona-backlog.md` – Future personas planned
+- `development/AI-Mantras-Updated-plan.md` – High-level architecture overview
+- `development/personas-and-patterns-context.md` – Conceptual foundation
+- `development/persona-backlog.md` – Future personas planned
 
 ---
 
