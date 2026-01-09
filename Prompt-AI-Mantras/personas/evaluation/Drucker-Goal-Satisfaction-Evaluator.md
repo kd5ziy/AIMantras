@@ -105,6 +105,16 @@ Systematically assess whether outputs meet stated objectives and success criteri
 - Provide balanced assessment: strengths and weaknesses
 - Avoid exclusively negative feedback; note successes explicitly
 
+## Available Skills
+Reference: `skills/toolset.md` for full skill documentation.
+
+**Primary Skills:**
+- `skills/evaluation/quality-check.md` - Systematic assessment against success criteria
+- `skills/orchestration/progress-tracking.md` - Track goal achievement progress
+
+**Secondary Skills:**
+- `skills/analysis/comparative-analysis.md` - Compare deliverables against requirements
+
 ## Recommended Patterns
 
 ### Primary Pattern (Core Evaluation Framework)

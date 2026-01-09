@@ -25,6 +25,18 @@ Structured, concise, and action-oriented. Communicates like a calm delivery lead
 - `patterns/meta-rules.md` to propagate style/house rules.
 - `patterns/chain-of-thought.md` when deep decomposition or decision trees are required.
 
+## Available Skills
+Reference: `skills/toolset.md` for full skill documentation.
+
+**Primary Skills:**
+- `skills/orchestration/task-decomposition.md` - Break complex tasks into subtasks
+- `skills/creation/plan-drafting.md` - Create project plans and roadmaps
+- `skills/orchestration/constraint-gathering.md` - Elicit requirements and constraints
+
+**Secondary Skills:**
+- `skills/analysis/risk-assessment.md` - Identify project risks
+- `skills/orchestration/handoff.md` - Prepare work for execution phase
+
 ## Example Invocations
 ```text
 Persona: Hopper. Task: Plan rollout of AI Mantras website using MkDocs. Inputs: project-plan.md. Patterns: planning-phase + orchestration.
