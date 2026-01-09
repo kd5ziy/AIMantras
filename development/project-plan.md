@@ -18,8 +18,10 @@ This file serves as the **root planning artifact** for the entire project.
 
 The goal of this repository is to create a scalable system of:
 
-* **Personas** (specialized roles)
-* **Prompt Patterns** (thinking structures)
+* **Personas** (WHO - specialized roles)
+* **Patterns** (HOW - thinking structures)
+* **Principles** (WHY - guiding values)
+* **Skills** (WHAT - actionable capabilities)
 * **Orchestration Flows** (planner → worker(s) → QA)
 * **Project Recipes** (applied examples for finance, homelab, DevOps, etc.)
 
@@ -41,42 +43,71 @@ This ensures clarity, modularity, and ease of automation.
 
 ---
 
-# 2. Target Folder Structure
+# 2. Target Folder Structure (Updated 2025-01-09)
 
 ```
-Prompt-AI-Mantras/
+ai-personas-and-patterns/
 │
-├── README.md
+├── README.md                    # Main readme with Four Pillars
+├── about.md                     # Quick reference overview
+├── HowToUse.md                  # Setup guide (MCP, Claude command, manual)
+├── AIMantra.md                  # Entry point - triage and routing
+├── Agent-bootstrapper.md        # Operational manual for AI agents
+├── ai-mantras-manifest.yaml     # Structured index for agents
 │
-├── personas/
-│   ├── clara.md
-│   ├── kestra.md
-│   ├── goeth.md
-│   ├── pm.md
-│   ├── qa-reviewer.md
-│   └── one.md
+├── development/                 # Development & planning docs
+│   ├── agents.md                # Development quickstart
+│   ├── project-plan.md          # This file
+│   ├── AI-Mantras-Updated-plan.md
+│   ├── persona-backlog.md
+│   └── personas-and-patterns-context.md
 │
-├── patterns/
-│   ├── chain-of-thought.md
-│   ├── rule-based-reasoning.md
-│   ├── guardrail-creative.md
-│   ├── recursive-self-eval.md
-│   ├── orchestration.md
-│   ├── planning-phase.md
-│   └── meta-rules.md
+├── Prompt-AI-Mantras/           # Framework content
+│   │
+│   ├── personas/                # WHO - 11 specialized personas
+│   │   ├── orchestration/       # Bernstein, Hopper, Lovell
+│   │   ├── domain/              # Clara, Kestra, Watson, Goeth, Franklin
+│   │   └── evaluation/          # Ada, Drucker, Rickover
+│   │
+│   ├── patterns/                # HOW - 9 reasoning patterns
+│   │   ├── (Layer 1)            # planning-phase, orchestration, recursive-self-eval, meta-rules
+│   │   ├── (Layer 2)            # chain-of-thought, rule-based-reasoning, guardrail-creative
+│   │   └── (Layer 3)            # criterion-based-evaluation, threat-modeling
+│   │
+│   ├── principles/              # WHY - Guiding values
+│   │   └── guiding-principles.md
+│   │
+│   ├── skills/                  # WHAT - 24 actionable capabilities
+│   │   ├── toolset.md           # Master index
+│   │   ├── research/            # web-search, codebase-exploration, etc.
+│   │   ├── analysis/            # code-review, risk-assessment, etc.
+│   │   ├── creation/            # document-generation, code-generation, etc.
+│   │   ├── evaluation/          # quality-check, security-audit, etc.
+│   │   ├── orchestration/       # task-decomposition, handoff, etc.
+│   │   └── utility/             # help
+│   │
+│   └── projects/                # Applied recipes (per domain)
 │
-└── projects/
-    ├── finance/
-    ├── homelab/
-    └── devops/
+└── ai-mantras-mcp/              # MCP server implementation
+    ├── src/                     # TypeScript source
+    └── content/                 # Bundled framework content
 ```
+
+**The Four Pillars:**
+| Pillar | Folder | Purpose |
+|--------|--------|---------|
+| Personas | `personas/` | WHO does the work |
+| Patterns | `patterns/` | HOW they think |
+| Principles | `principles/` | WHY (guiding values) |
+| Skills | `skills/` | WHAT they can do |
 
 This structure is:
 
 * easy for agents to traverse
 * modular for long-term scaling
 * predictable for scripting
-* compatible with future static site generation (MkDocs)
+* compatible with MCP server integration
+* supports multiple integration methods (MCP, Claude command, manual loading)
 
 ---
 

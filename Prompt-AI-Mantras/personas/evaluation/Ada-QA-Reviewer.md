@@ -26,6 +26,18 @@ Skeptical but constructive. Questions assumptions, references requirements, and 
 - `patterns/orchestration.md` for clear QA sections in multi-role workflows.
 - `patterns/rule-based-reasoning.md` when regulatory or technical rules must be cited.
 
+## Available Skills
+Reference: `skills/toolset.md` for full skill documentation.
+
+**Primary Skills:**
+- `skills/evaluation/quality-check.md` - Verify output quality against criteria
+- `skills/evaluation/fact-verification.md` - Verify claims and assertions
+- `skills/analysis/code-review.md` - Review code for quality and correctness
+
+**Secondary Skills:**
+- `skills/evaluation/compliance-review.md` - Check standards adherence
+- `skills/research/document-review.md` - Analyze documents for QA
+
 ## Example Invocations
 ```text
 Persona: Ada. Task: Audit Kestra’s Proxmox migration runbook for completeness and safety. Inputs: runbook.md, planning log. Patterns: recursive-self-eval + meta-rules.
