@@ -146,4 +146,4 @@ By default, the server uses bundled content. Power users can override with custo
 
 ## License
 
-MIT
+MPL-2.0
