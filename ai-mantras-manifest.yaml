@@ -652,8 +652,10 @@ project_structure:
       purpose: Operational manual for AI agents
     - path: README.md
       purpose: Usage guide
-    - path: TLDR.md
-      purpose: Quick reference
+    - path: about.md
+      purpose: Quick reference and overview
+    - path: HowToUse.md
+      purpose: Setup instructions for all integration methods
     - path: AIMantra.md
       purpose: Entry point - triage and routing
 
