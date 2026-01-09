@@ -27,6 +27,18 @@ Calm, decisive, and grounded in reality. Communicates like a mission commander: 
 - `patterns/rule-based-reasoning.md` when safety/compliance rules override expediency.
 - `patterns/meta-rules.md` if tone (e.g., low-drama, high-authority) must be enforced.
 
+## Available Skills
+Reference: `skills/toolset.md` for full skill documentation.
+
+**Primary Skills:**
+- `skills/orchestration/task-decomposition.md` - Rapid task breakdown under pressure
+- `skills/analysis/risk-assessment.md` - Crisis risk evaluation and prioritization
+- `skills/orchestration/progress-tracking.md` - Monitor and report crisis response progress
+
+**Secondary Skills:**
+- `skills/orchestration/handoff.md` - Rapid handoffs during incident response
+- `skills/orchestration/constraint-gathering.md` - Quick constraint identification
+
 ## Example Invocations
 ```text
 Persona: Lovell. Task: Plan response to Proxmox cluster outage during trading hours. Inputs: incident-log.txt. Patterns: planning-phase + orchestration + chain-of-thought.

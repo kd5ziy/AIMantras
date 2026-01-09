@@ -1,10 +1,10 @@
 # AI Mantras Framework Manifest
 # Purpose: Structured index for AI agents to navigate the framework
-# Last Updated: 2025-12-15
+# Last Updated: 2025-01-09
 
 metadata:
   name: AI Mantras
-  version: "0.2.0"
+  version: "0.3.0"
   description: >
     A prompting framework that treats AI collaboration as organizational design.
     Specialized personas (WHO) combined with reusable patterns (HOW) coordinated
@@ -363,6 +363,131 @@ patterns:
           - Discovering unknown risks before deployment
 
 # =============================================================================
+# SKILLS
+# =============================================================================
+skills:
+  description: >
+    Actionable capabilities that personas can invoke to accomplish specific work.
+    Skills complement personas (WHO), patterns (HOW), and principles (WHAT guides).
+    Skills define WHAT they can DO.
+
+  index_file: Prompt-AI-Mantras/skills/toolset.md
+
+  research:
+    description: Information gathering and discovery capabilities
+    members:
+      - name: web-search
+        path: Prompt-AI-Mantras/skills/research/web-search.md
+        purpose: Find current information from the web
+
+      - name: codebase-exploration
+        path: Prompt-AI-Mantras/skills/research/codebase-exploration.md
+        purpose: Navigate and understand code repositories
+
+      - name: document-review
+        path: Prompt-AI-Mantras/skills/research/document-review.md
+        purpose: Analyze and extract insights from documents
+
+      - name: literature-review
+        path: Prompt-AI-Mantras/skills/research/literature-review.md
+        purpose: Survey academic or technical literature
+
+  analysis:
+    description: Analytical and reasoning capabilities
+    members:
+      - name: data-analysis
+        path: Prompt-AI-Mantras/skills/analysis/data-analysis.md
+        purpose: Analyze datasets and extract insights
+
+      - name: code-review
+        path: Prompt-AI-Mantras/skills/analysis/code-review.md
+        purpose: Review code for quality, bugs, and improvements
+
+      - name: financial-modeling
+        path: Prompt-AI-Mantras/skills/analysis/financial-modeling.md
+        purpose: Build and analyze financial models
+
+      - name: risk-assessment
+        path: Prompt-AI-Mantras/skills/analysis/risk-assessment.md
+        purpose: Identify and evaluate risks
+
+      - name: comparative-analysis
+        path: Prompt-AI-Mantras/skills/analysis/comparative-analysis.md
+        purpose: Compare options systematically
+
+  creation:
+    description: Content and artifact creation capabilities
+    members:
+      - name: document-generation
+        path: Prompt-AI-Mantras/skills/creation/document-generation.md
+        purpose: Create structured documents
+
+      - name: code-generation
+        path: Prompt-AI-Mantras/skills/creation/code-generation.md
+        purpose: Write new code
+
+      - name: diagram-creation
+        path: Prompt-AI-Mantras/skills/creation/diagram-creation.md
+        purpose: Create visual diagrams and flowcharts
+
+      - name: plan-drafting
+        path: Prompt-AI-Mantras/skills/creation/plan-drafting.md
+        purpose: Create project plans and roadmaps
+
+      - name: report-writing
+        path: Prompt-AI-Mantras/skills/creation/report-writing.md
+        purpose: Write analytical reports
+
+  evaluation:
+    description: Review, assessment, and quality assurance capabilities
+    members:
+      - name: quality-check
+        path: Prompt-AI-Mantras/skills/evaluation/quality-check.md
+        purpose: Verify output quality against criteria
+
+      - name: security-audit
+        path: Prompt-AI-Mantras/skills/evaluation/security-audit.md
+        purpose: Assess security posture and vulnerabilities
+
+      - name: compliance-review
+        path: Prompt-AI-Mantras/skills/evaluation/compliance-review.md
+        purpose: Check adherence to standards/regulations
+
+      - name: fact-verification
+        path: Prompt-AI-Mantras/skills/evaluation/fact-verification.md
+        purpose: Verify claims and assertions
+
+  orchestration:
+    description: Workflow coordination and communication capabilities
+    members:
+      - name: task-decomposition
+        path: Prompt-AI-Mantras/skills/orchestration/task-decomposition.md
+        purpose: Break complex tasks into subtasks
+
+      - name: handoff
+        path: Prompt-AI-Mantras/skills/orchestration/handoff.md
+        purpose: Transfer work between personas
+
+      - name: summarization
+        path: Prompt-AI-Mantras/skills/orchestration/summarization.md
+        purpose: Condense information for handoffs
+
+      - name: progress-tracking
+        path: Prompt-AI-Mantras/skills/orchestration/progress-tracking.md
+        purpose: Monitor and report task progress
+
+      - name: constraint-gathering
+        path: Prompt-AI-Mantras/skills/orchestration/constraint-gathering.md
+        purpose: Elicit requirements and constraints
+
+  utility:
+    description: Framework navigation and meta-capabilities
+    members:
+      - name: help
+        path: Prompt-AI-Mantras/skills/utility/help.md
+        purpose: Discover and learn about framework components
+
+# =============================================================================
 # WORKFLOWS
 # =============================================================================
 workflows:
@@ -552,6 +677,8 @@ project_structure:
       contents: 3 evaluation personas
     - path: Prompt-AI-Mantras/patterns
       contents: 9 patterns (4 Layer1 + 3 Layer2 + 2 Layer3)
+    - path: Prompt-AI-Mantras/skills
+      contents: 24 skills across 6 categories (research, analysis, creation, evaluation, orchestration, utility)
     - path: Prompt-AI-Mantras/projects
       contents: Applied project examples
 
@@ -573,4 +700,11 @@ statistics:
   layer1_patterns: 4
   layer2_patterns: 3
   layer3_patterns: 2
+  total_skills: 24
+  research_skills: 4
+  analysis_skills: 5
+  creation_skills: 5
+  evaluation_skills: 4
+  orchestration_skills: 5
+  utility_skills: 1
   defined_workflows: 3

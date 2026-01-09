@@ -1,14 +1,39 @@
-# Personas & Patterns Prompt Wiki
+# AI Mantras
 
-## Purpose
-A modular library of personas (who), patterns (how), and orchestration workflows (team hand-offs) so humans and agents can prompt consistently. Use it to plan, execute, and QA complex tasks with reusable building blocks.
+A cognitive framework for AI collaboration that treats prompting as organizational design.
+
+## The Four Pillars
+
+AI Mantras is built on four complementary pillars:
+
+| Pillar | Question | Purpose |
+|--------|----------|---------|
+| **Personas** | WHO | Specialized identities with expertise, style, and constraints |
+| **Patterns** | HOW | Reusable reasoning structures and thinking templates |
+| **Principles** | WHY | Guiding values that shape behavior (internalized, not announced) |
+| **Skills** | WHAT | Actionable capabilities personas can invoke |
+
+Together, these enable consistent, high-quality AI collaboration across complex multi-step tasks.
 
 ## Repository Layout
 ```
 Prompt-AI-Mantras/
-├── README.md              # This file
-├── personas/              # Persona definitions (one file per persona)
-├── patterns/              # Prompt patterns/playbooks
+├── personas/              # WHO - 11 specialized personas
+│   ├── orchestration/     # Plan & coordinate (Bernstein, Hopper, Lovell)
+│   ├── domain/            # Execute work (Clara, Kestra, Watson, Goeth, Franklin)
+│   └── evaluation/        # Review & approve (Ada, Drucker, Rickover)
+├── patterns/              # HOW - 9 reasoning patterns
+│   ├── Layer 1            # Foundational (planning, orchestration, self-eval, meta-rules)
+│   ├── Layer 2            # Thinking (chain-of-thought, rule-based, guardrail-creative)
+│   └── Layer 3            # Evaluation (criterion-based, threat-modeling)
+├── principles/            # WHY - Guiding values (wisdom, justice, courage, temperance)
+├── skills/                # WHAT - 24 actionable capabilities
+│   ├── research/          # Information gathering
+│   ├── analysis/          # Analytical capabilities
+│   ├── creation/          # Content generation
+│   ├── evaluation/        # Assessment capabilities
+│   ├── orchestration/     # Workflow coordination
+│   └── utility/           # Framework navigation (help)
 └── projects/              # Applied recipes (per domain/project)
 ```
 
@@ -43,9 +68,29 @@ Prompt-AI-Mantras/
 - Append new project recipes under `projects/` to show real-world orchestration examples.
 - Default to additive edits; avoid destructive rewrites unless coordinated.
 
+## Quick Start
+
+1. **Entry Point**: Start with `AIMantra.md` - it triages your request to the right complexity tier
+2. **Simple tasks**: One persona answers directly
+3. **Moderate tasks**: Structured reasoning with patterns and self-review
+4. **Complex tasks**: Full orchestration (Bernstein → Hopper → Workers → Ada → Evaluators)
+
+## Key Concepts
+
+### Separation of Powers
+- **Orchestrators** plan but don't execute or evaluate
+- **Domain personas** execute but don't self-evaluate
+- **Evaluators** assess but don't generate content
+- **Humans** retain final authority
+
+### Two-Phase Workflow
+1. **Plan → Evaluate → Approve** (before work begins)
+2. **Execute → QA → Evaluate** (before delivery)
+
 ## Next Steps
-- Populate the remaining pattern layers (chain-of-thought, rule-based reasoning, guardrail creative).
-- Add project-specific playbooks under `projects/` folders once personas/patterns stabilize.
+- Multi-agent architecture (personas as separate agents)
+- MCP server integration for skills
+- Project-specific playbooks under `projects/`
 
 ## Support This Project
 

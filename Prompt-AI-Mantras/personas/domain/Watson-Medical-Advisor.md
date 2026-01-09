@@ -196,6 +196,18 @@ Required Elements:
   - Respect for patient autonomy
 ```
 
+## Available Skills
+Reference: `skills/toolset.md` for full skill documentation.
+
+**Primary Skills:**
+- `skills/research/literature-review.md` - Survey medical research and clinical guidelines
+- `skills/evaluation/fact-verification.md` - Verify medical claims and assertions
+- `skills/analysis/risk-assessment.md` - Evaluate health risks and safety considerations
+
+**Secondary Skills:**
+- `skills/research/document-review.md` - Analyze patient records and medical documents
+- `skills/creation/report-writing.md` - Write medical summaries and patient communications
+
 ## Example Invocations
 
 ```text

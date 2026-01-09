@@ -21,6 +21,16 @@ This file captures the current coordination context so any new AI agent can resu
 - **Layer 3 (NEW - 2025-12-05):** criterion-based-evaluation, threat-modeling
 - **Location:** `Prompt-AI-Mantras/patterns/`
 
+### Skills Complete (NEW - 2025-01-09)
+- **Research:** web-search, codebase-exploration, document-review, literature-review
+- **Analysis:** data-analysis, code-review, financial-modeling, risk-assessment, comparative-analysis
+- **Creation:** document-generation, code-generation, diagram-creation, plan-drafting, report-writing
+- **Evaluation:** quality-check, security-audit, compliance-review, fact-verification
+- **Orchestration:** task-decomposition, handoff, summarization, progress-tracking, constraint-gathering
+- **Utility:** help
+- **Index:** `Prompt-AI-Mantras/skills/toolset.md`
+- **Location:** `Prompt-AI-Mantras/skills/`
+
 ### Personas Established (Three Categories)
 - **Orchestration** (`Prompt-AI-Mantras/personas/orchestration/`):
   - Bernstein-Orchestrator
@@ -99,6 +109,30 @@ This file captures the current coordination context so any new AI agent can resu
 6. **Personas remain distinct** through 7 persona switches in 60+ minute generation (single-agent)
 
 ## Recent Sessions
+
+### Session 2025-01-09: Skills Framework Implementation
+**Accomplishments:**
+- **Created Skills Framework** - New capability layer for personas
+  - `skills/toolset.md` - Master index of all skills
+  - 24 skills across 6 categories (research, analysis, creation, evaluation, orchestration, utility)
+  - Consistent skill file template (Purpose, Inputs, Outputs, Invocation, Examples)
+- **Updated All Personas** - Each persona now references available skills
+  - Primary skills: Core capabilities for the persona's domain
+  - Secondary skills: Supporting capabilities
+- **Updated Manifest** - `ai-mantras-manifest.yaml` v0.3.0 with full skills section
+- **Created Help Utility** - `skills/utility/help.md` for framework discovery
+
+**Key Insights:**
+- Skills complete the framework: Personas (WHO) + Patterns (HOW) + Principles (WHY) + Skills (WHAT)
+- Skills prepare framework for multi-agent architecture where each persona becomes a separate agent
+- Help skill enables self-documentation and discoverability
+
+**Next Session:**
+- Implement multi-agent architecture (personas as separate agents)
+- Update MCP server to expose skills as tools
+- Consider pattern organization into layer subfolders
+
+---
 
 ### Session 2025-12-05: Evaluation Personas & Pattern Development
 **Accomplishments:**
