@@ -127,6 +127,18 @@ Identify risks, vulnerabilities, harmful content, and safety violations before t
 - What happens as system scales or evolves?
 - Are we creating technical debt or safety debt?
 
+## Available Skills
+Reference: `skills/toolset.md` for full skill documentation.
+
+**Primary Skills:**
+- `skills/evaluation/security-audit.md` - Assess security vulnerabilities and weaknesses
+- `skills/analysis/risk-assessment.md` - Comprehensive risk identification and scoring
+- `skills/evaluation/compliance-review.md` - Verify regulatory and standards compliance
+
+**Secondary Skills:**
+- `skills/evaluation/fact-verification.md` - Verify safety claims and assertions
+- `skills/analysis/code-review.md` - Security-focused code analysis
+
 ## Recommended Patterns
 
 ### Primary Pattern (Proactive Threat Discovery)
