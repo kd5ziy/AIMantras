@@ -2,6 +2,24 @@
 
 A cognitive framework for AI collaboration that treats prompting as organizational design.
 
+## Quick Start
+
+Choose your integration method:
+
+| Method | Best For | Setup Time |
+|--------|----------|------------|
+| **[MCP Server](#mcp-server)** | Claude Code users wanting full integration | 5 minutes |
+| **[Claude Command](#claude-command)** | Claude Code users wanting simple `/Mantras` command | 2 minutes |
+| **[Manual Loading](#any-ai-model)** | Any AI model (ChatGPT, Gemini, local LLMs, etc.) | Immediate |
+
+**See [HowToUse.md](HowToUse.md) for detailed setup instructions.**
+
+### Quickest Start (Any AI)
+1. Download or clone this repository
+2. Give your AI model access to the files
+3. Ask it to read `AIMantra.md` and follow its instructions
+4. Make your request - the framework handles the rest
+
 ## The Four Pillars
 
 AI Mantras is built on four complementary pillars:
@@ -68,12 +86,17 @@ Prompt-AI-Mantras/
 - Append new project recipes under `projects/` to show real-world orchestration examples.
 - Default to additive edits; avoid destructive rewrites unless coordinated.
 
-## Quick Start
+## How It Works
 
-1. **Entry Point**: Start with `AIMantra.md` - it triages your request to the right complexity tier
-2. **Simple tasks**: One persona answers directly
-3. **Moderate tasks**: Structured reasoning with patterns and self-review
-4. **Complex tasks**: Full orchestration (Bernstein → Hopper → Workers → Ada → Evaluators)
+The framework automatically triages your request to the right complexity tier:
+
+| Tier | Description | What Happens |
+|------|-------------|--------------|
+| **Simple** | Single question, factual, bounded | One persona answers directly |
+| **Moderate** | Analysis, structured reasoning | Persona + patterns + self-review |
+| **Complex** | Multi-domain, high stakes, ambiguous | Full orchestration workflow |
+
+**Entry Point**: `AIMantra.md` handles this triage automatically.
 
 ## Key Concepts
 
