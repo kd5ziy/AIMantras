@@ -6,8 +6,10 @@
  * - mantras://bootstrapper - Agent bootstrapper
  * - mantras://manifest - YAML manifest
  * - mantras://entry-point - AIMantra.md
+ * - mantras://toolset - Skills toolset index
  * - mantras://persona/{category}/{name} - Individual personas
  * - mantras://pattern/{layer}/{name} - Individual patterns
+ * - mantras://skill/{category}/{name} - Individual skills
  */
 
 import { Resource, ResourceTemplate } from '@modelcontextprotocol/sdk/types.js';
@@ -18,9 +20,12 @@ import {
   loadManifest,
   loadPersona,
   loadPattern,
+  loadSkill,
+  loadToolset,
   readContentFile,
   getAllPersonas,
   getAllPatterns,
+  getAllSkills,
 } from '../utils/content-loader.js';
 
 /**
@@ -53,8 +58,14 @@ export function registerResources(): {
     {
       uri: 'mantras://manifest',
       name: 'Framework Manifest',
-      description: 'Structured YAML index of all personas, patterns, and workflows',
+      description: 'Structured YAML index of all personas, patterns, workflows, and skills',
       mimeType: 'application/yaml',
+    },
+    {
+      uri: 'mantras://toolset',
+      name: 'Skills Toolset',
+      description: 'Master index of all available skills that personas can invoke',
+      mimeType: 'text/markdown',
     },
   ];
 
@@ -79,6 +90,19 @@ export function registerResources(): {
         uri: `mantras://pattern/${layer}/${pattern.name}`,
         name: pattern.name,
         description: pattern.purpose,
+        mimeType: 'text/markdown',
+      });
+    }
+  }
+
+  // Add individual skill resources
+  const allSkills = getAllSkills();
+  for (const { category, skills } of allSkills) {
+    for (const skill of skills) {
+      resources.push({
+        uri: `mantras://skill/${category}/${skill.name}`,
+        name: skill.name,
+        description: skill.purpose,
         mimeType: 'text/markdown',
       });
     }
@@ -123,6 +147,17 @@ export function handleResourceRead(uri: string): {
         content = loadPattern(patternName);
       } else {
         throw new Error(`Invalid pattern URI: ${uri}`);
+      }
+    } else if (uri === 'mantras://toolset') {
+      content = loadToolset();
+    } else if (uri.startsWith('mantras://skill/')) {
+      // Parse: mantras://skill/{category}/{name}
+      const parts = uri.replace('mantras://skill/', '').split('/');
+      if (parts.length >= 2) {
+        const skillName = parts[parts.length - 1];
+        content = loadSkill(skillName);
+      } else {
+        throw new Error(`Invalid skill URI: ${uri}`);
       }
     } else {
       throw new Error(`Unknown resource URI: ${uri}`);

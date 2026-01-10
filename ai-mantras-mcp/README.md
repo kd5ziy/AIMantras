@@ -8,6 +8,7 @@ AI Mantras is a prompt engineering framework that treats AI collaboration as org
 
 - **11 Personas** across orchestration, domain, and evaluation categories
 - **9 Thinking Patterns** for structured reasoning
+- **24 Skills** - actionable capabilities personas can invoke
 - **3 Complexity Tiers** (Simple, Moderate, Complex) with appropriate workflows
 - **Separation of Powers** to prevent self-evaluation and ensure quality
 
@@ -50,9 +51,10 @@ npm run build
 | `assess_complexity` | Triage a request into Simple/Moderate/Complex tier |
 | `get_persona` | Load a persona by name or domain match |
 | `get_pattern` | Load a thinking pattern by name |
+| `get_skill` | Load a skill by name, task match, or category |
 | `get_workflow` | Get workflow steps for a complexity tier |
 | `create_handoff` | Generate handoff template between personas |
-| `list_available` | List all available personas and patterns |
+| `list_available` | List all available personas, patterns, and skills |
 
 ## Resources
 
@@ -61,8 +63,10 @@ npm run build
 | `mantras://principles` | Guiding principles |
 | `mantras://bootstrapper` | Agent bootstrapper |
 | `mantras://manifest` | Framework manifest (YAML) |
+| `mantras://toolset` | Skills master index |
 | `mantras://persona/{category}/{name}` | Individual personas |
 | `mantras://pattern/{layer}/{name}` | Individual patterns |
+| `mantras://skill/{category}/{name}` | Individual skills |
 
 ## Prompts
 
@@ -143,6 +147,31 @@ By default, the server uses bundled content. Power users can override with custo
 ### Layer 3: Evaluation
 - `criterion-based-evaluation` - Systematic assessment
 - `threat-modeling` - Risk identification
+
+## Available Skills
+
+### Research
+- `web-search` - Search and synthesize web information
+- `codebase-exploration` - Navigate and understand code
+
+### Analysis
+- `code-review` - Review code for quality and issues
+- `risk-assessment` - Evaluate risks and mitigations
+
+### Creation
+- `document-generation` - Create structured documents
+- `code-generation` - Generate code from specifications
+
+### Evaluation
+- `quality-check` - Verify output quality
+- `security-audit` - Assess security posture
+
+### Orchestration
+- `task-decomposition` - Break down complex tasks
+- `handoff` - Transfer work between personas
+
+### Utility
+- `help` - Framework guidance and discovery
 
 ## License
 

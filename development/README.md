@@ -7,8 +7,7 @@ This folder contains planning, architecture, and development documentation for A
 | File | Purpose |
 |------|---------|
 | `agents.md` | Development quickstart for contributors and AI agents |
-| `project-plan.md` | Strategic and operational planning |
-| `AI-Mantras-Updated-plan.md` | Architecture updates and insights |
+| `project-plan.md` | Comprehensive strategic, operational, and architecture planning |
 | `personas-and-patterns-context.md` | Conceptual foundation and philosophy |
 | `persona-backlog.md` | Roadmap of planned future personas |
 
