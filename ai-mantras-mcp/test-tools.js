@@ -7,6 +7,7 @@
 import { handleAssessComplexity } from './dist/tools/assess-complexity.js';
 import { handleGetPersona } from './dist/tools/get-persona.js';
 import { handleGetPattern } from './dist/tools/get-pattern.js';
+import { handleGetSkill } from './dist/tools/get-skill.js';
 import { handleGetWorkflow } from './dist/tools/get-workflow.js';
 import { handleCreateHandoff } from './dist/tools/create-handoff.js';
 import { handleListAvailable } from './dist/tools/list-available.js';
@@ -106,6 +107,30 @@ await test('Error on missing name', async () => {
   }
 });
 
+// get_skill tests
+console.log('\n--- get_skill ---');
+
+await test('Load skill by exact name', async () => {
+  const result = await handleGetSkill({ name: 'code-review' });
+  assert(result.includes('Code Review') || result.includes('code review'), 'Should contain code review');
+});
+
+await test('Load skill by task matching', async () => {
+  const result = await handleGetSkill({ task: 'search the web for information' });
+  assert(result.includes('web') || result.includes('search') || result.includes('Web'), 'Should match web search skill');
+});
+
+await test('List all skills via toolset', async () => {
+  const result = await handleGetSkill({ list_all: true });
+  assert(result.includes('Research') || result.includes('research'), 'Should contain Research category');
+  assert(result.includes('Analysis') || result.includes('analysis'), 'Should contain Analysis category');
+});
+
+await test('List skills by category', async () => {
+  const result = await handleGetSkill({ category: 'research' });
+  assert(result.includes('Research') || result.includes('research'), 'Should list research skills');
+});
+
 // get_workflow tests
 console.log('\n--- get_workflow ---');
 
@@ -165,6 +190,7 @@ await test('List everything', async () => {
   const result = await handleListAvailable({ type: 'all' });
   assert(result.includes('Personas'), 'Should have Personas section');
   assert(result.includes('Patterns'), 'Should have Patterns section');
+  assert(result.includes('Skills'), 'Should have Skills section');
   assert(result.includes('Summary'), 'Should have Summary');
 });
 

@@ -33,6 +33,14 @@ export interface ManifestData {
     layer2_thinking_primitives: { members: PatternInfo[] };
     layer3_evaluation: { members: PatternInfo[] };
   };
+  skills: {
+    research: { members: SkillInfo[] };
+    analysis: { members: SkillInfo[] };
+    creation: { members: SkillInfo[] };
+    evaluation: { members: SkillInfo[] };
+    orchestration: { members: SkillInfo[] };
+    utility: { members: SkillInfo[] };
+  };
   workflows: Record<string, WorkflowInfo>;
   complexity_tiers: Record<string, TierInfo>;
 }
@@ -51,6 +59,12 @@ export interface PatternInfo {
   path: string;
   purpose: string;
   when_to_use?: string[];
+}
+
+export interface SkillInfo {
+  name: string;
+  path: string;
+  purpose: string;
 }
 
 export interface WorkflowInfo {
@@ -205,4 +219,59 @@ export function getWorkflow(tier: 'simple' | 'moderate' | 'complex'): WorkflowIn
 export function getTierInfo(tier: 'simple' | 'moderate' | 'complex'): TierInfo | undefined {
   const manifest = loadManifest();
   return manifest.complexity_tiers[tier];
+}
+
+/**
+ * Load a skill by name
+ */
+export function loadSkill(name: string): string {
+  const manifest = loadManifest();
+
+  // Search all skill categories
+  const categories = ['research', 'analysis', 'creation', 'evaluation', 'orchestration', 'utility'] as const;
+  for (const category of categories) {
+    const skills = manifest.skills?.[category]?.members;
+    if (skills) {
+      const found = skills.find(s =>
+        s.name === name ||
+        s.name.toLowerCase() === name.toLowerCase() ||
+        s.name.replace(/-/g, '_') === name.replace(/-/g, '_')
+      );
+      if (found) {
+        return readContentFile(found.path);
+      }
+    }
+  }
+
+  throw new Error(`Skill not found: ${name}`);
+}
+
+/**
+ * Get all skills with their metadata
+ */
+export function getAllSkills(): { category: string; skills: SkillInfo[] }[] {
+  const manifest = loadManifest();
+
+  if (!manifest.skills) {
+    return [];
+  }
+
+  const categories = ['research', 'analysis', 'creation', 'evaluation', 'orchestration', 'utility'] as const;
+  const result: { category: string; skills: SkillInfo[] }[] = [];
+
+  for (const category of categories) {
+    const skills = manifest.skills[category]?.members;
+    if (skills && skills.length > 0) {
+      result.push({ category, skills });
+    }
+  }
+
+  return result;
+}
+
+/**
+ * Load the skills toolset index
+ */
+export function loadToolset(): string {
+  return readContentFile('Prompt-AI-Mantras/skills/toolset.md');
 }

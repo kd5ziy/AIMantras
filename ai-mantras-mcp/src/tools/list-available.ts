@@ -1,9 +1,9 @@
 /**
- * List Available Tool - List all personas and patterns in the framework
+ * List Available Tool - List all personas, patterns, and skills in the framework
  */
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
-import { getAllPersonas, getAllPatterns } from '../utils/content-loader.js';
+import { getAllPersonas, getAllPatterns, getAllSkills } from '../utils/content-loader.js';
 
 export const listAvailableTool: Tool = {
   name: 'list_available',
@@ -18,7 +18,7 @@ export const listAvailableTool: Tool = {
       },
       category: {
         type: 'string',
-        description: 'Filter by category (orchestration, domain, evaluation for personas; layer1, layer2, layer3 for patterns)',
+        description: 'Filter by category (orchestration, domain, evaluation for personas; layer1, layer2, layer3 for patterns; research, analysis, creation, evaluation, orchestration, utility for skills)',
       },
     },
   },
@@ -97,16 +97,38 @@ export async function handleListAvailable(
     }
   }
 
+  // List skills
+  if (type === 'all') {
+    response += '# Available Skills\n\n';
+    const allSkills = getAllSkills();
+
+    for (const { category: cat, skills } of allSkills) {
+      // Skip if filtering by category and this doesn't match
+      if (category && !cat.toLowerCase().includes(category.toLowerCase())) {
+        continue;
+      }
+
+      response += `## ${cat.charAt(0).toUpperCase() + cat.slice(1)} Skills\n\n`;
+
+      for (const skill of skills) {
+        response += `- **${skill.name}**: ${skill.purpose}\n`;
+      }
+      response += '\n';
+    }
+  }
+
   // Summary statistics
   if (type === 'all' && !category) {
     const allPersonas = getAllPersonas();
     const allPatterns = getAllPatterns();
+    const allSkills = getAllSkills();
 
     const totalPersonas = allPersonas.reduce((sum, { personas }) => sum + personas.length, 0);
     const totalPatterns = allPatterns.reduce((sum, { patterns }) => sum + patterns.length, 0);
+    const totalSkills = allSkills.reduce((sum, { skills }) => sum + skills.length, 0);
 
     response += '---\n\n';
-    response += `**Summary:** ${totalPersonas} personas, ${totalPatterns} patterns available\n`;
+    response += `**Summary:** ${totalPersonas} personas, ${totalPatterns} patterns, ${totalSkills} skills available\n`;
   }
 
   return response;
