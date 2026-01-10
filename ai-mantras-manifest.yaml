@@ -664,9 +664,7 @@ project_structure:
     - path: development/agents.md
       purpose: Development quickstart for contributors
     - path: development/project-plan.md
-      purpose: Strategic and operational planning
-    - path: development/AI-Mantras-Updated-plan.md
-      purpose: Latest architectural insights
+      purpose: Comprehensive strategic and operational planning
     - path: development/persona-backlog.md
       purpose: Pipeline of planned personas
     - path: development/personas-and-patterns-context.md

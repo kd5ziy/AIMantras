@@ -123,7 +123,7 @@ This file captures the current coordination context so any new AI agent can resu
 - **Created Help Utility** - `skills/utility/help.md` for framework discovery
 - **Project Reorganization:**
   - Created `development/` folder for planning/development docs
-  - Moved: agents.md, project-plan.md, AI-Mantras-Updated-plan.md, persona-backlog.md, personas-and-patterns-context.md
+  - Moved: agents.md, project-plan.md, persona-backlog.md, personas-and-patterns-context.md
   - Renamed TLDR.md → about.md
 - **Documentation Overhaul:**
   - README.md: Added Four Pillars explanation, Quick Start section, Contributing guidelines
@@ -216,7 +216,7 @@ This file captures the current coordination context so any new AI agent can resu
 
 ## Reboot Instructions
 1. Read `development/agents.md` (this file) for current state and recent session notes
-2. Read `development/AI-Mantras-Updated-plan.md` for architecture overview
+2. Read `development/project-plan.md` for architecture and strategy overview
 3. Review `Prompt-AI-Mantras/principles/guiding-principles.md` for philosophical foundation
 4. Check `Prompt-AI-Mantras/skills/toolset.md` for available skills
 5. Inspect `Prompt-AI-Mantras/personas/` (orchestration, domain, evaluation folders) for available personas
