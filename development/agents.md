@@ -143,17 +143,53 @@ This file captures the current coordination context so any new AI agent can resu
 - Framework now supports three integration methods: MCP server, Claude command, manual loading
 - Project structure is cleaner with user-facing files at root, development docs in `development/`
 
-**Branch:** `feature/skills-integration` (6 commits, pushed to GitLab + GitHub)
-
-**Next Session:**
-- Merge feature branch to master
-- Implement multi-agent architecture (personas as separate agents)
-- Update MCP server to expose skills as tools
-- Create remaining placeholder skill files
+**Branch:** `feature/skills-integration` (merged to master)
 
 ---
 
-### Session 2025-12-05: Evaluation Personas & Pattern Development
+### Session 2025-01-10: MCP Server Skills Integration
+**Accomplishments:**
+- **Added skills support to MCP server** (branch: `feature/mcp-skills-integration`)
+  - New `get_skill` tool - load skills by name, task matching, or category filter
+  - New resources: `mantras://toolset`, `mantras://skill/{category}/{name}`
+  - Updated `list_available` to include skills in output and summary
+  - Added 4 skill tests to test suite (now 35 total tests passing)
+- **Updated content-loader.ts:**
+  - Added `SkillInfo` interface
+  - Added `loadSkill()`, `getAllSkills()`, `loadToolset()` functions
+- **Updated MCP documentation:**
+  - README.md: Added skills to feature list, tools table, resources table, available skills section
+  - Bumped version to 1.1.0
+
+**MCP Server Now Supports Full Four Pillars:**
+| Pillar | Tool | Resource Pattern |
+|--------|------|------------------|
+| Personas | `get_persona` | `mantras://persona/{category}/{name}` |
+| Patterns | `get_pattern` | `mantras://pattern/{layer}/{name}` |
+| Principles | (resource only) | `mantras://principles` |
+| Skills | `get_skill` | `mantras://skill/{category}/{name}` |
+
+**Key Files Modified:**
+- `ai-mantras-mcp/src/utils/content-loader.ts` - skill loading functions
+- `ai-mantras-mcp/src/tools/get-skill.ts` - NEW tool
+- `ai-mantras-mcp/src/tools/index.ts` - registered get_skill
+- `ai-mantras-mcp/src/tools/list-available.ts` - skills in listings
+- `ai-mantras-mcp/src/resources/index.ts` - skill resources
+- `ai-mantras-mcp/test-tools.js` - skill tests
+- `ai-mantras-mcp/README.md` - documentation
+- `ai-mantras-mcp/package.json` - version 1.1.0
+
+**Branch:** `feature/mcp-skills-integration` (pushed to GitLab + GitHub)
+
+**Next Session:**
+- Merge MCP skills branch to master
+- Implement multi-agent architecture (personas as separate agents)
+- Create remaining placeholder skill files
+- Consider publishing MCP server to npm
+
+---
+
+### Session 2025-01-09: Skills Framework & Project Organization
 **Accomplishments:**
 - **Demonstrated AI Mantras framework** - Solved infant sleep problem using full orchestration workflow
 - **Created 2 new patterns:**
