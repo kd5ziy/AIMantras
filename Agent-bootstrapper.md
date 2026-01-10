@@ -523,7 +523,7 @@ CONSTRAINTS: Do not recommend individual stocks without discussing concentration
 - Success criteria provided by orchestration personas
 
 ### Optional but Helpful
-- `development/AI-Mantras-Updated-plan.md` – High-level architecture overview
+- `development/project-plan.md` – Comprehensive architecture and planning
 - `development/personas-and-patterns-context.md` – Conceptual foundation
 - `development/persona-backlog.md` – Future personas planned
 

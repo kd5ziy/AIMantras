@@ -6,6 +6,7 @@ import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import { assessComplexityTool, handleAssessComplexity } from './assess-complexity.js';
 import { getPersonaTool, handleGetPersona } from './get-persona.js';
 import { getPatternTool, handleGetPattern } from './get-pattern.js';
+import { getSkillTool, handleGetSkill } from './get-skill.js';
 import { getWorkflowTool, handleGetWorkflow } from './get-workflow.js';
 import { createHandoffTool, handleCreateHandoff } from './create-handoff.js';
 import { listAvailableTool, handleListAvailable } from './list-available.js';
@@ -18,6 +19,7 @@ export function registerTools(): Tool[] {
     assessComplexityTool,
     getPersonaTool,
     getPatternTool,
+    getSkillTool,
     getWorkflowTool,
     createHandoffTool,
     listAvailableTool,
@@ -43,6 +45,9 @@ export async function handleToolCall(
         break;
       case 'get_pattern':
         result = await handleGetPattern(args);
+        break;
+      case 'get_skill':
+        result = await handleGetSkill(args);
         break;
       case 'get_workflow':
         result = await handleGetWorkflow(args);

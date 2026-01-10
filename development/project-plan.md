@@ -1,49 +1,103 @@
-# Project Plan for Personas & Patterns Prompt Wiki
+# AI Mantras Project Plan
 
-This document is the **comprehensive strategic and operational plan** for building a structured, reusable, agent-friendly **Prompt Wiki**. It contains:
+This document is the **comprehensive strategic and operational plan** for AI Mantras. It contains:
 
-* Folder layout
-* Standards for file creation
+* Project goals and vision
+* System architecture
+* Folder layout and file standards
 * Build sequencing
-* Persona and pattern architecture
-* Quality assurance strategy
-* CLI/agent compatibility plan
-* Future extensibility roadmap
-
-This file serves as the **root planning artifact** for the entire project.
+* Workflow and governance
+* CLI/agent/MCP compatibility
+* Extensibility and commercial roadmap
 
 ---
 
-# 1. Project Purpose
+# 1. Project Goals
 
-The goal of this repository is to create a scalable system of:
+## Goal 1 — Vision & Capability
 
-* **Personas** (WHO - specialized roles)
-* **Patterns** (HOW - thinking structures)
-* **Principles** (WHY - guiding values)
-* **Skills** (WHAT - actionable capabilities)
-* **Orchestration Flows** (planner → worker(s) → QA)
-* **Project Recipes** (applied examples for finance, homelab, DevOps, etc.)
+Create a powerful, multi-agent cognitive framework built on:
 
-This system aims to:
+* **Personas** (WHO) - Specialized identities with expertise, style, and constraints
+* **Patterns** (HOW) - Reusable reasoning structures and thinking templates
+* **Principles** (WHY) - Guiding values that shape behavior
+* **Skills** (WHAT) - Actionable capabilities personas can invoke
+* Symbiotic human-AI collaboration
 
-* Standardize and optimize all interactions with AI (LLMs, CLI agents, orchestrated assistants)
-* Provide reproducible prompt modules
-* Allow multi-agent orchestration
-* Enable consistent high-quality outputs
-* Serve as a long-term knowledge and capability amplifier
+## Goal 2 — Sustainability & IP
 
-The structure is intentionally similar to:
+Ensure the system can be:
 
-* design systems
-* software architecture libraries
-* DevOps pipelines
+* Monetizable
+* Protectable (architecture/process patenting)
+* Extensible into commercial products
+* Supported long-term as a proprietary core
 
-This ensures clarity, modularity, and ease of automation.
+## Goal 3 — Human-AI Symbiosis
+
+Build AI Mantras so humans are structurally integrated into the workflow:
+
+* Human plan approval
+* Human input on rubrics/criteria
+* Human review of evaluator decisions
+* Human authority on high-stakes domains
+* Human-guided moral, emotional, and creative direction
+
+Humans remain essential, not optional.
 
 ---
 
-# 2. Target Folder Structure (Updated 2025-01-09)
+# 2. System Architecture
+
+## 2.1 The Four Pillars
+
+| Pillar | Question | Purpose |
+|--------|----------|---------|
+| Personas | WHO | Specialized identities with expertise, style, and constraints |
+| Patterns | HOW | Reusable reasoning structures and thinking templates |
+| Principles | WHY | Guiding values that shape behavior |
+| Skills | WHAT | Actionable capabilities personas can invoke |
+
+## 2.2 Persona Categories
+
+### Orchestration Personas (Executive Function)
+* **Bernstein** — Orchestrator (coordinates multi-persona workflows)
+* **Hopper** — Project Planner (frames problems, decomposes work)
+* **Lovell** — Crisis Planner (high-stakes, time-sensitive planning)
+* Future: Director, Mediator, Overseer
+
+### Domain Personas (Subject-Matter Experts)
+* **Clara** — Financial Analyst
+* **Kestra** — Systems Architect
+* **Goeth** — Philosophical Synthesizer
+* **Franklin** — Deep Reasoner
+* **Watson** — Medical Advisor
+* Future: Judge, Lawyer, Scholar, Mathematician, Politician, CEO
+
+### Evaluation Personas (Supervisory / Governance)
+* **Ada** — QA Reviewer (micro-quality)
+* **Drucker** — Goal-Satisfaction Evaluator
+* **Rickover** — Safety Evaluator
+* Future: Clarity Evaluator, Efficiency Evaluator, Evaluator-Orchestrator
+
+## 2.3 Pattern Layers
+
+* **Layer 1 (Foundational):** planning-phase, orchestration, recursive-self-eval, meta-rules
+* **Layer 2 (Thinking Primitives):** chain-of-thought, rule-based-reasoning, guardrail-creative
+* **Layer 3 (Evaluation):** criterion-based-evaluation, threat-modeling
+
+## 2.4 Skill Categories
+
+* **Research:** web-search, codebase-exploration, document-review, literature-review
+* **Analysis:** data-analysis, code-review, financial-modeling, risk-assessment, comparative-analysis
+* **Creation:** document-generation, code-generation, diagram-creation, plan-drafting, report-writing
+* **Evaluation:** quality-check, security-audit, compliance-review, fact-verification
+* **Orchestration:** task-decomposition, handoff, summarization, progress-tracking, constraint-gathering
+* **Utility:** help
+
+---
+
+# 3. Folder Structure
 
 ```
 ai-personas-and-patterns/
@@ -58,12 +112,9 @@ ai-personas-and-patterns/
 ├── development/                 # Development & planning docs
 │   ├── agents.md                # Development quickstart
 │   ├── project-plan.md          # This file
-│   ├── AI-Mantras-Updated-plan.md
-│   ├── persona-backlog.md
-│   └── personas-and-patterns-context.md
+│   └── persona-backlog.md       # Future persona roadmap
 │
 ├── Prompt-AI-Mantras/           # Framework content
-│   │
 │   ├── personas/                # WHO - 11 specialized personas
 │   │   ├── orchestration/       # Bernstein, Hopper, Lovell
 │   │   ├── domain/              # Clara, Kestra, Watson, Goeth, Franklin
@@ -79,12 +130,12 @@ ai-personas-and-patterns/
 │   │
 │   ├── skills/                  # WHAT - 24 actionable capabilities
 │   │   ├── toolset.md           # Master index
-│   │   ├── research/            # web-search, codebase-exploration, etc.
-│   │   ├── analysis/            # code-review, risk-assessment, etc.
-│   │   ├── creation/            # document-generation, code-generation, etc.
-│   │   ├── evaluation/          # quality-check, security-audit, etc.
-│   │   ├── orchestration/       # task-decomposition, handoff, etc.
-│   │   └── utility/             # help
+│   │   ├── research/
+│   │   ├── analysis/
+│   │   ├── creation/
+│   │   ├── evaluation/
+│   │   ├── orchestration/
+│   │   └── utility/
 │   │
 │   └── projects/                # Applied recipes (per domain)
 │
@@ -93,31 +144,13 @@ ai-personas-and-patterns/
     └── content/                 # Bundled framework content
 ```
 
-**The Four Pillars:**
-| Pillar | Folder | Purpose |
-|--------|--------|---------|
-| Personas | `personas/` | WHO does the work |
-| Patterns | `patterns/` | HOW they think |
-| Principles | `principles/` | WHY (guiding values) |
-| Skills | `skills/` | WHAT they can do |
-
-This structure is:
-
-* easy for agents to traverse
-* modular for long-term scaling
-* predictable for scripting
-* compatible with MCP server integration
-* supports multiple integration methods (MCP, Claude command, manual loading)
-
 ---
 
-# 3. File Standards & Conventions
+# 4. File Standards
 
-## 3.1 Persona File Template
+## 4.1 Persona File Template
 
-Every persona file will include:
-
-```
+```markdown
 # [Persona Name]
 
 ## Purpose
@@ -132,6 +165,9 @@ Voice, attitudes, demeanor.
 ## Rules & Constraints
 Explicit rules that constrain behavior.
 
+## Available Skills
+Primary and secondary skills from the toolset.
+
 ## Recommended Patterns
 Which prompt patterns pair best with this persona.
 
@@ -145,11 +181,9 @@ Formatting, structure, consistency requirements.
 Common pitfalls and behaviors to avoid.
 ```
 
----
+## 4.2 Pattern File Template
 
-## 3.2 Pattern File Template
-
-```
+```markdown
 # [Pattern Name]
 
 ## Purpose
@@ -171,262 +205,288 @@ Which personas and patterns work well with it.
 What to avoid.
 ```
 
+## 4.3 Skill File Template
+
+```markdown
+# [Skill Name]
+
+## Purpose
+What capability this skill provides.
+
+## When to Use
+Scenarios where this skill applies.
+
+## Inputs
+What information is needed.
+
+## Process
+Step-by-step execution.
+
+## Outputs
+What the skill produces.
+
+## Quality Criteria
+How to verify successful execution.
+```
+
 ---
 
-# 4. Build Sequencing
-
-The repository will be constructed in **layers** for clarity, reusability, and dependency correctness.
-
----
+# 5. Build Sequencing
 
 ## Layer 1 — Foundational Patterns (Build First)
 
 These patterns define how all other personas think and interact.
 
-1. **patterns/planning-phase.md**
-2. **patterns/orchestration.md**
-3. **patterns/recursive-self-eval.md**
-4. **patterns/meta-rules.md**
-
-### Why these first?
-
-* They define the core architecture of the entire system
-* Personas rely on them for structure
-* They enable agent orchestration
-
----
+1. `planning-phase.md`
+2. `orchestration.md`
+3. `recursive-self-eval.md`
+4. `meta-rules.md`
 
 ## Layer 2 — Thinking Primitives (Build Second)
 
-These are the fundamental reasoning mechanisms.
+Fundamental reasoning mechanisms referenced by all personas.
 
-5. **patterns/chain-of-thought.md**
-6. **patterns/rule-based-reasoning.md**
-7. **patterns/guardrail-creative.md**
-
-These will be referenced heavily by all personas.
-
----
+5. `chain-of-thought.md`
+6. `rule-based-reasoning.md`
+7. `guardrail-creative.md`
 
 ## Layer 3 — Core Personas (Build Third)
 
-Start with the control-plane personas:
+Control-plane personas first:
+8. PM/Planner persona
+9. QA Reviewer persona
 
-8. **personas/pm.md** – Planner & Decomposer
-9. **personas/qa-reviewer.md** – Critical Scrutinizer
+Then domain personas, then evaluation personas.
 
-These are essential for orchestrated workflows.
+## Layer 4 — Project Recipes (Build Last)
 
-Next, domain personas:
-
-10. **personas/kestra.md** – Infra Architect
-11. **personas/clara.md** – Financial Analyst
-12. **personas/goeth.md** – Philosopher
-13. **personas/one.md** – Deep General Reasoner
-
----
-
-## Layer 4 — Project-Specific Recipes (Build Last)
-
-In `projects/` create domain applications of personas + patterns:
-
+Domain applications in `projects/`:
 * Finance prompt recipes
 * Homelab orchestration examples
 * DevOps planning templates
-* Task lists, architectures, upgrade guides
-
-These will evolve continuously.
 
 ---
 
-# 5. Orchestration Workflow Strategy
+# 6. Workflow & Governance
 
-The default pipeline for any complex task is:
+## 6.1 Two-Phase Evaluation Cycle
 
-## Step 1 — Planning Phase
+### Phase 1 — Plan → Evaluate → Approve
 
-Handled by the **PM Persona** using `planning-phase.md`.
+1. Work-Orchestrator (Bernstein + Hopper) drafts:
+   * Goal & constraints
+   * Workflow (personas + patterns)
+   * Success criteria
 
-* Define the problem
-* Identify constraints
-* Choose appropriate patterns
-* Select personas to involve
-* Define success criteria and output format
+2. Evaluation-Orchestrator + Evaluator Team:
+   * Assess plan
+   * Approve or request revisions
 
-## Step 2 — Execution Phase
+No work proceeds without approval.
 
-Handled by **worker personas**, e.g.:
+### Phase 2 — Execute → QA → Evaluate
 
-* Clara → financial analysis
-* Kestra → architecture
-* Goeth → philosophy / meaning
-* One → deep reasoning
+1. Domain Personas produce the work.
+2. Ada performs QA.
+3. Evaluation-Orchestrator + Evaluators:
+   * Score the work using success criteria
+   * Approve or request refinement
 
-Use appropriate patterns:
+**Human approval** bookends both major phases.
 
-* chain-of-thought
-* rule-based reasoning
-* guardrails
+## 6.2 Separation of Powers
 
-## Step 3 — QA Phase
+To ensure safety, quality, and clarity:
 
-Handled by **QA Reviewer Persona** using:
+* Domain personas **never** evaluate their own output
+* Orchestrators **do not** score their own plans
+* Evaluators **do not** generate content
+* Humans remain the ultimate approving authority
 
-* recursive self-evaluation
-* rule alignment checks
-* output clarity checks
+This is core to AI Mantras governance philosophy.
 
-QA outputs:
+## 6.3 Default Pipeline
 
-* issues list
-* suggested improvements
-* optional "approved final version"
+1. **Planning Phase** — PM Persona using `planning-phase.md`
+   * Define the problem
+   * Identify constraints
+   * Choose patterns and personas
+   * Define success criteria
 
-This ensures predictable quality and eliminates LLM drift.
+2. **Execution Phase** — Worker personas with appropriate patterns
+   * chain-of-thought
+   * rule-based reasoning
+   * guardrails
+
+3. **QA Phase** — QA Reviewer using:
+   * recursive self-evaluation
+   * rule alignment checks
+   * output clarity checks
 
 ---
 
-# 6. CLI & Agent Compatibility Strategy
+# 7. Memory & Context Architecture
+
+AI Mantras supports **separate contexts per persona**:
+
+* Separate message histories
+* Separate persona specs
+* Persona-specific RAG indexes
+* Persona-specific evaluation logs
+
+Implementation options:
+* One LLM endpoint (logical separation)
+* Separate LLM sessions per persona
+* Multiple local model instances (physical separation)
+
+Benefits:
+* Prevents cross-contamination
+* Makes reasoning more reliable
+* Enables persona specialization over time
+
+## RAG Architecture Progression
+
+1. **Stage 1 — Local RAG** (FAISS or ChromaDB): Per-persona indexes
+2. **Stage 2 — Shared Orchestrator Index**: Workflows, patterns, persona files
+3. **Stage 3 — Evaluation RAG**: Scores, rubrics, workflow histories
+4. **Stage 4 — Graph RAG** (Advanced): Full knowledge graph linking personas, workflows, tasks, performance history
+
+---
+
+# 8. Integration Methods
+
+## 8.1 MCP Server (Recommended)
+
+The MCP server exposes AI Mantras as callable tools:
+
+**Tools:**
+| Tool | Description |
+|------|-------------|
+| `assess_complexity` | Triage into Simple/Moderate/Complex |
+| `get_persona` | Load persona by name or domain |
+| `get_pattern` | Load pattern by name |
+| `get_skill` | Load skill by name, task, or category |
+| `get_workflow` | Get workflow for complexity tier |
+| `create_handoff` | Generate handoff template |
+| `list_available` | List all resources |
+
+**Resources:**
+* `mantras://principles` — Guiding principles
+* `mantras://bootstrapper` — Agent bootstrapper
+* `mantras://toolset` — Skills master index
+* `mantras://persona/{category}/{name}` — Individual personas
+* `mantras://pattern/{layer}/{name}` — Individual patterns
+* `mantras://skill/{category}/{name}` — Individual skills
+
+## 8.2 Claude Command
+
+Copy `AIMantra.md` to `~/.claude/commands/Mantras.md` for `/Mantras` command.
+
+## 8.3 Manual Loading
+
+For any AI system, load files in order:
+1. `Agent-bootstrapper.md`
+2. `guiding-principles.md`
+3. Required personas and patterns
+
+---
+
+# 9. CLI & Agent Compatibility
 
 To support CLI-based agents:
 
 * Every file uses deterministic headings
-* No chain-of-thought or reasoning leakage inside definitions
+* No reasoning leakage inside definitions
 * Persona and pattern files are atomic (one concept each)
-* Example invocations provided for each persona/pattern
-* Format avoids overly poetic or ambiguous descriptors
+* Example invocations provided
 * All rules and structures are machine-parsable
-* Updates should default to additive changes, not destructive edits
+* Updates default to additive changes
 
 Agents should:
-
-* load personas into memory
-* load patterns into memory
-* orchestrate prompts using the framework
-* follow the PM → Worker → QA pipeline
-* preserve original formatting when editing files
-
----
-
-# 7. Documentation & Repo Hygiene Strategy
-
-## A consistent writing style across all files:
-
-* Clear, instructional
-* No rambling or narrative fluff
-* All sections labeled
-* Each persona/pattern fits on one screen if possible
-
-## Versioning
-
-* Use semantic version tags for major changes
-* Avoid overwriting persona behavior radically without version notes
-
-## README.md
-
-Should explain:
-
-* Purpose of repo
-* How to use personas
-* How to use patterns
-* Suggested workflows
-* How agents can integrate
+* Load personas into memory
+* Load patterns into memory
+* Orchestrate prompts using the framework
+* Follow the PM → Worker → QA pipeline
+* Preserve original formatting when editing files
 
 ---
 
-# 8. Extensibility Strategy
+# 10. Extensibility & Future
 
-The system is designed to scale indefinitely. Future additions may include:
+## New Personas (Backlog)
 
-### New Personas
+* **Domain:** Judge, Lawyer, Scholar, Mathematician, Politician, CEO
+* **Orchestration:** Director, Mediator, Overseer
+* **Evaluation:** Clarity Evaluator, Efficiency Evaluator, Evaluator-Orchestrator
 
-* Documentation Writer
-* Code Reviewer
-* Tutor/Educator
-* Security Auditor
-* AI Research Explainer
-
-### New Patterns
+## New Patterns
 
 * Decision matrices
 * Diagnostic trees
 * Comparison tables
 * Troubleshooting flows
 
-### New Project Areas
+## Static Site Generation
 
-* More finance components
-* Solar/hardware projects
-* Multi-cloud orchestrations
-* Long-form reasoning templates
+Use MkDocs + Material to:
+* Turn the wiki into a browsable website
+* Auto-generate navigation and search
+* Publish via GitHub Pages
 
-### Static Site Generation
+## Multi-Agent Architecture
 
-Eventually, use MkDocs + Material to:
-
-* turn the wiki into a browsable website
-* auto-generate navigation and search
-* publish via GitHub Pages
-
-### MCP Server Integration
-
-Build a Model Context Protocol (MCP) server to expose AI Mantras as callable tools:
-
-**Architecture:**
-```
-MCP Server
-├── mantras_triage      →  Entry point (loads AIMantra.md, routes by complexity)
-├── mantras_orchestrate →  Full Bernstein orchestration for Complex tier
-│
-├── Orchestration Tools
-│   ├── bernstein       →  Strategy & coordination
-│   ├── hopper          →  Project planning
-│   └── lovell          →  Crisis planning
-│
-├── Domain Tools
-│   ├── clara           →  Financial analysis
-│   ├── kestra          →  Systems/infrastructure
-│   ├── goeth           →  Philosophy/ethics
-│   ├── franklin        →  Deep multi-domain reasoning
-│   └── watson          →  Medical advisory
-│
-└── Evaluation Tools
-    ├── ada             →  QA review
-    ├── drucker         →  Goal satisfaction
-    └── rickover        →  Safety evaluation
-```
-
-**Benefits:**
-* Each persona runs as an isolated tool (true separation)
-* Direct persona access bypasses triage when user knows what they need
-* Evaluation personas can be called independently for review
-* Enables multi-agent architectures with actual process separation
-* Works across all Claude interfaces (CLI, API, integrations)
-
-**Implementation phases:**
-1. Basic MCP server with `mantras_triage` tool
-2. Add individual persona tools (domain first)
-3. Add orchestration tools with handoff protocols
-4. Add evaluation tools with scoring/approval flows
-5. Implement persona memory/context persistence (RAG layer)
-
-**Dependencies:**
-* `ai-mantras-manifest.yaml` provides tool metadata
-* `AIMantra.md` provides triage logic
-* Individual persona files provide tool behavior
+Implement true separation with independent model instances per persona.
 
 ---
 
-# 9. Next Steps
+# 11. Commercial & IP Strategy
 
-The next operational step is:
+## Patentable Elements
 
-> Begin **Layer 1**: Foundational Patterns (planning-phase, orchestration, recursive-self-eval, meta-rules)
+* Multi-branch agent system with work, orchestration, evaluation, and human branches
+* Two-phase "Plan Approval → Execution Approval" workflow
+* Persona separation with enforced role boundaries
+* Evaluator-Orchestrator coordinating evaluator teams
+* Systematic generation of success criteria and rubrics
+* Per-persona context + memory + RAG stores
+* Workflow optimization using evaluator scoring history
+* Persona training pipeline (spec → drills → synthetic training → agent instance)
 
-Once the foundational patterns are created, personas can reference them cleanly.
+## Startup Support Path
 
-After that, we proceed persona-by-persona through Layer 3.
+**Microsoft Founders Hub** (first application):
+* No LLC required
+* No MVP or revenue required
+* Offers Azure credits
+* Free GitHub Copilot
+* AI-first project support
+
+Plan:
+1. Prepare application package
+2. Submit to Microsoft Founders Hub
+3. Build prototype using credits
+4. Form LLC afterward for larger programs (Google, AWS, NVIDIA, AMD)
 
 ---
 
-This project plan governs the entire development of your Personas & Patterns Prompt Wiki. Future revisions should be made collaboratively and reviewed using the QA Persona.
+# 12. Next Steps
+
+## Immediate
+- [ ] Merge MCP skills branch to master
+- [ ] Continue persona voice differentiation
+- [ ] Create remaining placeholder skill files
+
+## Short-term
+- [ ] Implement multi-agent architecture
+- [ ] Build evaluation persona workflows and rubrics
+- [ ] Populate projects/ with applied examples
+
+## Long-term
+- [ ] Draft Microsoft Founders Hub application
+- [ ] Explore patent outline
+- [ ] Design Human Governance Layer
+- [ ] Establish persona memories and RAG indexes
+
+---
+
+This project plan governs the entire development of AI Mantras. Future revisions should be made collaboratively and reviewed using the QA Persona.
