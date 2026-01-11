@@ -9,6 +9,77 @@ This file captures the current coordination context so any new AI agent can resu
 - Entry point: `AIMantra.md` (triage and routing)
 - Setup guide: `HowToUse.md`
 
+## Architecture Map
+
+```
+ai-personas-and-patterns/
+│
+├─── Root Files (User-Facing)
+│    ├── README.md              ← Project overview, Four Pillars
+│    ├── HowToUse.md            ← Setup instructions
+│    ├── AIMantra.md            ← Entry point for triage
+│    ├── Agent-bootstrapper.md  ← Runtime manual for AI
+│    └── ai-mantras-manifest.yaml ← Structured index
+│
+├─── Prompt-AI-Mantras/         ← FRAMEWORK CONTENT (Source of Truth)
+│    ├── personas/              ← WHO (11 personas)
+│    │   ├── orchestration/     │
+│    │   ├── domain/            ├── Adding personas? Update manifest
+│    │   └── evaluation/        │
+│    │
+│    ├── patterns/              ← HOW (9 patterns)
+│    │   └── *.md               │
+│    │
+│    ├── principles/            ← WHY (guiding values)
+│    │   └── guiding-principles.md
+│    │
+│    └── skills/                ← WHAT (24 skills)
+│        ├── toolset.md         ← Master index
+│        ├── research/          │
+│        ├── analysis/          │
+│        ├── creation/          ├── Adding skills? Update:
+│        ├── evaluation/        │   1. toolset.md
+│        ├── orchestration/     │   2. manifest
+│        └── utility/           │   3. MCP server (see below)
+│
+├─── ai-mantras-mcp/            ← MCP SERVER (Must sync with framework)
+│    ├── src/
+│    │   ├── tools/             ← get_persona, get_pattern, get_skill, etc.
+│    │   ├── resources/         ← mantras:// URI handlers
+│    │   └── utils/
+│    │       └── content-loader.ts ← Loads from manifest
+│    ├── content/               ← Bundled copy (built from Prompt-AI-Mantras/)
+│    └── package.json           ← Version: 1.1.0
+│
+└─── development/               ← DEVELOPMENT DOCS
+     ├── agents.md              ← This file
+     ├── project-plan.md        ← Architecture & strategy
+     └── persona-backlog.md     ← Future personas
+```
+
+### Component Dependencies
+
+| When you add... | You must also update... |
+|-----------------|-------------------------|
+| New Persona | `ai-mantras-manifest.yaml`, persona's skills reference |
+| New Pattern | `ai-mantras-manifest.yaml` |
+| New Skill | `toolset.md`, `ai-mantras-manifest.yaml`, **MCP server** (`content-loader.ts`, `get-skill.ts`, tests) |
+| New Pillar/Category | `ai-mantras-manifest.yaml`, `README.md`, `project-plan.md`, **MCP server** (new tool + resources) |
+
+### MCP Server Sync Checklist
+
+When modifying framework content that affects MCP:
+
+1. **Add to manifest** - `ai-mantras-manifest.yaml` is the source of truth
+2. **Update content-loader.ts** - Add interfaces and loading functions
+3. **Create/update tool** - `src/tools/get-*.ts` for new resource types
+4. **Register in index** - `src/tools/index.ts` and `src/resources/index.ts`
+5. **Update list-available** - Include new items in listings
+6. **Add tests** - `test-tools.js` and/or `test-content.js`
+7. **Update README** - `ai-mantras-mcp/README.md` with new tools/resources
+8. **Bump version** - `package.json` (minor for features, patch for fixes)
+9. **Build & test** - `npm run build && npm test`
+
 ## Latest State
 
 ### Operational Framework Complete ✅
