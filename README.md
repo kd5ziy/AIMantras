@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./logos/AIMantras-ChatBubble.jpeg" alt="AI Mantras" width="200">
+</p>
+
 # AI Mantras
 
 A cognitive framework for AI collaboration that treats prompting as organizational design.
