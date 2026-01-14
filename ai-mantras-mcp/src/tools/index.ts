@@ -10,12 +10,14 @@ import { getSkillTool, handleGetSkill } from './get-skill.js';
 import { getWorkflowTool, handleGetWorkflow } from './get-workflow.js';
 import { createHandoffTool, handleCreateHandoff } from './create-handoff.js';
 import { listAvailableTool, handleListAvailable } from './list-available.js';
+import { bootstrapSessionTool, handleBootstrapSession } from './bootstrap-session.js';
 
 /**
  * Register all tools
  */
 export function registerTools(): Tool[] {
   return [
+    bootstrapSessionTool,  // Primary tool - use this for most sessions
     assessComplexityTool,
     getPersonaTool,
     getPatternTool,
@@ -37,6 +39,9 @@ export async function handleToolCall(
     let result: string;
 
     switch (toolName) {
+      case 'bootstrap_session':
+        result = await handleBootstrapSession(args);
+        break;
       case 'assess_complexity':
         result = await handleAssessComplexity(args);
         break;
