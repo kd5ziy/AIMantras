@@ -1,6 +1,6 @@
 {
   "name": "@ai-mantras/mcp-server",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "MCP server for the AI Mantras prompt framework - personas, patterns, and orchestration for Claude",
   "type": "module",
   "main": "dist/index.js",
