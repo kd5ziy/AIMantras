@@ -11,6 +11,9 @@ import { getWorkflowTool, handleGetWorkflow } from './get-workflow.js';
 import { createHandoffTool, handleCreateHandoff } from './create-handoff.js';
 import { listAvailableTool, handleListAvailable } from './list-available.js';
 import { bootstrapSessionTool, handleBootstrapSession } from './bootstrap-session.js';
+import { spawnAgentTool, handleSpawnAgent } from './spawn-agent.js';
+import { getAgentResultTool, handleGetAgentResult } from './get-agent-result.js';
+import { listAgentsTool, handleListAgents } from './list-agents.js';
 
 /**
  * Register all tools
@@ -25,6 +28,10 @@ export function registerTools(): Tool[] {
     getWorkflowTool,
     createHandoffTool,
     listAvailableTool,
+    // Multi-agent tools
+    spawnAgentTool,
+    getAgentResultTool,
+    listAgentsTool,
   ];
 }
 
@@ -62,6 +69,15 @@ export async function handleToolCall(
         break;
       case 'list_available':
         result = await handleListAvailable(args);
+        break;
+      case 'spawn_agent':
+        result = await handleSpawnAgent(args);
+        break;
+      case 'get_agent_result':
+        result = await handleGetAgentResult(args);
+        break;
+      case 'list_agents':
+        result = await handleListAgents(args);
         break;
       default:
         return {

@@ -46,8 +46,11 @@ npm run build
 
 ## Tools
 
+### Core Tools
+
 | Tool | Description |
 |------|-------------|
+| `bootstrap_session` | Initialize a session with appropriate resources for a request |
 | `assess_complexity` | Triage a request into Simple/Moderate/Complex tier |
 | `get_persona` | Load a persona by name or domain match |
 | `get_pattern` | Load a thinking pattern by name |
@@ -55,6 +58,55 @@ npm run build
 | `get_workflow` | Get workflow steps for a complexity tier |
 | `create_handoff` | Generate handoff template between personas |
 | `list_available` | List all available personas, patterns, and skills |
+
+### Multi-Agent Tools
+
+These tools enable true multi-agent execution with context isolation between personas.
+
+| Tool | Description |
+|------|-------------|
+| `spawn_agent` | Spawn an isolated AI agent with a specific persona |
+| `get_agent_result` | Retrieve status and result from a spawned agent |
+| `list_agents` | List all spawned agents with status and usage stats |
+
+#### spawn_agent
+
+Spawns an isolated agent that only sees its persona definition, the task, and any provided inputs. Supports both synchronous (wait for result) and asynchronous (return immediately) modes.
+
+```javascript
+spawn_agent({
+  persona: "Clara-Financial-Analyst",  // Required: persona name
+  task: "Analyze this investment opportunity", // Required: what to do
+  inputs: { document: "..." },          // Optional: context data
+  success_criteria: "Provide ROI estimate", // Optional: success definition
+  patterns: ["chain-of-thought"],       // Optional: thinking patterns
+  provider: "anthropic",                // Optional: "anthropic" or "openai"
+  model: "claude-sonnet-4-20250514",   // Optional: specific model
+  async: false,                         // Optional: async mode
+  max_tokens: 4096,                     // Optional: response limit
+  timeout_ms: 120000                    // Optional: timeout
+})
+```
+
+#### get_agent_result
+
+Poll for completion or retrieve results from a spawned agent.
+
+```javascript
+get_agent_result({
+  agent_id: "agent_abc12345"  // Required: ID from spawn_agent
+})
+```
+
+#### list_agents
+
+List all spawned agents with optional status filtering.
+
+```javascript
+list_agents({
+  status: "all",  // Optional: pending|running|completed|failed|timeout|all
+  limit: 20       // Optional: max results
+})
 
 ## Resources
 
@@ -92,6 +144,38 @@ Use the assess_complexity tool to analyze: "Help me design a backup strategy"
 ### Reading resources
 ```
 Read mantras://persona/domain/Kestra-Systems-Architect
+```
+
+## Environment Variables
+
+### Multi-Agent Configuration
+
+To use the multi-agent tools (`spawn_agent`, etc.), configure API keys:
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `ANTHROPIC_API_KEY` | Anthropic API key for Claude models | For Anthropic provider |
+| `OPENAI_API_KEY` | OpenAI API key for GPT models | For OpenAI provider |
+| `MANTRAS_DEFAULT_PROVIDER` | Default provider: `anthropic` or `openai` | No (default: anthropic) |
+| `MANTRAS_DEFAULT_MODEL` | Default model name | No (auto-selected) |
+| `MANTRAS_MAX_CONCURRENT_AGENTS` | Max parallel async agents | No (default: 5) |
+| `MANTRAS_AGENT_TIMEOUT_MS` | Default timeout in ms | No (default: 120000) |
+
+Example configuration:
+
+```json
+{
+  "mcpServers": {
+    "ai-mantras": {
+      "command": "npx",
+      "args": ["-y", "@ai-mantras/mcp-server"],
+      "env": {
+        "ANTHROPIC_API_KEY": "sk-ant-...",
+        "MANTRAS_DEFAULT_PROVIDER": "anthropic"
+      }
+    }
+  }
+}
 ```
 
 ## Custom Content

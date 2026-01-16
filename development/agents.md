@@ -82,6 +82,19 @@ When modifying framework content that affects MCP:
 
 ## Latest State
 
+### Multi-Agent Architecture (NEW - 2025-01-16) ✅
+- **spawn_agent tool:** Spawn isolated agents with persona, Anthropic/OpenAI support, sync/async modes
+- **get_agent_result tool:** Retrieve status and results from spawned agents
+- **list_agents tool:** List all agents with status filtering and usage stats
+- **Supporting infrastructure:**
+  - `types/agent.ts` - Type definitions for agents
+  - `utils/config.ts` - Environment-based configuration
+  - `utils/agent-store.ts` - In-memory agent storage with cleanup
+  - `utils/llm-client.ts` - Multi-provider LLM client (Anthropic + OpenAI)
+  - `utils/prompt-builder.ts` - Context-isolated prompt construction
+- **Tests:** 22 new tests for multi-agent tools (57 total tests)
+- **Documentation:** README updated with multi-agent tools and environment variables
+
 ### Operational Framework Complete ✅
 - **Agent-bootstrapper.md:** Operator manual for AI models (how to use AI Mantras at runtime)
 - **agents.md:** Development quickstart (this file - for contributors building AI Mantras)
@@ -147,22 +160,31 @@ When modifying framework content that affects MCP:
    - Show "Now applying chain-of-thought.md pattern: Step 1..." format
 3. **Principle Application Review:** Ensure all personas demonstrate internalized principles naturally
 
-### Phase 2: Expansion (IN PROGRESS - 2025-12-05)
-1. **Evaluation Personas:**
+### Phase 2: Multi-Agent Architecture (IN PROGRESS - 2025-01-16)
+1. **MCP Multi-Agent Tools:** ✅ COMPLETE
+   - ✅ `spawn_agent` - Spawn isolated agents with persona
+   - ✅ `get_agent_result` - Retrieve agent results
+   - ✅ `list_agents` - List and monitor agents
+   - ✅ Multi-provider support (Anthropic + OpenAI)
+   - ✅ Async/sync execution modes
+   - ✅ Context isolation via prompt builder
+   - ✅ 22 unit tests
+2. **Evaluation Personas:**
    - ✅ Drucker (Goal-Satisfaction Evaluator) - COMPLETE
    - ✅ Rickover (Safety Evaluator) - COMPLETE
-   - ⏳ Clarity Evaluator - IN PROGRESS
+   - ⏳ Clarity Evaluator - PENDING
    - ⏳ Efficiency Evaluator - PENDING
    - ⏳ Evaluator-Orchestrator - PENDING
-2. **Domain Personas (Backlog):**
+3. **Domain Personas (Backlog):**
    - ✅ Watson (Doctor/Medical Advisor) - COMPLETE
    - Judge, Lawyer, Scholar, Mathematician, Politician, CEO (see `persona-backlog.md`)
-3. **Orchestration Personas (Backlog):** Director, Mediator, Overseer
+4. **Orchestration Personas (Backlog):** Director, Mediator, Overseer
 
 ### Phase 3: Production & Commercial (Future)
-1. **Multi-Agent Architecture:** Implement true separation with independent model instances
+1. **Multi-Agent Orchestrator:** Build dedicated orchestration service with queue support
 2. **Projects:** Populate `projects/` with applied orchestration examples
 3. **Commercial Path:** Microsoft Founders Hub application, patent strategy
+4. **Framework Integrations:** LangGraph, CrewAI, Anthropic Agent SDK
 
 ## Working Agreements
 - **Naming:** `Name-Role.md` for persona files
@@ -182,6 +204,71 @@ When modifying framework content that affects MCP:
 6. **Personas remain distinct** through 7 persona switches in 60+ minute generation (single-agent)
 
 ## Recent Sessions
+
+### Session 2025-01-16: Multi-Agent Architecture Implementation
+**Accomplishments:**
+- **Implemented MCP Multi-Agent Tools** (branch: `feature/bootstrap-session-tool`)
+  - `spawn_agent` - Spawns isolated agents with specific personas
+    - Supports Anthropic (Claude) and OpenAI (GPT) providers
+    - Sync mode (wait for result) and async mode (return immediately)
+    - Context isolation: agents only see persona, task, and inputs
+    - Configurable model, timeout, max_tokens
+  - `get_agent_result` - Retrieves status and results from spawned agents
+    - Shows status (pending/running/completed/failed/timeout)
+    - Displays result content, token usage, duration
+  - `list_agents` - Lists all spawned agents with filtering
+    - Filter by status, shows usage statistics
+    - Table display with status icons
+- **Created Supporting Infrastructure:**
+  - `types/agent.ts` - Type definitions (SpawnedAgent, AgentStatus, etc.)
+  - `utils/config.ts` - Environment config (API keys, defaults, limits)
+  - `utils/agent-store.ts` - In-memory store with auto-cleanup
+  - `utils/llm-client.ts` - Multi-provider client with timeout support
+  - `utils/prompt-builder.ts` - Builds isolated prompts with principles/patterns
+- **Added 22 Unit Tests** for multi-agent tools (57 total tests now)
+- **Updated README.md** with multi-agent tool documentation and env vars
+- **Created multi-agent-architecture.md** planning document
+
+**Key Design Decisions:**
+- Context isolation: Each agent gets fresh prompt with only persona + task + inputs
+- No conversation history shared between agents (true separation of powers)
+- Support both providers to enable model specialization per persona
+- In-memory store with 30-minute cleanup (sufficient for session-based use)
+
+**Environment Variables Added:**
+| Variable | Description |
+|----------|-------------|
+| `ANTHROPIC_API_KEY` | Anthropic API key |
+| `OPENAI_API_KEY` | OpenAI API key |
+| `MANTRAS_DEFAULT_PROVIDER` | Default: anthropic |
+| `MANTRAS_DEFAULT_MODEL` | Auto-selected per provider |
+| `MANTRAS_MAX_CONCURRENT_AGENTS` | Default: 5 |
+| `MANTRAS_AGENT_TIMEOUT_MS` | Default: 120000 |
+
+**MCP Server State (v1.3.0):**
+| Tool | Description |
+|------|-------------|
+| `bootstrap_session` | Initialize session with resources |
+| `assess_complexity` | Triage into Simple/Moderate/Complex |
+| `get_persona` | Load persona by name or domain |
+| `get_pattern` | Load pattern by name |
+| `get_skill` | Load skill by name, task, or category |
+| `get_workflow` | Get workflow for complexity tier |
+| `create_handoff` | Generate handoff template |
+| `list_available` | List all resources |
+| `spawn_agent` | **NEW** - Spawn isolated agent |
+| `get_agent_result` | **NEW** - Get agent result |
+| `list_agents` | **NEW** - List spawned agents |
+
+**Branch:** `feature/bootstrap-session-tool` (pending commit)
+
+**Next Steps:**
+- Commit all changes to branch
+- Test live with actual API key
+- Merge to master
+- Consider npm publishing
+
+---
 
 ### Session 2025-01-09: Skills Framework & Project Organization
 **Accomplishments:**
