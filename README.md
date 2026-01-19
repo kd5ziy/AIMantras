@@ -114,10 +114,21 @@ The framework automatically triages your request to the right complexity tier:
 1. **Plan → Evaluate → Approve** (before work begins)
 2. **Execute → QA → Evaluate** (before delivery)
 
+## Features
+
+### Multi-Agent Mode (New!)
+AI Mantras now supports **true multi-agent execution** where each persona runs as an isolated agent:
+- **Context Isolation**: Agents only see their persona, task, and inputs - no shared history
+- **Multi-Provider**: Use Anthropic (Claude) or OpenAI (GPT) models per persona
+- **Parallel Execution**: Run multiple agents simultaneously
+- **Separation of Powers**: Enforced at the architecture level, not just prompting
+
+Enable with `MANTRAS_MULTI_AGENT_ENABLED=true`. See [HowToUse.md](HowToUse.md) for setup details.
+
 ## Next Steps
-- Multi-agent architecture (personas as separate agents)
-- MCP server integration for skills
+- Dedicated orchestration service with queue-based communication
 - Project-specific playbooks under `projects/`
+- Framework integrations (LangGraph, CrewAI)
 
 ## Contributing
 
