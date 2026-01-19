@@ -10,12 +10,24 @@ import { getSkillTool, handleGetSkill } from './get-skill.js';
 import { getWorkflowTool, handleGetWorkflow } from './get-workflow.js';
 import { createHandoffTool, handleCreateHandoff } from './create-handoff.js';
 import { listAvailableTool, handleListAvailable } from './list-available.js';
+import { bootstrapSessionTool, handleBootstrapSession } from './bootstrap-session.js';
+import { spawnAgentTool, handleSpawnAgent } from './spawn-agent.js';
+import { getAgentResultTool, handleGetAgentResult } from './get-agent-result.js';
+import { listAgentsTool, handleListAgents } from './list-agents.js';
+import { isMultiAgentEnabled } from '../utils/config.js';
 
 /**
  * Register all tools
+ *
+ * Multi-agent tools (spawn_agent, get_agent_result, list_agents) are only
+ * registered when MANTRAS_MULTI_AGENT_ENABLED=true.
+ *
+ * Single-agent mode (default): All personas run on one AI model
+ * Multi-agent mode: Each persona can spawn as a separate isolated agent
  */
 export function registerTools(): Tool[] {
-  return [
+  const coreTools: Tool[] = [
+    bootstrapSessionTool,  // Primary tool - use this for most sessions
     assessComplexityTool,
     getPersonaTool,
     getPatternTool,
@@ -24,6 +36,18 @@ export function registerTools(): Tool[] {
     createHandoffTool,
     listAvailableTool,
   ];
+
+  // Only register multi-agent tools if enabled
+  if (isMultiAgentEnabled()) {
+    return [
+      ...coreTools,
+      spawnAgentTool,
+      getAgentResultTool,
+      listAgentsTool,
+    ];
+  }
+
+  return coreTools;
 }
 
 /**
@@ -37,6 +61,9 @@ export async function handleToolCall(
     let result: string;
 
     switch (toolName) {
+      case 'bootstrap_session':
+        result = await handleBootstrapSession(args);
+        break;
       case 'assess_complexity':
         result = await handleAssessComplexity(args);
         break;
@@ -57,6 +84,15 @@ export async function handleToolCall(
         break;
       case 'list_available':
         result = await handleListAvailable(args);
+        break;
+      case 'spawn_agent':
+        result = await handleSpawnAgent(args);
+        break;
+      case 'get_agent_result':
+        result = await handleGetAgentResult(args);
+        break;
+      case 'list_agents':
+        result = await handleListAgents(args);
         break;
       default:
         return {
