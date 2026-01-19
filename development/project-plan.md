@@ -485,25 +485,28 @@ Plan:
 
 # 12. Next Steps
 
-## Completed
+## Completed (as of 2025-01-16)
 - [x] Merge MCP skills branch to master (v1.1.0)
 - [x] Implement multi-agent architecture - MCP tools (v1.3.0)
-  - spawn_agent, get_agent_result, list_agents
-  - Multi-provider support (Anthropic + OpenAI)
-  - Context isolation and prompt building
-  - 22 unit tests
+  - `spawn_agent`, `get_agent_result`, `list_agents` tools
+  - Multi-provider support (Anthropic Claude + OpenAI GPT)
+  - Context isolation via prompt builder
+  - `MANTRAS_MULTI_AGENT_ENABLED` toggle for single vs multi-agent mode
+  - 59 unit tests (15 content + 20 tools + 24 multi-agent)
+- [x] Merge feature/bootstrap-session-tool branch to master
+- [x] Update documentation (README, HowToUse, MCP README)
 
 ## Immediate
-- [ ] Commit and merge feature/bootstrap-session-tool branch
 - [ ] Test multi-agent tools with live API keys
+- [ ] Publish MCP server to npm (`@ai-mantras/mcp-server`)
 - [ ] Continue persona voice differentiation
 - [ ] Create remaining placeholder skill files
 
 ## Short-term
 - [ ] Build orchestrator component (Bernstein as real service)
 - [ ] Build evaluation persona workflows and rubrics
-- [ ] Populate projects/ with applied examples
-- [ ] Consider npm publishing of MCP server
+- [ ] Populate `projects/` with applied examples
+- [ ] Add remaining evaluation personas (Clarity, Efficiency, Evaluator-Orchestrator)
 
 ## Long-term
 - [ ] Draft Microsoft Founders Hub application
