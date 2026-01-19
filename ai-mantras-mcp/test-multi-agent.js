@@ -7,12 +7,16 @@
  * Does NOT make actual LLM API calls.
  */
 
+// Enable multi-agent mode for tests
+process.env.MANTRAS_MULTI_AGENT_ENABLED = 'true';
+
 import { getAgentStore, createAgent, generateAgentId } from './dist/utils/agent-store.js';
-import { loadAgentConfig, isProviderConfigured, getDefaultModel, clearConfigCache } from './dist/utils/config.js';
+import { loadAgentConfig, isProviderConfigured, getDefaultModel, clearConfigCache, isMultiAgentEnabled } from './dist/utils/config.js';
 import { buildSystemPrompt, buildUserMessage, estimateTokens } from './dist/utils/prompt-builder.js';
 import { handleListAgents } from './dist/tools/list-agents.js';
 import { handleGetAgentResult } from './dist/tools/get-agent-result.js';
 import { handleSpawnAgent } from './dist/tools/spawn-agent.js';
+import { registerTools } from './dist/tools/index.js';
 
 let passed = 0;
 let failed = 0;
@@ -145,10 +149,27 @@ await test('Agent store running count', async () => {
 // --- Config Tests ---
 console.log('\n--- config ---');
 
+await test('Multi-agent mode is enabled via env var', async () => {
+  clearConfigCache();
+  const enabled = isMultiAgentEnabled();
+  assert(enabled === true, 'Should be enabled when MANTRAS_MULTI_AGENT_ENABLED=true');
+});
+
+await test('Multi-agent tools are registered when enabled', async () => {
+  clearConfigCache();
+  const tools = registerTools();
+  const toolNames = tools.map(t => t.name);
+
+  assert(toolNames.includes('spawn_agent'), 'Should include spawn_agent');
+  assert(toolNames.includes('get_agent_result'), 'Should include get_agent_result');
+  assert(toolNames.includes('list_agents'), 'Should include list_agents');
+});
+
 await test('Load agent config', async () => {
   clearConfigCache();
   const config = loadAgentConfig();
 
+  assert(config.multiAgentEnabled === true, 'Should have multiAgentEnabled');
   assert(config.defaultProvider === 'anthropic' || config.defaultProvider === 'openai', 'Should have valid provider');
   assert(typeof config.maxConcurrentAgents === 'number', 'Should have max concurrent');
   assert(config.maxConcurrentAgents > 0, 'Max concurrent should be positive');

@@ -14,12 +14,19 @@ import { bootstrapSessionTool, handleBootstrapSession } from './bootstrap-sessio
 import { spawnAgentTool, handleSpawnAgent } from './spawn-agent.js';
 import { getAgentResultTool, handleGetAgentResult } from './get-agent-result.js';
 import { listAgentsTool, handleListAgents } from './list-agents.js';
+import { isMultiAgentEnabled } from '../utils/config.js';
 
 /**
  * Register all tools
+ *
+ * Multi-agent tools (spawn_agent, get_agent_result, list_agents) are only
+ * registered when MANTRAS_MULTI_AGENT_ENABLED=true.
+ *
+ * Single-agent mode (default): All personas run on one AI model
+ * Multi-agent mode: Each persona can spawn as a separate isolated agent
  */
 export function registerTools(): Tool[] {
-  return [
+  const coreTools: Tool[] = [
     bootstrapSessionTool,  // Primary tool - use this for most sessions
     assessComplexityTool,
     getPersonaTool,
@@ -28,11 +35,19 @@ export function registerTools(): Tool[] {
     getWorkflowTool,
     createHandoffTool,
     listAvailableTool,
-    // Multi-agent tools
-    spawnAgentTool,
-    getAgentResultTool,
-    listAgentsTool,
   ];
+
+  // Only register multi-agent tools if enabled
+  if (isMultiAgentEnabled()) {
+    return [
+      ...coreTools,
+      spawnAgentTool,
+      getAgentResultTool,
+      listAgentsTool,
+    ];
+  }
+
+  return coreTools;
 }
 
 /**

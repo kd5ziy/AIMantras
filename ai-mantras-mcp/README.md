@@ -63,6 +63,8 @@ npm run build
 
 These tools enable true multi-agent execution with context isolation between personas.
 
+> **Note:** These tools only appear when `MANTRAS_MULTI_AGENT_ENABLED=true`
+
 | Tool | Description |
 |------|-------------|
 | `spawn_agent` | Spawn an isolated AI agent with a specific persona |
@@ -148,12 +150,29 @@ Read mantras://persona/domain/Kestra-Systems-Architect
 
 ## Environment Variables
 
+### Operating Modes
+
+AI Mantras supports two operating modes:
+
+| Mode | Description | Use Case |
+|------|-------------|----------|
+| **Single-Agent** (default) | All personas run on one AI model | Simple setup, no API keys needed, lower cost |
+| **Multi-Agent** | Each persona spawns as a separate isolated agent | True context isolation, parallel execution, model specialization |
+
+Set the mode via environment variable:
+
+```bash
+MANTRAS_MULTI_AGENT_ENABLED=false  # Single-agent mode (default)
+MANTRAS_MULTI_AGENT_ENABLED=true   # Multi-agent mode
+```
+
 ### Multi-Agent Configuration
 
-To use the multi-agent tools (`spawn_agent`, etc.), configure API keys:
+When `MANTRAS_MULTI_AGENT_ENABLED=true`, configure these additional settings:
 
 | Variable | Description | Required |
 |----------|-------------|----------|
+| `MANTRAS_MULTI_AGENT_ENABLED` | Enable multi-agent tools | No (default: false) |
 | `ANTHROPIC_API_KEY` | Anthropic API key for Claude models | For Anthropic provider |
 | `OPENAI_API_KEY` | OpenAI API key for GPT models | For OpenAI provider |
 | `MANTRAS_DEFAULT_PROVIDER` | Default provider: `anthropic` or `openai` | No (default: anthropic) |
@@ -161,8 +180,21 @@ To use the multi-agent tools (`spawn_agent`, etc.), configure API keys:
 | `MANTRAS_MAX_CONCURRENT_AGENTS` | Max parallel async agents | No (default: 5) |
 | `MANTRAS_AGENT_TIMEOUT_MS` | Default timeout in ms | No (default: 120000) |
 
-Example configuration:
+### Example Configurations
 
+**Single-Agent Mode** (default, no extra config needed):
+```json
+{
+  "mcpServers": {
+    "ai-mantras": {
+      "command": "npx",
+      "args": ["-y", "@ai-mantras/mcp-server"]
+    }
+  }
+}
+```
+
+**Multi-Agent Mode** (enables spawn_agent, get_agent_result, list_agents):
 ```json
 {
   "mcpServers": {
@@ -170,8 +202,8 @@ Example configuration:
       "command": "npx",
       "args": ["-y", "@ai-mantras/mcp-server"],
       "env": {
-        "ANTHROPIC_API_KEY": "sk-ant-...",
-        "MANTRAS_DEFAULT_PROVIDER": "anthropic"
+        "MANTRAS_MULTI_AGENT_ENABLED": "true",
+        "ANTHROPIC_API_KEY": "sk-ant-..."
       }
     }
   }
