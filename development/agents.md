@@ -49,7 +49,7 @@ ai-personas-and-patterns/
 │    │   └── utils/
 │    │       └── content-loader.ts ← Loads from manifest
 │    ├── content/               ← Bundled copy (built from Prompt-AI-Mantras/)
-│    └── package.json           ← Version: 1.1.0
+│    └── package.json           ← Version: 1.3.0
 │
 └─── development/               ← DEVELOPMENT DOCS
      ├── agents.md              ← This file
@@ -83,17 +83,20 @@ When modifying framework content that affects MCP:
 ## Latest State
 
 ### Multi-Agent Architecture (NEW - 2025-01-16) ✅
+- **Operating Modes:**
+  - Single-agent mode (default): All personas run on one AI model
+  - Multi-agent mode (`MANTRAS_MULTI_AGENT_ENABLED=true`): Each persona spawns as isolated agent
 - **spawn_agent tool:** Spawn isolated agents with persona, Anthropic/OpenAI support, sync/async modes
 - **get_agent_result tool:** Retrieve status and results from spawned agents
 - **list_agents tool:** List all agents with status filtering and usage stats
 - **Supporting infrastructure:**
   - `types/agent.ts` - Type definitions for agents
-  - `utils/config.ts` - Environment-based configuration
+  - `utils/config.ts` - Environment-based configuration (API keys, toggle, limits)
   - `utils/agent-store.ts` - In-memory agent storage with cleanup
   - `utils/llm-client.ts` - Multi-provider LLM client (Anthropic + OpenAI)
   - `utils/prompt-builder.ts` - Context-isolated prompt construction
-- **Tests:** 22 new tests for multi-agent tools (57 total tests)
-- **Documentation:** README updated with multi-agent tools and environment variables
+- **Tests:** 24 tests for multi-agent tools (59 total tests)
+- **Documentation:** README, HowToUse updated with multi-agent setup and environment variables
 
 ### Operational Framework Complete ✅
 - **Agent-bootstrapper.md:** Operator manual for AI models (how to use AI Mantras at runtime)

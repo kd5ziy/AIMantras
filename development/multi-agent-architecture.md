@@ -2,8 +2,8 @@
 
 **Created:** 2025-01-14
 **Updated:** 2025-01-16
-**Status:** Phase 2 Complete (MCP Agent Spawner)
-**Branch:** feature/bootstrap-session-tool
+**Status:** Phase 2 Complete (MCP Agent Spawner) - Merged to master
+**Branch:** master (was feature/bootstrap-session-tool)
 
 ---
 
@@ -703,6 +703,9 @@ Publish AI Mantras integrations for:
 - [x] Prototype spawn_agent MCP tool
 - [x] Create configuration schema for agent models (env vars)
 - [x] Design detailed handoff message format (via prompt-builder.ts)
+- [x] Add MANTRAS_MULTI_AGENT_ENABLED toggle for single/multi-agent mode
+- [x] Add 24 unit tests for multi-agent tools (59 total)
+- [x] Merge to master
 
 ### In Progress
 - [ ] Test isolation with simple multi-agent flow (tools ready, needs live test)
