@@ -5,6 +5,7 @@
 import { LLMProvider } from '../types/agent.js';
 
 export interface AgentConfig {
+  multiAgentEnabled: boolean;
   anthropicApiKey?: string;
   openaiApiKey?: string;
   defaultProvider: LLMProvider;
@@ -28,6 +29,11 @@ export function loadAgentConfig(): AgentConfig {
     return cachedConfig;
   }
 
+  // Check if multi-agent mode is enabled
+  // Defaults to false (single-agent mode) for safety and simplicity
+  const multiAgentEnv = process.env.MANTRAS_MULTI_AGENT_ENABLED?.toLowerCase();
+  const multiAgentEnabled = multiAgentEnv === 'true' || multiAgentEnv === '1';
+
   const anthropicApiKey = process.env.ANTHROPIC_API_KEY;
   const openaiApiKey = process.env.OPENAI_API_KEY;
 
@@ -48,6 +54,7 @@ export function loadAgentConfig(): AgentConfig {
   const defaultModel = envModel || DEFAULT_MODELS[defaultProvider];
 
   cachedConfig = {
+    multiAgentEnabled,
     anthropicApiKey,
     openaiApiKey,
     defaultProvider,
@@ -104,6 +111,13 @@ export function getApiKey(provider: LLMProvider): string {
  */
 export function getDefaultModel(provider: LLMProvider): string {
   return DEFAULT_MODELS[provider];
+}
+
+/**
+ * Check if multi-agent mode is enabled
+ */
+export function isMultiAgentEnabled(): boolean {
+  return loadAgentConfig().multiAgentEnabled;
 }
 
 /**
