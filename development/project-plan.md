@@ -359,9 +359,10 @@ Benefits:
 
 The MCP server exposes AI Mantras as callable tools:
 
-**Tools:**
+**Core Tools:**
 | Tool | Description |
 |------|-------------|
+| `bootstrap_session` | Initialize session with appropriate resources |
 | `assess_complexity` | Triage into Simple/Moderate/Complex |
 | `get_persona` | Load persona by name or domain |
 | `get_pattern` | Load pattern by name |
@@ -369,6 +370,13 @@ The MCP server exposes AI Mantras as callable tools:
 | `get_workflow` | Get workflow for complexity tier |
 | `create_handoff` | Generate handoff template |
 | `list_available` | List all resources |
+
+**Multi-Agent Tools (v1.3.0):**
+| Tool | Description |
+|------|-------------|
+| `spawn_agent` | Spawn isolated agent with persona (Anthropic/OpenAI) |
+| `get_agent_result` | Retrieve status and result from spawned agent |
+| `list_agents` | List all spawned agents with status filtering |
 
 **Resources:**
 * `mantras://principles` — Guiding principles
@@ -435,7 +443,13 @@ Use MkDocs + Material to:
 
 ## Multi-Agent Architecture
 
-Implement true separation with independent model instances per persona.
+**Phase 1 Complete:** MCP server now supports spawning isolated agents via `spawn_agent` tool.
+- Each agent runs in complete context isolation
+- Multi-provider support (Anthropic Claude, OpenAI GPT)
+- Sync and async execution modes
+- See `development/multi-agent-architecture.md` for full design
+
+**Phase 2 Planned:** Dedicated orchestration service with queue-based agent communication.
 
 ---
 
@@ -471,21 +485,32 @@ Plan:
 
 # 12. Next Steps
 
+## Completed
+- [x] Merge MCP skills branch to master (v1.1.0)
+- [x] Implement multi-agent architecture - MCP tools (v1.3.0)
+  - spawn_agent, get_agent_result, list_agents
+  - Multi-provider support (Anthropic + OpenAI)
+  - Context isolation and prompt building
+  - 22 unit tests
+
 ## Immediate
-- [ ] Merge MCP skills branch to master
+- [ ] Commit and merge feature/bootstrap-session-tool branch
+- [ ] Test multi-agent tools with live API keys
 - [ ] Continue persona voice differentiation
 - [ ] Create remaining placeholder skill files
 
 ## Short-term
-- [ ] Implement multi-agent architecture
+- [ ] Build orchestrator component (Bernstein as real service)
 - [ ] Build evaluation persona workflows and rubrics
 - [ ] Populate projects/ with applied examples
+- [ ] Consider npm publishing of MCP server
 
 ## Long-term
 - [ ] Draft Microsoft Founders Hub application
 - [ ] Explore patent outline
 - [ ] Design Human Governance Layer
 - [ ] Establish persona memories and RAG indexes
+- [ ] Framework integrations (LangGraph, CrewAI, Anthropic Agent SDK)
 
 ---
 
