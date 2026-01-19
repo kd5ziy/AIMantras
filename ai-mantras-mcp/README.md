@@ -109,6 +109,7 @@ list_agents({
   status: "all",  // Optional: pending|running|completed|failed|timeout|all
   limit: 20       // Optional: max results
 })
+```
 
 ## Resources
 

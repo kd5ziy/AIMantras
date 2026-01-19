@@ -9,12 +9,21 @@ This guide covers three ways to use AI Mantras, from full integration to simple 
 The MCP (Model Context Protocol) server provides the deepest integration with Claude Code, exposing AI Mantras as native tools.
 
 ### What You Get
+
+**Core Tools:**
+- `bootstrap_session` - Initialize a session with all needed resources
 - `assess_complexity` - Automatically triage requests
 - `get_persona` - Load personas by name or domain
 - `get_pattern` - Load thinking patterns
+- `get_skill` - Load skills by name, task, or category
 - `get_workflow` - Get orchestration workflows
 - `create_handoff` - Generate handoff templates
-- `list_available` - Discover all personas and patterns
+- `list_available` - Discover all personas, patterns, and skills
+
+**Multi-Agent Tools** (when enabled):
+- `spawn_agent` - Spawn isolated agents with specific personas
+- `get_agent_result` - Retrieve results from spawned agents
+- `list_agents` - Monitor all spawned agents
 
 ### Installation
 
@@ -54,6 +63,41 @@ Add to your MCP configuration:
   }
 }
 ```
+
+### Multi-Agent Mode (Optional)
+
+By default, AI Mantras runs in **single-agent mode** where all personas share one AI model. To enable **multi-agent mode** where each persona spawns as an isolated agent:
+
+```json
+{
+  "mcpServers": {
+    "ai-mantras": {
+      "command": "npx",
+      "args": ["-y", "@ai-mantras/mcp-server"],
+      "env": {
+        "MANTRAS_MULTI_AGENT_ENABLED": "true",
+        "ANTHROPIC_API_KEY": "sk-ant-your-key-here"
+      }
+    }
+  }
+}
+```
+
+**Multi-Agent Benefits:**
+- True context isolation between personas
+- Each agent only sees its persona, task, and inputs
+- Support for parallel execution
+- Mix Anthropic and OpenAI models per persona
+
+**Environment Variables:**
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `MANTRAS_MULTI_AGENT_ENABLED` | Enable multi-agent tools | `false` |
+| `ANTHROPIC_API_KEY` | API key for Claude models | - |
+| `OPENAI_API_KEY` | API key for GPT models | - |
+| `MANTRAS_DEFAULT_PROVIDER` | Default: `anthropic` or `openai` | `anthropic` |
+| `MANTRAS_MAX_CONCURRENT_AGENTS` | Max parallel agents | `5` |
+| `MANTRAS_AGENT_TIMEOUT_MS` | Agent timeout (ms) | `120000` |
 
 ### Usage
 Once configured, Claude Code automatically has access to AI Mantras tools. You can:
