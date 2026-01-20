@@ -2,6 +2,15 @@
 
 This file captures the current coordination context so any new AI agent can resume work quickly.
 
+## Claude Code Session
+
+**Session Name:** `AIMantrasDev`
+
+To resume development:
+```bash
+claude --resume AIMantrasDev
+```
+
 ## Repository
 - Path: `/mnt/d/development/ai-personas-and-patterns`
 - Project Name: **AI Mantras** (formerly Personas & Patterns Prompt Wiki)
