@@ -60,6 +60,15 @@ ai-personas-and-patterns/
 │    ├── content/               ← Bundled copy (built from Prompt-AI-Mantras/)
 │    └── package.json           ← Version: 1.3.0
 │
+├─── developer-docs/            ← CONTRIBUTOR GUIDES
+│    ├── README.md              ← Documentation index
+│    ├── creating-personas.md   ← How to create personas
+│    ├── creating-patterns.md   ← How to create patterns
+│    ├── creating-skills.md     ← How to create skills
+│    ├── ai-collaborative-development.md ← Development philosophy
+│    ├── extending-mcp-server.md ← MCP technical guide
+│    └── testing-guide.md       ← Validation guide
+│
 └─── development/               ← DEVELOPMENT DOCS
      ├── agents.md              ← This file
      ├── project-plan.md        ← Architecture & strategy
