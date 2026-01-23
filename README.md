@@ -13,9 +13,9 @@ Choose your integration method:
 
 | Method | Best For | Setup Time |
 |--------|----------|------------|
-| **[MCP Server](#mcp-server)** | Claude Code users wanting full integration | 5 minutes |
-| **[Claude Command](#claude-command)** | Claude Code users wanting simple `/Mantras` command | 2 minutes |
-| **[Manual Loading](#any-ai-model)** | Any AI model (ChatGPT, Gemini, local LLMs, etc.) | Immediate |
+| **[MCP Server](/HowToUse.md#option-1-mcp-server-claude-code---full-integration)** | Claude Code users wanting full integration | 5 minutes |
+| **[Claude Command](/HowToUse.md#option-2-claude-command-claude-code---simple)** | Claude Code users wanting simple `/Mantras` command | 2 minutes |
+| **[Manual Loading](/HowToUse.md#option-3-any-ai-model-manual-loading)** | Any AI model (ChatGPT, Gemini, local LLMs, etc.) | Immediate |
 
 **See [HowToUse.md](HowToUse.md) for detailed setup instructions.**
 
