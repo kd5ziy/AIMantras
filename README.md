@@ -132,49 +132,26 @@ Enable with `MANTRAS_MULTI_AGENT_ENABLED=true`. See [HowToUse.md](HowToUse.md) f
 
 ## Contributing
 
-Contributions are welcome! Please follow this workflow:
+Contributions are welcome! See **[CONTRIBUTING.md](CONTRIBUTING.md)** for the complete guide.
 
-### 1. Create a Feature Branch
-```bash
-git checkout -b feature/your-feature-name
-```
+### Quick Start
 
-Use descriptive branch names:
-- `feature/new-persona-name` - Adding a new persona
-- `feature/new-pattern-name` - Adding a new pattern
-- `feature/new-skill-name` - Adding a new skill
-- `fix/issue-description` - Bug fixes
-- `docs/update-description` - Documentation updates
-
-### 2. Make Your Changes
-- Follow existing file templates (see `toolset.md` for skills, existing personas for persona format)
-- Keep files atomic (one concept per file)
-- Prefer additive changes over destructive rewrites
-- Update `ai-mantras-manifest.yaml` if adding new components
-- Update relevant index files (`toolset.md`, `development/agents.md`)
-
-### 3. Commit with Clear Messages
-```bash
-git commit -m "Add new persona: Judge for legal reasoning"
-```
-
-### 4. Push and Create a Pull/Merge Request
-```bash
-git push origin feature/your-feature-name
-```
-
-Then create a Pull Request (GitHub) or Merge Request (GitLab) for review.
+1. Read the [developer documentation](developer-docs/README.md)
+2. Create a branch: `git checkout -b feature/your-feature-name`
+3. Follow the appropriate guide:
+   - [Creating Personas](developer-docs/creating-personas.md)
+   - [Creating Patterns](developer-docs/creating-patterns.md)
+   - [Creating Skills](developer-docs/creating-skills.md)
+   - [Extending MCP Server](developer-docs/extending-mcp-server.md)
+4. Test your changes using the [Testing Guide](developer-docs/testing-guide.md)
+5. Push and create a Pull Request
 
 ### What We're Looking For
 - **New personas** - Domain experts, orchestrators, or evaluators
 - **New patterns** - Reasoning structures that complement existing ones
 - **New skills** - Capabilities that personas can invoke
-- **Project recipes** - Real-world examples in `projects/`
-- **Bug fixes** - Issues with existing content
-- **Documentation** - Improvements to clarity and completeness
-
-### Review Process
-All contributions are reviewed before merging. We'll provide feedback and work with you to get your contribution ready.
+- **MCP improvements** - Tools and resources
+- **Documentation** - Clarity and completeness improvements
 
 ## Support This Project
 
