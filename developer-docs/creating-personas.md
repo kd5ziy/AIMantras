@@ -24,6 +24,49 @@ Before creating a persona, ensure you understand:
 3. **Existing Personas** - Review 2-3 personas in the category you're targeting
 4. **Available Patterns** - Review `Prompt-AI-Mantras/patterns/` to understand reasoning options
 5. **Available Skills** - Review `Prompt-AI-Mantras/skills/toolset.md` for capabilities
+6. **The Manifest** - Understand `ai-mantras-manifest.yaml` as the source of truth (see below)
+
+## Why the Manifest Matters
+
+The `ai-mantras-manifest.yaml` file is the **authoritative source of truth** for all framework components. Understanding its role is critical:
+
+### Who Uses the Manifest
+
+| Consumer | How They Use It |
+|----------|-----------------|
+| **MCP Server** | Discovers and loads personas, patterns, and skills dynamically |
+| **Orchestrator Personas** | Bernstein, Hopper, and Lovell consult it to know what personas are available for assignment |
+| **Developers** | Reference it to understand the complete framework inventory |
+
+### What Happens If You Don't Update It
+
+If you create a persona but don't add it to the manifest:
+- The MCP server's `get_persona` and `list_available` tools won't find it
+- Orchestrator personas won't know it exists when planning workflows
+- Other developers won't see it in the canonical inventory
+- Your persona effectively doesn't exist to the framework
+
+### Manifest Structure for Personas
+
+When adding a persona, you'll add an entry like this under the appropriate category:
+
+```yaml
+personas:
+  domain:  # or orchestration: or evaluation:
+    members:
+      - name: YourPersona-Role
+        path: Prompt-AI-Mantras/personas/domain/YourPersona-Role.md
+        purpose: One-line description of what this persona does
+        style: Brief style description
+        expertise:
+          - Expertise area 1
+          - Expertise area 2
+        recommended_patterns:
+          - pattern-name-1
+          - pattern-name-2
+```
+
+This entry enables both programmatic discovery (MCP) and orchestrator awareness.
 
 ## Step-by-Step Creation Process
 
