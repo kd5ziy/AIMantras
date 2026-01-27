@@ -8,7 +8,6 @@
 
 <p align="center">
   <a href="https://github.com/kd5ziy/AIMantras/stargazers"><img src="https://img.shields.io/github/stars/kd5ziy/AIMantras?style=social" alt="Stars"></a>
-  <a href="https://github.com/kd5ziy/AIMantras/network/members"><img src="https://img.shields.io/github/forks/kd5ziy/AIMantras?style=social" alt="Forks"></a>
   <a href="https://github.com/kd5ziy/AIMantras/blob/master/LICENSE"><img src="https://img.shields.io/github/license/kd5ziy/AIMantras" alt="License"></a>
   <a href="https://github.com/kd5ziy/AIMantras/graphs/contributors"><img src="https://img.shields.io/github/contributors/kd5ziy/AIMantras" alt="Contributors"></a>
   <a href="https://www.linkedin.com/in/james-b-7957ba58/"><img src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin" alt="LinkedIn"></a>
