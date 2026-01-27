@@ -4,6 +4,7 @@
 
 <h1 align="center">AI Mantras</h1>
 <p align="center"><strong>An AI prompt framework to help everyone think deeper and collaboratively.</strong></p>
+<p align="center"><em>This framework makes it easier for the average person to engage in complex conversation or analysis with AI by doing some of the heavy lifting.</em></p>
 
 <p align="center">
   <a href="https://github.com/kd5ziy/AIMantras/stargazers"><img src="https://img.shields.io/github/stars/kd5ziy/AIMantras?style=social" alt="Stars"></a>
