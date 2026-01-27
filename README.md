@@ -2,10 +2,24 @@
   <img src="./logos/AIMantras-ChatBubble.jpeg" alt="AI Mantras" width="200">
 </p>
 
-# AI Mantras
-# Personas & Patterns Prompt Wiki - By James Bennett
+<h1 align="center">AI Mantras</h1>
+<p align="center"><strong>An AI prompt framework to help everyone think deeper and collaboratively.</strong></p>
+<p align="center"><em>This framework makes it easier for the average person to engage in complex conversation or analysis with AI by doing some of the heavy lifting.</em></p>
 
-A cognitive framework for AI collaboration that treats prompting as organizational design.
+<p align="center">
+  <a href="https://github.com/kd5ziy/AIMantras/stargazers"><img src="https://img.shields.io/github/stars/kd5ziy/AIMantras?style=social" alt="Stars"></a>
+  <a href="https://github.com/kd5ziy/AIMantras/network/members"><img src="https://img.shields.io/github/forks/kd5ziy/AIMantras?style=social" alt="Forks"></a>
+  <a href="https://github.com/kd5ziy/AIMantras/blob/master/LICENSE"><img src="https://img.shields.io/github/license/kd5ziy/AIMantras" alt="License"></a>
+  <a href="https://github.com/kd5ziy/AIMantras/graphs/contributors"><img src="https://img.shields.io/github/contributors/kd5ziy/AIMantras" alt="Contributors"></a>
+  <a href="https://www.linkedin.com/in/james-b-7957ba58/"><img src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin" alt="LinkedIn"></a>
+</p>
+
+<p align="center">
+  ☕ If you use AI Mantras and like how it helped you out, feel free to <a href="https://buymeacoffee.com/kd5ziy">buy me a coffee</a><br>
+  <em>(software developers run on coffee)</em>
+</p>
+
+---
 
 ## Quick Start
 
