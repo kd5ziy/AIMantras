@@ -13,6 +13,10 @@
   <a href="https://www.linkedin.com/in/james-b-7957ba58/"><img src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin" alt="LinkedIn"></a>
 </p>
 
+
+<p align="center">
+  ⭐ If you think AI Mantras is a good idea and potentially useful.  Leave me a Star on this repo. ⭐
+</p>
 <p align="center">
   ☕ If you use AI Mantras and like how it helped you out, feel free to <a href="https://buymeacoffee.com/kd5ziy">buy me a coffee</a><br>
   <em>(software developers run on coffee)</em>
