@@ -1,0 +1,144 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <div class="brand-row">
+          <img src="/logos/AIMantras-ChatBubble.jpeg" alt="AI Mantras" class="brand-logo" />
+          <span class="brand-name">AI Mantras</span>
+        </div>
+        <p class="brand-desc">
+          An AI prompt framework to help everyone think deeper and collaboratively.
+        </p>
+      </div>
+
+      <!-- Documentation -->
+      <div>
+        <h4 class="footer-heading">Documentation</h4>
+        <ul class="footer-links">
+          <li><a href="/getting-started/quick-start/">Quick Start</a></li>
+          <li><a href="/personas/">Personas</a></li>
+          <li><a href="/patterns/">Patterns</a></li>
+          <li><a href="/skills/">Skills</a></li>
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div>
+        <h4 class="footer-heading">Resources</h4>
+        <ul class="footer-links">
+          <li><a href="/principles/guiding-principles/">Guiding Principles</a></li>
+          <li><a href="/contributing/">Contributing</a></li>
+          <li><a href="https://chatgpt.com/g/g-6981945caaa08191ac4540d162a89cb2-ai-mantras" target="_blank" rel="noopener">ChatGPT Custom GPT</a></li>
+          <li><a href="https://github.com/kd5ziy/AIMantras" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div>
+        <h4 class="footer-heading">Support</h4>
+        <ul class="footer-links">
+          <li><a href="https://github.com/kd5ziy/AIMantras/issues" target="_blank" rel="noopener">Report Issues</a></li>
+          <li><a href="https://github.com/sponsors/kd5ziy" target="_blank" rel="noopener">Sponsor</a></li>
+          <li><a href="https://buymeacoffee.com/kd5ziy" target="_blank" rel="noopener">Buy Me a Coffee</a></li>
+          <li><a href="https://www.linkedin.com/in/james-b-7957ba58/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">
+        &copy; {currentYear} AI Mantras. Licensed under MPL 2.0.
+      </p>
+      <div class="footer-icons">
+        <a href="https://github.com/kd5ziy/AIMantras" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: #0f172a;
+    border-top: 1px solid #1e293b;
+    padding: 3rem 1.5rem;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  .brand-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .brand-logo {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+  }
+  .brand-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+  }
+  .brand-desc {
+    color: #94a3b8;
+    font-size: 0.875rem;
+  }
+  .footer-heading {
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .footer-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.875rem;
+  }
+  .footer-links a:hover {
+    color: #818cf8;
+  }
+  .footer-bottom {
+    border-top: 1px solid #1e293b;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .copyright {
+    color: #64748b;
+    font-size: 0.875rem;
+  }
+  .footer-icons a {
+    color: #94a3b8;
+  }
+  .footer-icons a:hover {
+    color: white;
+  }
+</style>

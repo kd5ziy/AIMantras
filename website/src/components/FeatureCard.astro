@@ -1,0 +1,35 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  question: string;
+  icon: string;
+  pillar: 'personas' | 'patterns' | 'principles' | 'skills';
+  link: string;
+}
+
+const { title, description, question, icon, pillar, link } = Astro.props;
+---
+
+<a href={link} class={`feature-card pillar-${pillar} block no-underline hover:no-underline`}>
+  <div class="flex items-start gap-4">
+    <div class="text-4xl">{icon}</div>
+    <div>
+      <span class="text-xs font-semibold uppercase tracking-wider text-indigo-400">
+        {question}
+      </span>
+      <h3 class="text-xl font-bold text-slate-100 mt-1 mb-2">{title}</h3>
+      <p class="text-slate-400 text-sm">{description}</p>
+    </div>
+  </div>
+</a>
+
+<style>
+  .feature-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+  }
+  .feature-card:hover {
+    border-color: #6366f1;
+  }
+</style>

@@ -1,0 +1,79 @@
+---
+title: Welcome to AI Mantras
+description: An AI prompt framework to help everyone think deeper and collaboratively.
+template: splash
+hero:
+  tagline: This framework makes it easier for the average person to engage in complex conversation or analysis with AI by doing some of the heavy lifting.
+  image:
+    file: ../../assets/logo.jpeg
+  actions:
+    - text: Get Started
+      link: /getting-started/quick-start/
+      icon: right-arrow
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/kd5ziy/AIMantras
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## The Four Pillars
+
+AI Mantras is built on four complementary pillars that enable consistent, high-quality AI collaboration.
+
+<CardGrid stagger>
+  <Card title="Personas (WHO)" icon="user">
+    11 specialized identities with expertise, style, and constraints. From financial analysts to systems architects.
+  </Card>
+  <Card title="Patterns (HOW)" icon="puzzle">
+    9 reusable reasoning structures and thinking templates for structured problem-solving.
+  </Card>
+  <Card title="Principles (WHY)" icon="sun">
+    Guiding values rooted in wisdom, justice, courage, and temperance that shape behavior.
+  </Card>
+  <Card title="Skills (WHAT)" icon="rocket">
+    24 actionable capabilities that personas can invoke, from research to code review.
+  </Card>
+</CardGrid>
+
+## How It Works
+
+The framework automatically triages your request to the right complexity tier:
+
+| Tier | Description | What Happens |
+|------|-------------|--------------|
+| **Simple** | Single question, factual, bounded | One persona answers directly |
+| **Moderate** | Analysis, structured reasoning | Persona + patterns + self-review |
+| **Complex** | Multi-domain, high stakes, ambiguous | Full orchestration workflow |
+
+## Key Concepts
+
+### Separation of Powers
+- **Orchestrators** plan but don't execute or evaluate
+- **Domain personas** execute but don't self-evaluate
+- **Evaluators** assess but don't generate content
+- **Humans** retain final authority
+
+### Two-Phase Workflow
+1. **Plan → Evaluate → Approve** (before work begins)
+2. **Execute → QA → Evaluate** (before delivery)
+
+## Quick Start
+
+Choose your integration method:
+
+<CardGrid>
+  <Card title="MCP Server" icon="setting">
+    Full integration with Claude Code. Native tools, multi-agent support.
+    [Set up MCP Server →](/getting-started/mcp-server/)
+  </Card>
+  <Card title="Claude Command" icon="document">
+    Simple `/Mantras` command for Claude Code users.
+    [Quick Start →](/getting-started/quick-start/)
+  </Card>
+  <Card title="Manual Loading" icon="open-book">
+    Works with any AI: ChatGPT, Gemini, local LLMs.
+    [Manual Setup →](/getting-started/manual-setup/)
+  </Card>
+</CardGrid>
