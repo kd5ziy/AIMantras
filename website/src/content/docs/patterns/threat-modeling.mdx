@@ -1,0 +1,113 @@
+---
+title: Threat Modeling
+description: Proactive identification of risks, vulnerabilities, and failure modes.
+---
+
+import { Aside, Badge } from '@astrojs/starlight/components';
+
+<Badge text="Layer 3: Evaluation" variant="caution" />
+
+## Purpose
+
+- Proactively identifies risks, vulnerabilities, and failure modes before they cause harm
+- Systematically explores "what could go wrong" beyond stated requirements
+- Assesses likelihood and impact of potential threats
+- Evaluates existing mitigations and recommends additional safeguards
+- Prioritizes risks for remediation based on severity and probability
+
+## When to Use
+
+- Safety evaluations requiring comprehensive risk assessment
+- Security reviews identifying attack vectors and vulnerabilities
+- Quality assurance when failure prevention is critical
+- Design reviews for high-stakes systems (financial, medical, infrastructure, security)
+- Any evaluation where discovering *unknown* risks is as important as checking *known* requirements
+
+## Structure / Template
+
+```text
+[SCOPE DEFINITION]
+- What system/output/process are we analyzing?
+- What assets/values need protection? (data, safety, reputation, money, etc.)
+- What threat actors or failure sources exist?
+- Boundaries: What's in scope vs. out of scope?
+
+[THREAT IDENTIFICATION]
+For each component:
+  [Component]: [Name/Description]
+  [Potential Threats]
+  - What could go wrong?
+  - What are attack vectors? (security)
+  - What are failure modes? (technical)
+  - What edge cases exist?
+  [Threat List]
+  T1: [Specific threat description]
+  T2: [Specific threat description]
+
+[RISK ASSESSMENT]
+For each threat:
+  [Threat TX]: [Description]
+  [Likelihood]: High / Medium / Low (with justification)
+  [Impact]: Critical / High / Medium / Low (with consequences)
+  [Risk Score]: Calculated from Likelihood × Impact
+
+[EXISTING MITIGATIONS]
+For high-priority threats:
+  [Current Safeguards]: What protections exist?
+  [Assessment]: Adequate / Inadequate / Missing
+  [Gaps]: What's missing or weak?
+
+[RECOMMENDED SAFEGUARDS]
+Prioritized by risk score:
+  [CRITICAL Priority]: Address immediately
+  [HIGH Priority]: Address before deployment
+  [MEDIUM Priority]: Address in near term
+  [LOW Priority]: Monitor or accept risk
+
+[RESIDUAL RISKS]
+- What risks remain after mitigations?
+- Are they acceptable?
+- What monitoring is needed?
+```
+
+## Risk Matrix
+
+| Likelihood | Critical Impact | High Impact | Medium Impact | Low Impact |
+|------------|----------------|-------------|---------------|------------|
+| High       | CRITICAL       | HIGH        | MEDIUM        | LOW        |
+| Medium     | HIGH           | MEDIUM      | LOW           | LOW        |
+| Low        | MEDIUM         | LOW         | LOW           | MINIMAL    |
+
+## Related Frameworks
+
+- **STRIDE** - Spoofing, Tampering, Repudiation, Information Disclosure, DoS, Elevation of Privilege
+- **DREAD** - Damage, Reproducibility, Exploitability, Affected Users, Discoverability
+- **FMEA** - Failure Mode and Effects Analysis
+- **OWASP Top 10** - Web application security risks
+
+## Combination Guidance
+
+| Pair With | When |
+|-----------|------|
+| [Criterion-Based Evaluation](/patterns/criterion-based-evaluation/) | Check against safety requirements AFTER threat modeling |
+| [Rule-Based Reasoning](/patterns/rule-based-reasoning/) | Threats map to regulatory/compliance violations |
+| [Chain of Thought](/patterns/chain-of-thought/) | Cascading failure analysis |
+| [Meta Rules](/patterns/meta-rules/) | Calibrate risk severity thresholds |
+
+## Failure Modes to Avoid
+
+<Aside type="caution" title="Don't do these">
+- **Anchoring on obvious threats** - Missing subtle or novel attack vectors
+- **Optimism bias** - Assuming "that would never happen"
+- **Threat inflation** - Labeling everything as critical (creates alert fatigue)
+- **Single-layer thinking** - Relying on one safeguard instead of defense-in-depth
+- **Missing residual risk** - Not acknowledging what risks remain after mitigations
+</Aside>
+
+## Best Practices
+
+1. **Think like an adversary** - Actively try to break the system
+2. **Consider cascading failures** - One failure often triggers others
+3. **Defense in depth** - Multiple layers of protection for critical threats
+4. **Accept some risk** - Not everything needs mitigation, but document why
+5. **Update regularly** - Threat landscape changes as system evolves

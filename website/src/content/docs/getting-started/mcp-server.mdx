@@ -1,0 +1,138 @@
+---
+title: MCP Server Setup
+description: Full integration with Claude Code using the Model Context Protocol server.
+---
+
+import { Tabs, TabItem, Steps, Aside, Code } from '@astrojs/starlight/components';
+
+The MCP (Model Context Protocol) server provides the deepest integration with Claude Code, exposing AI Mantras as native tools.
+
+## What You Get
+
+### Core Tools
+
+| Tool | Description |
+|------|-------------|
+| `bootstrap_session` | Initialize a session with all needed resources |
+| `assess_complexity` | Automatically triage requests |
+| `get_persona` | Load personas by name or domain |
+| `get_pattern` | Load thinking patterns |
+| `get_skill` | Load skills by name, task, or category |
+| `get_workflow` | Get orchestration workflows |
+| `create_handoff` | Generate handoff templates |
+| `list_available` | Discover all personas, patterns, and skills |
+
+### Multi-Agent Tools (when enabled)
+
+| Tool | Description |
+|------|-------------|
+| `spawn_agent` | Spawn isolated agents with specific personas |
+| `get_agent_result` | Retrieve results from spawned agents |
+| `list_agents` | Monitor all spawned agents |
+
+## Installation
+
+<Tabs>
+  <TabItem label="From npm (Recommended)">
+    <Steps>
+    1. Install the package globally:
+       ```bash
+       npm install -g @ai-mantras/mcp-server
+       ```
+
+    2. Add to your Claude Code MCP configuration (`~/.claude/mcp.json` or project `.mcp.json`):
+       ```json
+       {
+         "mcpServers": {
+           "ai-mantras": {
+             "command": "npx",
+             "args": ["-y", "@ai-mantras/mcp-server"]
+           }
+         }
+       }
+       ```
+    </Steps>
+  </TabItem>
+  <TabItem label="From Source">
+    <Steps>
+    1. Clone and build:
+       ```bash
+       git clone https://github.com/kd5ziy/AIMantras.git
+       cd AIMantras/ai-mantras-mcp
+       npm install
+       npm run build
+       ```
+
+    2. Add to your MCP configuration:
+       ```json
+       {
+         "mcpServers": {
+           "ai-mantras": {
+             "command": "node",
+             "args": ["/path/to/AIMantras/ai-mantras-mcp/dist/index.js"]
+           }
+         }
+       }
+       ```
+    </Steps>
+  </TabItem>
+</Tabs>
+
+## Multi-Agent Mode (Optional)
+
+By default, AI Mantras runs in **single-agent mode** where all personas share one AI model. To enable **multi-agent mode** where each persona spawns as an isolated agent:
+
+```json
+{
+  "mcpServers": {
+    "ai-mantras": {
+      "command": "npx",
+      "args": ["-y", "@ai-mantras/mcp-server"],
+      "env": {
+        "MANTRAS_MULTI_AGENT_ENABLED": "true",
+        "ANTHROPIC_API_KEY": "sk-ant-your-key-here"
+      }
+    }
+  }
+}
+```
+
+### Multi-Agent Benefits
+
+- True context isolation between personas
+- Each agent only sees its persona, task, and inputs
+- Support for parallel execution
+- Mix Anthropic and OpenAI models per persona
+
+### Environment Variables
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `MANTRAS_MULTI_AGENT_ENABLED` | Enable multi-agent tools | `false` |
+| `ANTHROPIC_API_KEY` | API key for Claude models | - |
+| `OPENAI_API_KEY` | API key for GPT models | - |
+| `MANTRAS_DEFAULT_PROVIDER` | Default: `anthropic` or `openai` | `anthropic` |
+| `MANTRAS_MAX_CONCURRENT_AGENTS` | Max parallel agents | `5` |
+| `MANTRAS_AGENT_TIMEOUT_MS` | Agent timeout (ms) | `120000` |
+
+## Usage
+
+Once configured, Claude Code automatically has access to AI Mantras tools. You can:
+
+- Ask questions and let the framework triage automatically
+- Request specific personas: *"Use Clara to analyze this investment"*
+- Apply patterns: *"Use chain-of-thought to work through this problem"*
+
+## Troubleshooting
+
+<Aside type="caution" title="Server not found">
+  Ensure the path in `mcp.json` is correct. Check that the command and args point to valid locations.
+</Aside>
+
+<Aside type="tip" title="Tools not appearing">
+  Restart Claude Code after configuration changes. The MCP server needs to be reloaded.
+</Aside>
+
+<Aside type="caution" title="Permission errors">
+  Check file permissions on the server script. On Unix systems, you may need to make it executable.
+</Aside>

@@ -1,0 +1,30 @@
+---
+interface Props {
+  number: number;
+  title: string;
+  description: string;
+}
+
+const { number, title, description } = Astro.props;
+---
+
+<div class="flex flex-col items-center text-center p-6">
+  <div class="step-number mb-4">{number}</div>
+  <h3 class="text-lg font-semibold text-slate-100 mb-2">{title}</h3>
+  <p class="text-slate-400 text-sm">{description}</p>
+</div>
+
+<style>
+  .step-number {
+    width: 3rem;
+    height: 3rem;
+    background: #6366f1;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+</style>

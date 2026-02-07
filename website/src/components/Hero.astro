@@ -1,0 +1,36 @@
+---
+interface Props {
+  title: string;
+  tagline: string;
+  subtitle?: string;
+}
+
+const { title, tagline, subtitle } = Astro.props;
+---
+
+<section class="hero-section py-20 px-6">
+  <div class="max-w-5xl mx-auto text-center">
+    <img
+      src="/logos/AIMantras-ChatBubble.jpeg"
+      alt="AI Mantras"
+      class="w-32 h-32 mx-auto mb-8 rounded-2xl shadow-xl"
+    />
+    <h1 class="mb-6">{title}</h1>
+    <p class="text-xl md:text-2xl text-indigo-200 mb-4 max-w-3xl mx-auto">
+      {tagline}
+    </p>
+    {subtitle && (
+      <p class="text-lg text-indigo-300 mb-8 max-w-2xl mx-auto">
+        {subtitle}
+      </p>
+    )}
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="/getting-started/quick-start/" class="btn-primary">
+        Get Started
+      </a>
+      <a href="https://github.com/kd5ziy/AIMantras" class="btn-secondary" target="_blank" rel="noopener">
+        View on GitHub
+      </a>
+    </div>
+  </div>
+</section>

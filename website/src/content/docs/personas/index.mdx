@@ -1,0 +1,133 @@
+---
+title: Personas Overview
+description: Meet the 11 specialized AI identities in the AI Mantras framework.
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Personas are the **WHO** of AI Mantras - specialized identities with unique expertise, communication styles, and constraints. Each persona is designed for specific types of tasks and follows strict rules about what they can and cannot do.
+
+## Categories
+
+AI Mantras includes 11 personas organized into three categories based on the **Separation of Powers** principle:
+
+<CardGrid>
+  <Card title="Orchestration (3)" icon="setting">
+    **Plan but don't execute or evaluate**
+
+    Coordinators who frame problems, design workflows, and assign work to specialists.
+  </Card>
+  <Card title="Domain (5)" icon="document">
+    **Execute but don't self-evaluate**
+
+    Subject matter experts who produce high-quality work in their specialty areas.
+  </Card>
+  <Card title="Evaluation (3)" icon="approve-check">
+    **Assess but don't generate content**
+
+    Critical reviewers who audit outputs against plans, rules, and safety criteria.
+  </Card>
+</CardGrid>
+
+## Orchestration Personas
+
+These personas coordinate workflows but delegate execution to domain experts.
+
+<CardGrid>
+  <LinkCard
+    title="Hopper - Project Planner"
+    description="Frame problems, gather constraints, decompose work, and select personas/patterns."
+    href="/personas/orchestration/hopper-project-planner/"
+  />
+  <LinkCard
+    title="Bernstein - Orchestrator"
+    description="Translate user intent into coordinated multi-persona strategies."
+    href="/personas/orchestration/bernstein-orchestrator/"
+  />
+  <LinkCard
+    title="Lovell - Crisis Planner"
+    description="Coordinate planning under compressed timelines and high stakes."
+    href="/personas/orchestration/lovell-crisis-planner/"
+  />
+</CardGrid>
+
+## Domain Personas
+
+These personas have deep expertise and produce high-quality work in their specialty areas.
+
+<CardGrid>
+  <LinkCard
+    title="Clara - Financial Analyst"
+    description="Disciplined, risk-aware financial analysis for valuation and portfolio decisions."
+    href="/personas/domain/clara-financial-analyst/"
+  />
+  <LinkCard
+    title="Kestra - Systems Architect"
+    description="Resilient infrastructure design for homelab, networking, and DevOps."
+    href="/personas/domain/kestra-systems-architect/"
+  />
+  <LinkCard
+    title="Watson - Medical Advisor"
+    description="Evidence-based medical guidance with strict ethical boundaries."
+    href="/personas/domain/watson-medical-advisor/"
+  />
+  <LinkCard
+    title="Franklin - Deep Reasoner"
+    description="Multi-domain, high-complexity problem solving across disciplines."
+    href="/personas/domain/franklin-deep-reasoner/"
+  />
+  <LinkCard
+    title="Goeth - Philosophical Synthesizer"
+    description="Bridge technical work with ethical reflection and meaning frameworks."
+    href="/personas/domain/goeth-philosophical-synthesizer/"
+  />
+</CardGrid>
+
+## Evaluation Personas
+
+These personas assess quality, goal achievement, and safety without generating new content.
+
+<CardGrid>
+  <LinkCard
+    title="Ada - QA Reviewer"
+    description="Audit outputs for correctness, safety, clarity, and alignment with plans."
+    href="/personas/evaluation/ada-qa-reviewer/"
+  />
+  <LinkCard
+    title="Drucker - Goal Evaluator"
+    description="Measure whether outputs meet stated objectives and success criteria."
+    href="/personas/evaluation/drucker-goal-evaluator/"
+  />
+  <LinkCard
+    title="Rickover - Safety Evaluator"
+    description="Identify risks, vulnerabilities, and safety violations before they cause damage."
+    href="/personas/evaluation/rickover-safety-evaluator/"
+  />
+</CardGrid>
+
+## How to Use Personas
+
+1. **Read the full persona file** - Don't summarize; details matter for consistent behavior
+2. **Load guiding principles first** - They shape all persona behavior
+3. **Include recommended patterns** - Each persona lists which patterns work best
+4. **Cite the persona explicitly** - Use format like `Persona: Hopper. Task: ...`
+
+### Example Invocation
+
+```text
+Persona: Clara. Task: Evaluate whether to increase exposure to NVDA or SOXX
+for a 5-year horizon. Inputs: research-notes.md, macro-scenarios.xlsx.
+Patterns: rule-based reasoning + chain-of-thought.
+```
+
+## Separation of Powers
+
+The personas enforce separation of powers at the architectural level:
+
+| Role | Can Do | Cannot Do |
+|------|--------|-----------|
+| **Orchestrators** | Plan, coordinate, assign | Execute work, evaluate outputs |
+| **Domain Experts** | Execute specialized work | Self-evaluate, coordinate others |
+| **Evaluators** | Assess quality and safety | Generate content, prescribe fixes |
+
+This ensures checks and balances - no single persona can plan, execute, and approve their own work.

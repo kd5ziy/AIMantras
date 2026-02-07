@@ -1,0 +1,116 @@
+---
+title: Patterns Overview
+description: Learn the 9 thinking patterns that structure AI reasoning in the AI Mantras framework.
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Patterns are the **HOW** of AI Mantras - reusable reasoning structures and thinking templates that provide consistent, traceable outputs. They work like mental frameworks that guide how AI approaches different types of problems.
+
+## Pattern Layers
+
+AI Mantras includes 9 patterns organized into three layers based on their function:
+
+<CardGrid>
+  <Card title="Layer 1: Foundational" icon="setting">
+    **Core workflow patterns**
+
+    Planning, orchestration, self-evaluation, and meta-rules that govern all work.
+  </Card>
+  <Card title="Layer 2: Thinking" icon="puzzle">
+    **Reasoning patterns**
+
+    Chain-of-thought, rule-based reasoning, and creative guardrails for execution.
+  </Card>
+  <Card title="Layer 3: Evaluation" icon="approve-check">
+    **Assessment patterns**
+
+    Criterion-based evaluation and threat modeling for quality and safety.
+  </Card>
+</CardGrid>
+
+## Layer 1: Foundational Patterns
+
+These patterns establish the core workflow and communication structure.
+
+<CardGrid>
+  <LinkCard
+    title="Planning Phase"
+    description="Establish shared understanding before execution with goals, constraints, and success criteria."
+    href="/patterns/planning-phase/"
+  />
+  <LinkCard
+    title="Orchestration"
+    description="Coordinate planner, worker(s), and QA personas in a predictable pipeline."
+    href="/patterns/orchestration/"
+  />
+  <LinkCard
+    title="Recursive Self-Eval"
+    description="Deliberate reflection to catch mistakes before delivery."
+    href="/patterns/recursive-self-eval/"
+  />
+  <LinkCard
+    title="Meta Rules"
+    description="Repo-wide stylistic and behavioral guardrails in one block."
+    href="/patterns/meta-rules/"
+  />
+</CardGrid>
+
+## Layer 2: Thinking Patterns
+
+These patterns structure how personas reason through problems.
+
+<CardGrid>
+  <LinkCard
+    title="Chain of Thought"
+    description="Multi-stage reasoning with labeled steps for transparency and auditability."
+    href="/patterns/chain-of-thought/"
+  />
+  <LinkCard
+    title="Rule-Based Reasoning"
+    description="Explicit rules [R#] that govern reasoning with traceability."
+    href="/patterns/rule-based-reasoning/"
+  />
+  <LinkCard
+    title="Guardrail Creative"
+    description="Balance creativity with explicit constraints and boundaries."
+    href="/patterns/guardrail-creative/"
+  />
+</CardGrid>
+
+## Layer 3: Evaluation Patterns
+
+These patterns structure how evaluators assess outputs.
+
+<CardGrid>
+  <LinkCard
+    title="Criterion-Based Evaluation"
+    description="Systematic assessment against predefined success criteria."
+    href="/patterns/criterion-based-evaluation/"
+  />
+  <LinkCard
+    title="Threat Modeling"
+    description="Proactive identification of risks, vulnerabilities, and failure modes."
+    href="/patterns/threat-modeling/"
+  />
+</CardGrid>
+
+## Common Combinations
+
+Patterns work together in powerful combinations:
+
+| Workflow | Pattern Combination |
+|----------|---------------------|
+| **Project kickoff** | Planning Phase → Orchestration → Meta Rules |
+| **Domain execution** | Chain of Thought + Rule-Based Reasoning |
+| **Creative work** | Guardrail Creative + Meta Rules |
+| **Quality review** | Criterion-Based Evaluation + Recursive Self-Eval |
+| **Security assessment** | Threat Modeling + Rule-Based Reasoning |
+| **High-stakes work** | Any pattern + Recursive Self-Eval |
+
+## How to Use Patterns
+
+1. **Embed patterns in prompts** - Include the pattern template verbatim so personas follow the structure
+2. **Combine patterns** - Stack multiple patterns for complex tasks
+3. **Follow recommended patterns** - Each persona lists which patterns work best
+4. **Reference during QA** - Verify outputs follow the pattern structure

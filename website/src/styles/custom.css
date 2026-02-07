@@ -1,0 +1,193 @@
+/* AI Mantras Custom Styles */
+
+/* Override Starlight defaults with brand colors */
+:root {
+  --sl-color-accent-low: #e0e7ff;
+  --sl-color-accent: #6366f1;
+  --sl-color-accent-high: #4f46e5;
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #f8fafc;
+  --sl-color-gray-2: #e2e8f0;
+  --sl-color-gray-3: #94a3b8;
+  --sl-color-gray-4: #475569;
+  --sl-color-gray-5: #1e293b;
+  --sl-color-gray-6: #0f172a;
+  --sl-color-black: #020617;
+}
+
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #312e81;
+  --sl-color-accent: #818cf8;
+  --sl-color-accent-high: #c7d2fe;
+  --sl-color-white: #0f172a;
+  --sl-color-gray-1: #1e293b;
+  --sl-color-gray-2: #334155;
+  --sl-color-gray-3: #64748b;
+  --sl-color-gray-4: #94a3b8;
+  --sl-color-gray-5: #e2e8f0;
+  --sl-color-gray-6: #f8fafc;
+  --sl-color-black: #ffffff;
+}
+
+/* Landing page styles */
+.hero-section {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
+  color: white;
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Feature cards */
+.feature-card {
+  background: var(--sl-color-gray-6);
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.2);
+}
+
+/* Pillar colors */
+.pillar-personas { border-left: 4px solid #6366f1; }
+.pillar-patterns { border-left: 4px solid #8b5cf6; }
+.pillar-principles { border-left: 4px solid #ec4899; }
+.pillar-skills { border-left: 4px solid #14b8a6; }
+
+/* CTA buttons */
+.btn-primary {
+  background: #6366f1;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #4f46e5;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid white;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: #1e1b4b;
+}
+
+/* Persona cards */
+.persona-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--sl-color-gray-6);
+  border-radius: 0.75rem;
+  border: 1px solid var(--sl-color-gray-5);
+}
+
+.persona-card .category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--sl-color-accent);
+  font-weight: 600;
+}
+
+.persona-card .name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--sl-color-gray-1);
+}
+
+.persona-card .description {
+  font-size: 0.875rem;
+  color: var(--sl-color-gray-3);
+}
+
+/* How it works steps */
+.step-number {
+  width: 3rem;
+  height: 3rem;
+  background: var(--sl-color-accent);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--sl-color-gray-6);
+  border-top: 1px solid var(--sl-color-gray-5);
+  padding: 3rem 0;
+}
+
+.site-footer a {
+  color: var(--sl-color-gray-3);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--sl-color-accent);
+}
+
+/* Code blocks in docs */
+pre {
+  border-radius: 0.75rem !important;
+}
+
+/* Tables in docs */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--sl-color-gray-5);
+}
+
+th {
+  background: var(--sl-color-gray-6);
+  font-weight: 600;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--sl-color-accent);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: var(--sl-color-gray-3);
+}
