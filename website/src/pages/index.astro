@@ -28,20 +28,6 @@ import Footer from '../components/Footer.astro';
         color: #e2e8f0;
         line-height: 1.6;
       }
-      .hero-section {
-        background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
-        color: white;
-      }
-      .hero-section h1 {
-        font-size: 3.5rem;
-        font-weight: 800;
-        line-height: 1.1;
-      }
-      @media (max-width: 768px) {
-        .hero-section h1 {
-          font-size: 2.5rem;
-        }
-      }
       .btn-primary {
         background: #6366f1;
         color: white;
@@ -54,12 +40,13 @@ import Footer from '../components/Footer.astro';
       }
       .btn-primary:hover {
         background: #4f46e5;
+        text-decoration: none;
       }
       .btn-secondary {
         background: transparent;
         color: white;
         padding: 0.75rem 1.5rem;
-        border: 2px solid white;
+        border: 2px solid rgba(255,255,255,0.8);
         border-radius: 0.5rem;
         font-weight: 600;
         text-decoration: none;
@@ -69,6 +56,7 @@ import Footer from '../components/Footer.astro';
       .btn-secondary:hover {
         background: white;
         color: #1e1b4b;
+        text-decoration: none;
       }
       .section {
         padding: 5rem 1.5rem;
@@ -78,7 +66,7 @@ import Footer from '../components/Footer.astro';
         font-weight: 700;
         text-align: center;
         margin-bottom: 1rem;
-        color: white;
+        color: #f1f5f9;
       }
       .section-subtitle {
         text-align: center;
@@ -116,26 +104,32 @@ import Footer from '../components/Footer.astro';
         border-bottom: 1px solid #334155;
       }
       .tier-table th {
-        background: #1e293b;
+        background: #0f172a;
         font-weight: 600;
         color: #e2e8f0;
       }
       .tier-table td {
-        color: #94a3b8;
+        color: #cbd5e1;
       }
       .tier-name {
-        color: #6366f1;
+        color: #a5b4fc;
         font-weight: 600;
       }
       .cta-section {
         background: linear-gradient(135deg, #312e81 0%, #4338ca 100%);
         text-align: center;
       }
+      .cta-section .section-title {
+        color: white;
+      }
+      .cta-section .section-subtitle {
+        color: #c7d2fe;
+      }
       .integration-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 1rem;
-        max-width: 800px;
+        max-width: 900px;
         margin: 0 auto;
       }
       .integration-card {
@@ -144,14 +138,51 @@ import Footer from '../components/Footer.astro';
         border-radius: 0.75rem;
         padding: 1.5rem;
         text-align: center;
+        text-decoration: none;
+        transition: border-color 0.2s ease, transform 0.2s ease;
+      }
+      .integration-card:hover {
+        border-color: #6366f1;
+        transform: translateY(-2px);
       }
       .integration-card h4 {
-        color: white;
-        margin-bottom: 0.5rem;
+        color: #f1f5f9;
+        margin: 0 0 0.5rem 0;
+        font-size: 1rem;
       }
       .integration-card p {
         color: #94a3b8;
         font-size: 0.875rem;
+        margin: 0;
+      }
+      .cta-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+      .btn-primary-light {
+        background: white;
+        color: #4338ca;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-block;
+        transition: background 0.2s ease, transform 0.2s ease;
+      }
+      .btn-primary-light:hover {
+        background: #f1f5f9;
+        transform: translateY(-2px);
+        text-decoration: none;
+      }
+      .section-dark {
+        background: #1e293b;
+      }
+      .get-started-btn {
+        text-align: center;
+        margin-top: 2rem;
       }
     </style>
   </head>
@@ -206,7 +237,7 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- How It Works Section -->
-    <section class="section" style="background: #1e293b;">
+    <section class="section section-dark">
       <h2 class="section-title">How It Works</h2>
       <p class="section-subtitle">
         The framework automatically triages your request to the right complexity tier.
@@ -267,7 +298,7 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- Integration Methods Section -->
-    <section class="section" style="background: #1e293b;">
+    <section class="section section-dark">
       <h2 class="section-title">Choose Your Integration</h2>
       <p class="section-subtitle">
         Multiple ways to use AI Mantras with your preferred AI tools.
@@ -285,12 +316,12 @@ import Footer from '../components/Footer.astro';
           <h4>Manual Loading</h4>
           <p>Works with ChatGPT, Gemini, local LLMs, and more</p>
         </div>
-        <a href="https://chatgpt.com/g/g-6981945caaa08191ac4540d162a89cb2-ai-mantras" class="integration-card" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
+        <a href="https://chatgpt.com/g/g-6981945caaa08191ac4540d162a89cb2-ai-mantras" class="integration-card" target="_blank" rel="noopener">
           <h4>ChatGPT Custom GPT</h4>
           <p>Use AI Mantras directly inside ChatGPT</p>
         </a>
       </div>
-      <div style="text-align: center; margin-top: 2rem;">
+      <div class="get-started-btn">
         <a href="/getting-started/quick-start/" class="btn-primary">Get Started</a>
       </div>
     </section>
@@ -298,11 +329,11 @@ import Footer from '../components/Footer.astro';
     <!-- CTA Section -->
     <section class="section cta-section">
       <h2 class="section-title">Ready to Think Deeper?</h2>
-      <p class="section-subtitle" style="color: #c7d2fe;">
+      <p class="section-subtitle">
         Start using AI Mantras today and experience more structured, thoughtful AI collaboration.
       </p>
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
-        <a href="/getting-started/quick-start/" class="btn-primary" style="background: white; color: #4338ca;">
+      <div class="cta-buttons">
+        <a href="/getting-started/quick-start/" class="btn-primary-light">
           Read the Docs
         </a>
         <a href="https://chatgpt.com/g/g-6981945caaa08191ac4540d162a89cb2-ai-mantras" class="btn-secondary" target="_blank" rel="noopener">
