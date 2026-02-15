@@ -1,0 +1,9 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aimantras-web
+    restart: unless-stopped
+    ports:
+      - "8080:80"
