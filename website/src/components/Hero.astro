@@ -8,23 +8,23 @@ interface Props {
 const { title, tagline, subtitle } = Astro.props;
 ---
 
-<section class="hero-section py-20 px-6">
-  <div class="max-w-5xl mx-auto text-center">
+<section class="hero-section">
+  <div class="hero-content">
     <img
       src="/logos/AIMantras-ChatBubble.jpeg"
       alt="AI Mantras"
-      class="w-32 h-32 mx-auto mb-8 rounded-2xl shadow-xl"
+      class="hero-logo"
     />
-    <h1 class="mb-6">{title}</h1>
-    <p class="text-xl md:text-2xl text-indigo-200 mb-4 max-w-3xl mx-auto">
+    <h1 class="hero-title">{title}</h1>
+    <p class="hero-tagline">
       {tagline}
     </p>
     {subtitle && (
-      <p class="text-lg text-indigo-300 mb-8 max-w-2xl mx-auto">
+      <p class="hero-subtitle">
         {subtitle}
       </p>
     )}
-    <div class="flex flex-wrap justify-center gap-4">
+    <div class="hero-buttons">
       <a href="/getting-started/quick-start/" class="btn-primary">
         Get Started
       </a>
@@ -34,3 +34,60 @@ const { title, tagline, subtitle } = Astro.props;
     </div>
   </div>
 </section>
+
+<style>
+  .hero-section {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
+    color: white;
+    padding: 5rem 1.5rem;
+  }
+  .hero-content {
+    max-width: 64rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .hero-logo {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: white;
+  }
+  .hero-tagline {
+    font-size: 1.5rem;
+    color: #c7d2fe;
+    margin-bottom: 1rem;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-subtitle {
+    font-size: 1.125rem;
+    color: #a5b4fc;
+    margin-bottom: 2rem;
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    .hero-tagline {
+      font-size: 1.25rem;
+    }
+  }
+</style>

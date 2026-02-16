@@ -165,6 +165,35 @@ pre {
   border-radius: 0.75rem !important;
 }
 
+/* Fix code block colors for better contrast */
+:root[data-theme='light'] pre,
+:root[data-theme='light'] code {
+  background: #1e293b !important;
+  color: #e2e8f0 !important;
+}
+
+:root[data-theme='light'] .expressive-code {
+  --ec-codeBg: #1e293b !important;
+  --ec-codeFg: #e2e8f0 !important;
+}
+
+/* Inline code styling */
+:root[data-theme='light'] :not(pre) > code {
+  background: #e2e8f0 !important;
+  color: #1e293b !important;
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+
+:root[data-theme='dark'] :not(pre) > code {
+  background: #334155 !important;
+  color: #e2e8f0 !important;
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+
 /* Tables in docs */
 table {
   width: 100%;

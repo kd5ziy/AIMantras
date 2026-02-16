@@ -1,2 +1,8 @@
 # Local development files
 chatgpt-custom-gpt/
+
+# Cloudflare tunnel certificates
+certs/
+
+# Environment files with secrets
+.env
