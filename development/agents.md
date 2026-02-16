@@ -69,20 +69,31 @@ ai-personas-and-patterns/
 │    ├── extending-mcp-server.md ← MCP technical guide
 │    └── testing-guide.md       ← Validation guide
 │
-└─── development/               ← DEVELOPMENT DOCS
-     ├── agents.md              ← This file
-     ├── project-plan.md        ← Architecture & strategy
-     └── persona-backlog.md     ← Future personas
+├─── development/               ← DEVELOPMENT DOCS
+│    ├── agents.md              ← This file
+│    ├── project-plan.md        ← Architecture & strategy
+│    └── persona-backlog.md     ← Future personas
+│
+└─── website/                   ← DOCUMENTATION WEBSITE (aimantras.org)
+     ├── src/
+     │   ├── content/docs/      ← MDX documentation pages
+     │   ├── components/        ← Astro components
+     │   ├── pages/             ← Custom pages (landing)
+     │   └── styles/            ← Custom CSS
+     ├── Dockerfile             ← Multi-stage Docker build
+     ├── docker-compose.yml     ← Container orchestration
+     └── DOCKER-DEPLOY.md       ← Deployment guide
 ```
 
 ### Component Dependencies
 
 | When you add... | You must also update... |
 |-----------------|-------------------------|
-| New Persona | `ai-mantras-manifest.yaml`, persona's skills reference |
-| New Pattern | `ai-mantras-manifest.yaml` |
-| New Skill | `toolset.md`, `ai-mantras-manifest.yaml`, **MCP server** (`content-loader.ts`, `get-skill.ts`, tests) |
-| New Pillar/Category | `ai-mantras-manifest.yaml`, `README.md`, `project-plan.md`, **MCP server** (new tool + resources) |
+| New Persona | `ai-mantras-manifest.yaml`, persona's skills reference, **website** (`website/src/content/docs/personas/`) |
+| New Pattern | `ai-mantras-manifest.yaml`, **website** (`website/src/content/docs/patterns/`) |
+| New Skill | `toolset.md`, `ai-mantras-manifest.yaml`, **MCP server** (`content-loader.ts`, `get-skill.ts`, tests), **website** (`website/src/content/docs/skills/`) |
+| New Pillar/Category | `ai-mantras-manifest.yaml`, `README.md`, `project-plan.md`, **MCP server** (new tool + resources), **website** (navigation, landing page) |
+| Website Content | Rebuild and redeploy: `ssh root@10.10.50.93 "cd /opt/aimantras && docker compose up -d --build"` |
 
 ### MCP Server Sync Checklist
 
@@ -173,6 +184,11 @@ When modifying framework content that affects MCP:
 
 ## Active Focus
 
+### Phase 0: Documentation & Deployment (COMPLETE - 2026-02-15)
+1. **Website:** ✅ Built with Astro Starlight, live at https://aimantras.org
+2. **Docker Deployment:** ✅ Containerized with nginx, Cloudflare Tunnel
+3. **Branch:** `feature/website` ready for merge to master
+
 ### Phase 1: Framework Refinement (Current)
 1. **Persona Voice Differentiation:** Add stronger stylistic markers to make personas more distinct
    - Define characteristic phrases, vocabulary, communication patterns per persona
@@ -225,6 +241,58 @@ When modifying framework content that affects MCP:
 6. **Personas remain distinct** through 7 persona switches in 60+ minute generation (single-agent)
 
 ## Recent Sessions
+
+### Session 2026-02-15: Documentation Website & Docker Deployment
+**Accomplishments:**
+- **Built Documentation Website** (branch: `feature/website`)
+  - Astro + Starlight static site generator
+  - Custom landing page with Four Pillars overview
+  - Full documentation for personas, patterns, skills, principles
+  - Getting started guides for all integration methods
+  - Modern design with dark/light theme support
+  - Built-in search via Pagefind
+- **Created Docker Deployment Infrastructure:**
+  - `Dockerfile` - Multi-stage build (Node.js build + nginx:alpine serve)
+  - `docker-compose.yml` - Container orchestration
+  - `nginx.conf` - Optimized config with gzip, caching, security headers
+  - `.dockerignore` - Build optimization
+  - `DOCKER-DEPLOY.md` - Deployment guide
+- **Set Up Cloudflare Tunnel:**
+  - CLI-managed tunnel on LXC container
+  - Routes aimantras.org and www.aimantras.org
+  - systemd service for auto-start
+- **Fixed Website Styling:**
+  - Replaced non-functional Tailwind classes with scoped CSS
+  - Fixed text contrast on dark backgrounds
+  - Improved logo sizing, emoji icons, button styles
+  - Added code block styling overrides
+
+**Live Site:** https://aimantras.org
+
+**Key Files Created:**
+| File | Purpose |
+|------|---------|
+| `website/Dockerfile` | Multi-stage Docker build |
+| `website/docker-compose.yml` | Container config |
+| `website/nginx.conf` | Web server config |
+| `website/DOCKER-DEPLOY.md` | Deployment guide |
+| `website/src/pages/index.astro` | Landing page |
+| `website/src/content/docs/` | Documentation pages |
+
+**Deployment Stack:**
+- LXC container on local infrastructure
+- Docker (nginx:alpine) serving static files on port 8080
+- Cloudflare Tunnel for secure public access
+- DNS routing via Cloudflare
+
+**Branch:** `feature/website` (pushed to origin)
+
+**Next Steps:**
+- Merge to master after review
+- Set up GitHub Actions for auto-deploy on push
+- Continue improving documentation content
+
+---
 
 ### Session 2025-01-16: Multi-Agent Architecture Implementation
 **Accomplishments:**
