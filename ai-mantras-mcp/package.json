@@ -5,7 +5,7 @@
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "ai-mantras-mcp": "./dist/index.js"
+    "ai-mantras-mcp": "dist/index.js"
   },
   "scripts": {
     "copy-content": "node scripts/copy-content.js",
@@ -42,6 +42,18 @@
     "@types/uuid": "^9.0.0",
     "tsx": "^4.7.0",
     "typescript": "^5.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kd5ziy/AIMantras.git",
+    "directory": "ai-mantras-mcp"
+  },
+  "homepage": "https://aimantras.org",
+  "bugs": {
+    "url": "https://github.com/kd5ziy/AIMantras/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "engines": {
     "node": ">=18.0.0"
