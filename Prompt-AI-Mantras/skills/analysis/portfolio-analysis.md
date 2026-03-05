@@ -12,7 +12,7 @@ Comprehensive portfolio evaluation including position sizing, allocation breakdo
 - Transaction journal and P&L tracking
 
 ## Inputs Required
-- **Portfolio Data**: DEGIRO CSV transaction history or position file
+- **Portfolio Data**: Broker CSV transaction history or position file
 - **Analysis Type**: Holdings overview, multi-currency consolidation, or transaction journal
 - **Currency**: Base currency for multi-currency analysis (USD, EUR)
 - **Date Range**: For transaction journal and performance analysis
@@ -20,20 +20,20 @@ Comprehensive portfolio evaluation including position sizing, allocation breakdo
 ## Outputs Produced
 Depending on analysis type:
 
-### Holdings Analysis (`portfolio.py`)
+### Holdings Analysis
 - Current positions with quantity, avg cost, current price
 - Unrealized P&L by position ($ and %)
 - Allocation percentages
 - Sector/thematic concentration
 - Total portfolio value and cost basis
 
-### Multi-Currency Analysis (`portfolio_multicurrency.py`)
+### Multi-Currency Analysis
 - Consolidated view across multiple currencies
 - FX exposure breakdown
 - Currency-converted position values
 - Cross-currency performance metrics
 
-### Transaction Journal (`journal.py`)
+### Transaction Journal
 - Chronological transaction history
 - Realized P&L from closed positions
 - Trade frequency and patterns
@@ -44,8 +44,6 @@ Depending on analysis type:
 
 ### Using Python Scripts Directly
 ```bash
-cd Prompt-AI-Mantras/scripts
-
 # Basic portfolio overview
 python portfolio.py
 
@@ -58,16 +56,15 @@ python journal.py --from 2024-01-01 --to 2024-12-31
 
 ### Via Claude Code
 When AI agents need portfolio analysis, they should:
-1. Navigate to `Prompt-AI-Mantras/scripts/`
-2. Select appropriate script based on analysis objective
-3. Execute with portfolio CSV path
-4. Parse structured output (positions, allocations, P&L)
-5. Identify concentration risks or limit violations
-6. Generate recommendations for rebalancing or risk management
+1. Select appropriate script based on analysis objective
+2. Execute with portfolio CSV path
+3. Parse structured output (positions, allocations, P&L)
+4. Identify concentration risks or limit violations
+5. Generate recommendations for rebalancing or risk management
 
 ## Constraints
-- Requires transaction history in DEGIRO CSV format (or parse other broker formats)
-- Current prices fetched from yfinance (live market data required)
+- Requires broker transaction history CSV (parser may need adapting per broker)
+- Current prices fetched from a market data provider (live data required)
 - FX rates from reliable sources (for multi-currency analysis)
 - Does not include:
   - Options, futures, or derivatives (equity-focused)
@@ -162,8 +159,8 @@ python portfolio.py --compare-target-allocation targets.json
 ## Technical Details
 
 ### Data Sources
-- **Transaction History**: DEGIRO CSV export (or compatible broker format)
-- **Current Prices**: yfinance provider (Yahoo Finance API)
+- **Transaction History**: Broker CSV export (format varies by broker; parser may need adapting)
+- **Current Prices**: Market data provider API (e.g., Yahoo Finance, Alpha Vantage)
 - **FX Rates**: Currency conversion APIs (ECB, Fed, live feeds)
 - **Sector Classification**: Manual mapping or API enrichment
 
@@ -222,10 +219,10 @@ This skill enables personas to:
 ## Advanced Features
 
 ### Correlation-Aware Rebalancing
-Combine with `correlation.py`:
+Combine with correlation analysis:
 ```bash
 # Identify correlated positions for diversification
-python correlation.py MU NVDA SOXX
+python correlation.py AAPL MSFT QQQ
 ```
 **Use Case**: Reduce effective concentration by identifying highly correlated holdings
 
@@ -237,6 +234,6 @@ Track tax lots for:
 
 ### Scenario-Based Sizing
 Use stress test results to calibrate position sizes:
-- If stress test shows 30% loss on MU in memory glut scenario
+- If stress test shows 30% loss on a position in a sector downturn scenario
 - And portfolio tolerates 5% total loss
-- Then MU position should be < 16.7% of portfolio
+- Then that position should be < 16.7% of portfolio

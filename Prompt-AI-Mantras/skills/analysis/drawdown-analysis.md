@@ -12,7 +12,7 @@ Identify and analyze peak-to-trough declines in security prices to assess downsi
 - Validating backtest results against crisis scenarios
 
 ## Inputs Required
-- **Symbol**: Ticker symbol to analyze (e.g., "MU", "NVDA", "SPY")
+- **Symbol**: Ticker symbol to analyze (e.g., "AAPL", "SPY", "QQQ")
 - **Period**: Time horizon for analysis (3mo, 6mo, 1y, 2y, 5y, 10y, ytd, max)
 - **Interval**: Data frequency (1d, 5d, 1wk) - default: daily
 - **Show History**: Optional flag to display drawdown distribution chart
@@ -31,32 +31,30 @@ Comprehensive drawdown metrics including:
 
 ### Using Python Script Directly
 ```bash
-cd Prompt-AI-Mantras/scripts
 python drawdown.py <SYMBOL> --period <PERIOD> [--show-history]
 ```
 
 ### Examples
 ```bash
 # 1-year drawdown analysis
-python drawdown.py MU
+python drawdown.py AAPL
 
 # 2-year analysis with distribution chart
-python drawdown.py MU --period 2y --show-history
+python drawdown.py MSFT --period 2y --show-history
 
 # Maximum available history
-python drawdown.py NVDA --period max
+python drawdown.py SPY --period max
 ```
 
 ### Via Claude Code
 When AI agents need to analyze drawdowns, they should:
-1. Navigate to `Prompt-AI-Mantras/scripts/`
-2. Execute the Python script with appropriate parameters
-3. Parse structured output (current status, max drawdown, statistics, periods)
-4. Identify crisis periods and recovery patterns
-5. Incorporate findings into risk assessments
+1. Execute the Python script with appropriate parameters
+2. Parse structured output (current status, max drawdown, statistics, periods)
+3. Identify crisis periods and recovery patterns
+4. Incorporate findings into risk assessments
 
 ## Constraints
-- Requires internet connection for price data (uses yfinance provider)
+- Requires internet connection for price data (market data provider)
 - Limited to publicly traded securities with available price history
 - Recovery calculations require data after trough (ongoing drawdowns show "Not Yet Recovered")
 - Does not account for dividends (uses price-only returns)
@@ -88,7 +86,7 @@ When AI agents need to analyze drawdowns, they should:
 ### Risk Assessment
 ```bash
 # Evaluate maximum loss exposure before adding position
-python drawdown.py MU --period 5y
+python drawdown.py TSLA --period 5y
 ```
 **Use Case**: Taleb (Risk Manager) assessing worst-case historical drawdown to set position limits
 
@@ -102,15 +100,15 @@ python drawdown.py SPY --period 5y --show-history
 ### Position Monitoring
 ```bash
 # Check if current drawdown triggers risk review
-python drawdown.py MU --period 1y
+python drawdown.py AMZN --period 1y
 ```
 **Use Case**: Simons (Quant Researcher) monitoring if strategy drawdown exceeds kill criteria (-15%)
 
 ### Comparative Risk Analysis
 ```bash
 # Compare drawdown profiles of two investment options
-python drawdown.py NVDA --period 2y > nvda_dd.txt
-python drawdown.py SOXX --period 2y > soxx_dd.txt
+python drawdown.py MSFT --period 2y > msft_dd.txt
+python drawdown.py QQQ --period 2y > qqq_dd.txt
 ```
 **Use Case**: Clara (Financial Analyst) comparing single-stock vs. diversified ETF downside risk
 
@@ -141,7 +139,7 @@ python drawdown.py SOXX --period 2y > soxx_dd.txt
 - Calculates duration metrics (days to trough, days to recovery, total duration)
 
 ### Data Source
-- yfinance provider (Yahoo Finance API)
+- Market data provider API (e.g., Yahoo Finance, Alpha Vantage)
 - Adjusted close prices (accounts for splits/dividends)
 - Time-series analysis with expanding window calculations
 

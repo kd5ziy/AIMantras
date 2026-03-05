@@ -4,7 +4,7 @@ This document explains how Python financial analysis tools are integrated into t
 
 ## Overview
 
-The Python scripts in `Prompt-AI-Mantras/scripts/` are now accessible to AIMantras personas through formalized Skills that bridge the cognitive framework with computational tools.
+Python scripts for portfolio analysis can be made accessible to AIMantras personas through formalized Skills that bridge the cognitive framework with computational tools.
 
 ## Integrated Skills
 
@@ -16,13 +16,12 @@ The Python scripts in `Prompt-AI-Mantras/scripts/` are now accessible to AIMantr
 **Primary Personas**: Clara, Simons, Markowitz
 **Example Usage**:
 ```bash
-cd Prompt-AI-Mantras/scripts
-python sharpe.py MU --period 1y --risk-free-rate 4.5
+python sharpe.py AAPL --period 1y --risk-free-rate 4.5
 ```
 
 **AI Invocation Example**:
 ```
-Persona: Clara. Task: Evaluate risk-adjusted returns for MU over 1 year.
+Persona: Clara. Task: Evaluate risk-adjusted returns for AAPL over 1 year.
 Skill: sharpe-ratio-calculation.
 Output: Risk assessment with Sharpe ratio, volatility, and recommendation.
 ```
@@ -35,12 +34,12 @@ Output: Risk assessment with Sharpe ratio, volatility, and recommendation.
 **Primary Personas**: Taleb, Markowitz, Clara
 **Example Usage**:
 ```bash
-python drawdown.py MU --period 2y --show-history
+python drawdown.py TSLA --period 2y --show-history
 ```
 
 **AI Invocation Example**:
 ```
-Persona: Taleb. Task: Assess maximum loss exposure for MU position.
+Persona: Taleb. Task: Assess maximum loss exposure for TSLA position.
 Skill: drawdown-analysis.
 Output: Maximum drawdown, recovery time, current drawdown status.
 ```
@@ -57,7 +56,7 @@ Output: Maximum drawdown, recovery time, current drawdown status.
 python stress_test.py
 
 # Custom scenario
-python stress_test.py --custom --market -20 --semis -40 --mu -50
+python stress_test.py --custom --market -20 --tech -40
 ```
 
 **AI Invocation Example**:
@@ -107,7 +106,6 @@ The following tools are also available but not yet formalized into Skills (can b
 | `fetch_fx.py` | Fetch FX rates | `analysis/currency-analysis.md` |
 | `fetch_news.py` | Fetch news and sentiment | `research/news-analysis.md` |
 | `check_limits.py` | Verify position limit compliance | (Built into portfolio-analysis) |
-| `degiro_parser.py` | Parse broker CSV files | (Data layer, used by other tools) |
 
 ## How AI Agents Use These Skills
 
@@ -123,27 +121,26 @@ Personas reference skills in their skill lists:
 ### 2. Skill Invocation
 When a task requires quantitative analysis:
 ```
-User: "What's the risk-adjusted return for MU?"
+User: "What's the risk-adjusted return for AAPL?"
 
 Clara internally:
 1. Recognizes need for Sharpe ratio calculation
 2. References skill file for invocation syntax
-3. Navigates to scripts directory
-4. Executes: python sharpe.py MU --period 1y
-5. Parses output and interprets results
-6. Formulates response with investment recommendation
+3. Executes: python sharpe.py AAPL --period 1y
+4. Parses output and interprets results
+5. Formulates response with investment recommendation
 ```
 
 ### 3. Multi-Skill Workflows
 Complex tasks chain multiple skills:
 ```
-User: "Evaluate MU for addition to portfolio"
+User: "Evaluate TSLA for addition to portfolio"
 
 Clara's workflow:
 1. sharpe-ratio-calculation.md → Risk-adjusted returns
 2. drawdown-analysis.md → Downside risk assessment
 3. stress-testing.md → Impact on portfolio if added
-4. comparative-analysis.md → Compare vs. SOXX ETF alternative
+4. comparative-analysis.md → Compare vs. sector ETF alternative
 5. Report → Integrated recommendation with evidence
 ```
 
@@ -213,8 +210,7 @@ Calculate correlation coefficients between securities to assess diversification 
 
 ## Invocation
 ```bash
-cd Prompt-AI-Mantras/scripts
-python correlation.py MU NVDA SOXX --period 1y
+python correlation.py AAPL MSFT QQQ --period 1y
 ```
 
 ## Recommended Personas
@@ -250,10 +246,3 @@ Then update:
 2. **Add More Skills**: Formalize correlation, fundamental analysis, news analysis
 3. **Create Workflows**: Document common multi-skill workflows
 4. **MCP Integration**: Connect skills to MCP server for seamless invocation
-5. **Documentation**: Add examples to development/agents.md
-
-## Questions or Issues?
-
-- Skill not working? Check Python dependencies: `cd scripts && pip install -r requirements.txt`
-- Adding new tool? Follow the skill template above
-- Want automated invocation? Consider MCP server integration for direct tool calls

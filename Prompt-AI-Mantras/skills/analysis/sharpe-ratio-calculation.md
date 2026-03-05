@@ -11,7 +11,7 @@ Calculate risk-adjusted returns (Sharpe ratio) for securities to evaluate perfor
 - Performance attribution and strategy evaluation
 
 ## Inputs Required
-- **Symbol**: Ticker symbol to analyze (e.g., "MU", "NVDA", "SPY")
+- **Symbol**: Ticker symbol to analyze (e.g., "AAPL", "SPY", "QQQ")
 - **Period**: Time horizon for analysis (1mo, 3mo, 6mo, 1y, 2y, 5y, 10y, ytd, max)
 - **Interval**: Data frequency (1d, 5d, 1wk, 1mo) - default: daily
 - **Risk-Free Rate**: Annual risk-free rate % (default: 4.5% for US Treasury)
@@ -30,31 +30,29 @@ Comprehensive risk/return metrics including:
 
 ### Using Python Script Directly
 ```bash
-cd Prompt-AI-Mantras/scripts
 python sharpe.py <SYMBOL> --period <PERIOD> --risk-free-rate <RATE>
 ```
 
 ### Examples
 ```bash
-# 3-month Sharpe ratio for Micron
-python sharpe.py MU
+# 3-month Sharpe ratio for Apple
+python sharpe.py AAPL
 
 # 1-year analysis with custom risk-free rate
-python sharpe.py MU --period 1y --risk-free-rate 5.0
+python sharpe.py MSFT --period 1y --risk-free-rate 5.0
 
-# 5-year historical analysis
-python sharpe.py NVDA --period 5y
+# 5-year historical analysis for an ETF
+python sharpe.py SPY --period 5y
 ```
 
 ### Via Claude Code
 When AI agents need to calculate Sharpe ratios, they should:
-1. Navigate to `Prompt-AI-Mantras/scripts/`
-2. Execute the Python script with appropriate parameters
-3. Parse and interpret the formatted output
-4. Incorporate results into analysis or recommendations
+1. Execute the Python script with appropriate parameters
+2. Parse and interpret the formatted output
+3. Incorporate results into analysis or recommendations
 
 ## Constraints
-- Requires internet connection for price data (uses yfinance provider)
+- Requires internet connection for price data (market data provider)
 - Limited to publicly traded securities with available price history
 - Risk-free rate should match the currency and duration of analysis
 - Short time periods may produce unreliable Sharpe ratios (prefer 1y+)
@@ -84,15 +82,15 @@ When AI agents need to calculate Sharpe ratios, they should:
 ### Single Security Evaluation
 ```bash
 # Evaluate risk-adjusted returns for a stock position
-python sharpe.py MU --period 2y --risk-free-rate 4.5
+python sharpe.py AAPL --period 2y --risk-free-rate 4.5
 ```
-**Use Case**: Clara (Financial Analyst) assessing whether MU's returns justify its volatility
+**Use Case**: Clara (Financial Analyst) assessing whether a stock's returns justify its volatility
 
 ### Strategy Comparison
 ```bash
-# Compare multiple securities
-python sharpe.py NVDA --period 1y > nvda_sharpe.txt
-python sharpe.py SOXX --period 1y > soxx_sharpe.txt
+# Compare individual stock vs. sector ETF
+python sharpe.py MSFT --period 1y > msft_sharpe.txt
+python sharpe.py QQQ --period 1y > qqq_sharpe.txt
 ```
 **Use Case**: Simons (Quant Researcher) comparing individual stock vs. sector ETF for allocation
 
@@ -126,7 +124,7 @@ python sharpe.py <STRATEGY_TICKER> --period 6mo
 - Sharpe = Mean(Excess Returns) / StdDev(Returns) × √Periods per year
 
 ### Data Source
-- yfinance provider (Yahoo Finance API)
+- Market data provider API (e.g., Yahoo Finance, Alpha Vantage)
 - Adjusted close prices (accounts for splits/dividends)
 - Real-time and historical data availability
 

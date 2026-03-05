@@ -12,7 +12,7 @@ Evaluate portfolio resilience by simulating performance under adverse market sce
 - Investor reporting and regulatory compliance (stress test requirements)
 
 ## Inputs Required
-- **Portfolio Data**: DEGIRO CSV transaction history or position file
+- **Portfolio Data**: Broker CSV transaction history or position file
 - **Scenario Type**: Historical, factor-based, thesis-driven, or custom
 - **Specific Scenario**: Named scenario (e.g., "COVID Crash", "Tech Selloff")
 - **Custom Shocks**: User-defined price impacts by ticker or sector
@@ -30,7 +30,6 @@ For each scenario:
 
 ### Using Python Script Directly
 ```bash
-cd Prompt-AI-Mantras/scripts
 python stress_test.py [OPTIONS]
 ```
 
@@ -51,26 +50,25 @@ python stress_test.py --summary
 
 ### Custom Scenarios
 ```bash
-# Custom scenario: -20% market, -40% semis, -50% MU
-python stress_test.py --custom --market -20 --semis -40 --mu -50
+# Custom scenario: -20% market, -30% tech sector
+python stress_test.py --custom --market -20 --tech -30
 
-# Custom NVDA-specific shock
-python stress_test.py --custom --nvda -35 --default -15
+# Custom single-stock shock with broad market decline
+python stress_test.py --custom --aapl -35 --default -15
 ```
 
 ### Via Claude Code
 When AI agents need to stress test portfolios, they should:
-1. Navigate to `Prompt-AI-Mantras/scripts/`
-2. Determine appropriate scenario type or build custom shocks
-3. Execute Python script with portfolio CSV path
-4. Parse structured output for each scenario
-5. Identify limit violations and high-impact positions
-6. Recommend portfolio adjustments or hedging strategies
+1. Determine appropriate scenario type or build custom shocks
+2. Execute Python script with portfolio CSV path
+3. Parse structured output for each scenario
+4. Identify limit violations and high-impact positions
+5. Recommend portfolio adjustments or hedging strategies
 
 ## Constraints
-- Requires transaction history CSV in DEGIRO format (or compatible format)
-- Assumes current prices from yfinance (live market data required)
-- Position limits defined in CLAUDE.md:
+- Requires broker transaction history CSV (or compatible position file)
+- Assumes current prices from a market data provider (live data required)
+- Position limits should be defined in project configuration:
   - Max single position: 15%
   - Max sector exposure: 35%
   - Max speculative allocation: 15%
@@ -96,15 +94,15 @@ Systematic risk factor shocks:
 
 ### Thesis-Driven Scenarios
 Specific investment thesis failure modes:
-- **AI Bubble Pop**: NVDA -50%, AMD -45%, semis -40%
-- **Memory Glut**: MU -50%, memory sector -45%
-- **China Tariffs**: Semis -30%, Apple -25%, exporters -20%
-- **Semiconductor Cycle Peak**: Mean reversion to historical valuations
+- **Tech Bubble Pop**: Large-cap tech -40%, growth names -50%
+- **Sector Concentration Collapse**: Overweight sector -45%, broad market -20%
+- **Trade War Escalation**: Exporters -30%, multinationals -25%
+- **Cycle Peak Mean Reversion**: Cyclicals revert to historical valuations
 
 ### Custom Scenarios
 User-defined shocks for:
 - Earnings misses or guidance cuts
-- Geopolitical events (Taiwan conflict, trade wars)
+- Geopolitical events (regional conflicts, trade wars)
 - Company-specific issues (product delays, competitive threats)
 - Portfolio-specific risks unique to current holdings
 
@@ -131,10 +129,10 @@ User-defined shocks for:
 
 ### Pre-Trade Risk Check
 ```bash
-# Before adding new semiconductor position
-python stress_test.py --scenario "Memory Glut"
+# Before adding a new position in a concentrated sector
+python stress_test.py --scenario "Sector Concentration Collapse"
 ```
-**Use Case**: Taleb (Risk Manager) checking if adding more semis exposure creates unacceptable concentration risk
+**Use Case**: Taleb (Risk Manager) checking if adding more exposure creates unacceptable concentration risk
 
 ### Weekly Risk Monitoring
 ```bash
@@ -145,10 +143,10 @@ python stress_test.py --summary
 
 ### Custom Thesis Testing
 ```bash
-# Test bearish thesis: AI hype deflates
-python stress_test.py --custom --nvda -50 --market -20 --semis -35
+# Test bearish thesis: tech valuations deflate
+python stress_test.py --custom --tech -40 --market -20 --growth -35
 ```
-**Use Case**: Simons (Quant Researcher) quantifying downside if AI bubble thesis proves correct
+**Use Case**: Simons (Quant Researcher) quantifying downside if a sector bubble thesis proves correct
 
 ### Investor Reporting
 ```bash
@@ -178,11 +176,12 @@ python stress_test.py --type historical > stress_test_report.txt
 4. **Price Calculation**: New Price = Current Price × (1 + Shock)
 
 ### Sector Classification
-Predefined groups:
-- Semiconductors: MU, NVDA, AMD, INTC, TSM, ASML, SOXX
+Predefined groups (customizable):
 - Technology: AAPL, MSFT, GOOGL, META, QQQ
+- Semiconductors: NVDA, AMD, INTC, TSM, ASML, SOXX
 - Financials: JPM, BAC, GS, V, MA
-- Defensives: PG, JNJ, KO, WMT
+- Healthcare: JNJ, UNH, PFE, ABBV
+- Defensives: PG, KO, WMT, COST
 
 ### Limit Violation Detection
 - Calculates post-stress position allocations
