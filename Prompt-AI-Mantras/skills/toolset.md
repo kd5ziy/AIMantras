@@ -41,7 +41,6 @@ Analytical and reasoning capabilities.
 | Comparative Analysis | `analysis/comparative-analysis.md` | Compare options systematically |
 | **Sharpe Ratio Calculation** | `analysis/sharpe-ratio-calculation.md` | Calculate risk-adjusted returns for securities |
 | **Drawdown Analysis** | `analysis/drawdown-analysis.md` | Analyze peak-to-trough declines and recovery patterns |
-| **Stress Testing** | `analysis/stress-testing.md` | Simulate portfolio performance under crisis scenarios |
 | **Portfolio Analysis** | `analysis/portfolio-analysis.md` | Comprehensive portfolio evaluation and monitoring |
 
 ### Creation Skills
@@ -180,8 +179,8 @@ Reviewing against success criteria using quality-check.md:
 | Franklin (Reasoning) | comparative-analysis, risk-assessment, data-analysis | literature-review, fact-verification |
 | **Quantitative Trading Personas** | | |
 | Simons (Quant Researcher) | data-analysis, code-generation, risk-assessment, sharpe-ratio-calculation, comparative-analysis | report-writing, literature-review, quality-check, drawdown-analysis |
-| Markowitz (Portfolio Manager) | risk-assessment, comparative-analysis, financial-modeling, portfolio-analysis, stress-testing | data-analysis, report-writing, handoff, quality-check |
-| Taleb (Risk Manager) | risk-assessment, stress-testing, drawdown-analysis, data-analysis, comparative-analysis | security-audit, report-writing, compliance-review, handoff |
+| Markowitz (Portfolio Manager) | risk-assessment, comparative-analysis, financial-modeling, portfolio-analysis | data-analysis, report-writing, handoff, quality-check |
+| Taleb (Risk Manager) | risk-assessment, drawdown-analysis, data-analysis, comparative-analysis | security-audit, report-writing, compliance-review, handoff, portfolio-analysis |
 | Thorp (Execution Trader) | data-analysis, risk-assessment, comparative-analysis | report-writing, web-search, handoff, quality-check |
 | Nightingale (Data Engineer) | data-analysis, code-generation, web-search, risk-assessment | document-generation, quality-check, handoff, diagram-creation |
 | Schapiro (Compliance Officer) | compliance-review, security-audit, risk-assessment, fact-verification | document-generation, report-writing, handoff, literature-review |

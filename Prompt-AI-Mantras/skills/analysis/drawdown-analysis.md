@@ -120,7 +120,6 @@ python drawdown.py QQQ --period 2y > qqq_dd.txt
 
 ## Related Skills
 - `analysis/sharpe-ratio-calculation.md`: Risk-adjusted returns complement drawdown analysis
-- `analysis/stress-testing.md`: Simulate future drawdowns under crisis scenarios
 - `analysis/risk-assessment.md`: Comprehensive risk evaluation framework
 - `analysis/correlation-analysis.md`: Understand diversification during drawdowns
 

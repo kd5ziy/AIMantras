@@ -109,7 +109,6 @@ python sharpe.py <STRATEGY_TICKER> --period 6mo
 
 ## Related Skills
 - `analysis/drawdown-analysis.md`: Complement Sharpe with drawdown assessment
-- `analysis/stress-testing.md`: Evaluate performance under crisis scenarios
 - `analysis/correlation-analysis.md`: Understand diversification benefits
 - `analysis/financial-modeling.md`: Incorporate Sharpe into broader portfolio models
 - `analysis/comparative-analysis.md`: Systematically compare multiple Sharpe ratios

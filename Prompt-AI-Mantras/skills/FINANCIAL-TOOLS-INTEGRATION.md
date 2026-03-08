@@ -10,7 +10,7 @@ Python scripts for portfolio analysis can be made accessible to AIMantras person
 
 ### 1. Sharpe Ratio Calculation
 **Skill File**: `skills/analysis/sharpe-ratio-calculation.md`
-**Python Tool**: `scripts/sharpe.py`
+**Python Tool**: `tools/sharpe.py`
 **Purpose**: Calculate risk-adjusted returns for securities
 
 **Primary Personas**: Clara, Simons, Markowitz
@@ -28,7 +28,7 @@ Output: Risk assessment with Sharpe ratio, volatility, and recommendation.
 
 ### 2. Drawdown Analysis
 **Skill File**: `skills/analysis/drawdown-analysis.md`
-**Python Tool**: `scripts/drawdown.py`
+**Python Tool**: `tools/drawdown.py`
 **Purpose**: Analyze peak-to-trough declines and recovery patterns
 
 **Primary Personas**: Taleb, Markowitz, Clara
@@ -44,52 +44,23 @@ Skill: drawdown-analysis.
 Output: Maximum drawdown, recovery time, current drawdown status.
 ```
 
-### 3. Portfolio Stress Testing
-**Skill File**: `skills/analysis/stress-testing.md`
-**Python Tool**: `scripts/stress_test.py`
-**Purpose**: Simulate portfolio performance under crisis scenarios
-
-**Primary Personas**: Taleb, Markowitz
-**Example Usage**:
-```bash
-# Run all scenarios
-python stress_test.py
-
-# Custom scenario
-python stress_test.py --custom --market -20 --tech -40
-```
-
-**AI Invocation Example**:
-```
-Persona: Taleb. Task: Stress test portfolio against 2008-style crisis.
-Skill: stress-testing.
-Pattern: threat-modeling.
-Output: Portfolio impact, limit violations, remediation plan.
-```
-
-### 4. Portfolio Analysis
+### 3. Portfolio Analysis
 **Skill File**: `skills/analysis/portfolio-analysis.md`
-**Python Tools**: `scripts/portfolio.py`, `scripts/portfolio_multicurrency.py`, `scripts/journal.py`
-**Purpose**: Comprehensive portfolio monitoring and analysis
+**Python Tools**: `tools/correlation.py`
+**Purpose**: Portfolio concentration and diversification analysis
 
 **Primary Personas**: Markowitz, Taleb
 **Example Usage**:
 ```bash
-# Holdings overview
-python portfolio.py
-
-# Multi-currency consolidation
-python portfolio_multicurrency.py --currency USD
-
-# Transaction journal
-python journal.py --from 2024-01-01 --to 2024-12-31
+# Analyze correlations between holdings
+python correlation.py AAPL MSFT QQQ --period 1y
 ```
 
 **AI Invocation Example**:
 ```
-Persona: Markowitz. Task: Review current portfolio allocations and identify rebalancing needs.
+Persona: Markowitz. Task: Analyze portfolio concentration and identify diversification opportunities.
 Skill: portfolio-analysis.
-Output: Position breakdown, limit compliance, rebalancing recommendations.
+Output: Correlation matrix, concentration analysis, rebalancing recommendations.
 ```
 
 ## Additional Available Tools
@@ -99,13 +70,12 @@ The following tools are also available but not yet formalized into Skills (can b
 | Tool | Purpose | Potential Skill Category |
 |------|---------|------------------------|
 | `correlation.py` | Analyze correlation between securities | `analysis/correlation-analysis.md` |
-| `scenarios.py` | Scenario definitions for stress testing | (Library, used by stress_test.py) |
 | `fetch_history.py` | Fetch historical price data | `research/market-data-fetching.md` |
 | `fetch_financials.py` | Fetch fundamental data | `research/fundamental-analysis.md` |
 | `fetch_earnings.py` | Fetch earnings data | `research/earnings-analysis.md` |
 | `fetch_fx.py` | Fetch FX rates | `analysis/currency-analysis.md` |
 | `fetch_news.py` | Fetch news and sentiment | `research/news-analysis.md` |
-| `check_limits.py` | Verify position limit compliance | (Built into portfolio-analysis) |
+| `fetch_batch.py` | Batch fetch data for multiple tickers | `research/batch-data-fetching.md` |
 
 ## How AI Agents Use These Skills
 
@@ -115,7 +85,7 @@ Personas reference skills in their skill lists:
 ## Available Skills
 **Primary Skills:**
 - `skills/analysis/sharpe-ratio-calculation.md`
-- `skills/analysis/stress-testing.md`
+- `skills/analysis/portfolio-analysis.md`
 ```
 
 ### 2. Skill Invocation
@@ -139,7 +109,7 @@ User: "Evaluate TSLA for addition to portfolio"
 Clara's workflow:
 1. sharpe-ratio-calculation.md → Risk-adjusted returns
 2. drawdown-analysis.md → Downside risk assessment
-3. stress-testing.md → Impact on portfolio if added
+3. portfolio-analysis.md → Correlation and concentration check
 4. comparative-analysis.md → Compare vs. sector ETF alternative
 5. Report → Integrated recommendation with evidence
 ```
@@ -157,13 +127,13 @@ Clara's workflow:
 - **Use Cases**: Strategy validation, backtest analysis, signal evaluation
 
 ### Markowitz (Portfolio Manager)
-- **Primary**: portfolio-analysis, stress-testing, risk-assessment
-- **Secondary**: sharpe-ratio-calculation, comparative-analysis
+- **Primary**: portfolio-analysis, risk-assessment, comparative-analysis
+- **Secondary**: sharpe-ratio-calculation, financial-modeling
 - **Use Cases**: Capital allocation, rebalancing, strategy lifecycle management
 
 ### Taleb (Risk Manager)
-- **Primary**: stress-testing, drawdown-analysis, risk-assessment
-- **Secondary**: portfolio-analysis, compliance-review
+- **Primary**: drawdown-analysis, risk-assessment, portfolio-analysis
+- **Secondary**: comparative-analysis, compliance-review
 - **Use Cases**: Risk monitoring, limit enforcement, crisis preparedness
 
 ### Thorp (Execution Trader)
