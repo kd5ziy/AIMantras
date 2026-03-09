@@ -6,3 +6,6 @@ certs/
 
 # Environment files with secrets
 .env
+
+# Website error screenshots
+website-errors/
