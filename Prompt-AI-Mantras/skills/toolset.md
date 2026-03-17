@@ -39,6 +39,9 @@ Analytical and reasoning capabilities.
 | Financial Modeling | `analysis/financial-modeling.md` | Build and analyze financial models |
 | Risk Assessment | `analysis/risk-assessment.md` | Identify and evaluate risks |
 | Comparative Analysis | `analysis/comparative-analysis.md` | Compare options systematically |
+| **Sharpe Ratio Calculation** | `analysis/sharpe-ratio-calculation.md` | Calculate risk-adjusted returns for securities |
+| **Drawdown Analysis** | `analysis/drawdown-analysis.md` | Analyze peak-to-trough declines and recovery patterns |
+| **Portfolio Analysis** | `analysis/portfolio-analysis.md` | Comprehensive portfolio evaluation and monitoring |
 
 ### Creation Skills
 Content and artifact creation capabilities.
@@ -168,14 +171,24 @@ Reviewing against success criteria using quality-check.md:
 
 | Persona | Primary Skills | Secondary Skills |
 |---------|---------------|------------------|
-| Clara (Finance) | financial-modeling, risk-assessment, data-analysis | comparative-analysis, report-writing |
+| **Domain Personas** | | |
+| Clara (Finance) | financial-modeling, risk-assessment, data-analysis, sharpe-ratio-calculation, drawdown-analysis | comparative-analysis, report-writing, portfolio-analysis |
 | Kestra (Systems) | codebase-exploration, security-audit, code-review | diagram-creation, risk-assessment |
 | Watson (Medical) | literature-review, fact-verification, risk-assessment | document-review, report-writing |
 | Goeth (Philosophy) | comparative-analysis, document-review | summarization, report-writing |
 | Franklin (Reasoning) | comparative-analysis, risk-assessment, data-analysis | literature-review, fact-verification |
+| **Quantitative Trading Personas** | | |
+| Simons (Quant Researcher) | data-analysis, code-generation, risk-assessment, sharpe-ratio-calculation, comparative-analysis | report-writing, literature-review, quality-check, drawdown-analysis |
+| Markowitz (Portfolio Manager) | risk-assessment, comparative-analysis, financial-modeling, portfolio-analysis | data-analysis, report-writing, handoff, quality-check |
+| Taleb (Risk Manager) | risk-assessment, drawdown-analysis, data-analysis, comparative-analysis | security-audit, report-writing, compliance-review, handoff, portfolio-analysis |
+| Thorp (Execution Trader) | data-analysis, risk-assessment, comparative-analysis | report-writing, web-search, handoff, quality-check |
+| Nightingale (Data Engineer) | data-analysis, code-generation, web-search, risk-assessment | document-generation, quality-check, handoff, diagram-creation |
+| Schapiro (Compliance Officer) | compliance-review, security-audit, risk-assessment, fact-verification | document-generation, report-writing, handoff, literature-review |
+| **Evaluation Personas** | | |
 | Ada (QA) | quality-check, fact-verification | code-review, compliance-review |
 | Drucker (Goals) | quality-check, progress-tracking | comparative-analysis |
 | Rickover (Safety) | security-audit, risk-assessment, compliance-review | fact-verification |
+| **Orchestration Personas** | | |
 | Bernstein (Orchestrator) | task-decomposition, handoff, constraint-gathering | progress-tracking, summarization |
 | Hopper (Planner) | task-decomposition, plan-drafting, constraint-gathering | risk-assessment |
 | Lovell (Crisis) | task-decomposition, risk-assessment, progress-tracking | handoff, constraint-gathering |
