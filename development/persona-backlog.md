@@ -26,6 +26,9 @@ Subject-matter experts who perform specialized reasoning and domain-specific tas
 ### Completed
 - **Watson (Doctor/Medical Advisor)** – Medical reasoning, diagnosis, treatment planning, patient care considerations, evidence-based health guidance
 
+### Completed
+- **Matsushita (CEO)** – People-first executive leadership, strategic vision, employee ownership and alignment, long-term value creation over short-term extraction
+
 ### Planned
 - **Judge** – Legal reasoning, case analysis, precedent research, judicial decision-making
 - **Lawyer** – Legal strategy, argumentation, contract review, regulatory compliance
@@ -33,8 +36,10 @@ Subject-matter experts who perform specialized reasoning and domain-specific tas
 - **Scholar** – Academic research, literature review, scholarly analysis, citation management
 - **Mathematician** – Formal proofs, mathematical modeling, theorem development, quantitative analysis
 - **Politician** – Policy analysis, stakeholder management, strategic communication, coalition building
-- **CEO** – Business strategy, organizational leadership, resource allocation, executive decision-making
 - **Policeman/Detective** – Investigative reasoning, evidence gathering, pattern recognition, security analysis
+- **Blue Team Security Engineer** ~~– Defensive security, hardening, monitoring, supply chain auditing~~ → **COMPLETED** as Schneier-Blue-Team
+- **Red Team Security Engineer** ~~– Offensive security, penetration testing, vulnerability discovery~~ → **COMPLETED** as Mitnick-Red-Team
+- **Black Hat Analyst** ~~– Adversarial thinking, supply chain weaponization, social engineering~~ → **COMPLETED** as Morris-Black-Hat
 - **Engineer** – Technical design, systems optimization, problem-solving, technical specifications
 - **Teacher/Educator** – Pedagogy, curriculum design, learning assessment, knowledge transfer
 - **Scientist** – Hypothesis formation, experimental design, research methodology, scientific reasoning
@@ -42,6 +47,10 @@ Subject-matter experts who perform specialized reasoning and domain-specific tas
 - **Historian** – Historical analysis, context research, timeline construction, historical pattern recognition
 - **Economist** – Economic analysis, market dynamics, policy impact assessment, resource optimization
 - **Psychologist** – Behavioral analysis, cognitive assessment, therapeutic reasoning, human factors
+
+### Completed
+- **Pennyworth (Executive Assistant)** – Strategic personal assistant, accountability, goal tracking, honest feedback
+- **LeHand (Executive Assistant)** – Organizational powerhouse, anticipation, detail management, follow-up tracking
 
 ### Ideas for Future Consideration
 - **Journalist** – Investigation, fact-checking, narrative construction, source verification

@@ -160,6 +160,12 @@ When modifying framework content that affects MCP:
   - Goeth-Philosophical-Synthesizer
   - Kestra-Systems-Architect
   - Watson-Medical-Advisor (NEW - 2025-12-05)
+  - Matsushita-CEO (NEW - 2026-03-30)
+  - Schneier-Blue-Team (NEW - 2026-03-30)
+  - Mitnick-Red-Team (NEW - 2026-03-30)
+  - Morris-Black-Hat (NEW - 2026-03-30)
+  - Pennyworth-Executive-Assistant (NEW - 2026-03-30)
+  - LeHand-Executive-Assistant (NEW - 2026-03-30)
 - **Evaluation** (`Prompt-AI-Mantras/personas/evaluation/`):
   - Ada-QA-Reviewer (updated with criterion-based-evaluation pattern)
   - Drucker-Goal-Satisfaction-Evaluator (NEW - 2025-12-05)

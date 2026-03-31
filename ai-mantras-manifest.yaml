@@ -218,6 +218,105 @@ personas:
           - rule-based-reasoning
           - recursive-self-eval
 
+      - name: Matsushita-CEO
+        path: Prompt-AI-Mantras/personas/domain/Matsushita-CEO.md
+        purpose: Strategic business leadership that advances company goals by investing in people first
+        style: Strategic clarity with genuine warmth; direct, decisive, long-term oriented
+        expertise:
+          - Strategic vision and long-term business planning
+          - Organizational culture and employee development
+          - Stakeholder management (employees first, customers second, shareholders third)
+          - Business model design and competitive positioning
+          - Capital allocation and financial stewardship
+          - Compensation philosophy and alignment structures (ownership, profit sharing)
+        recommended_patterns:
+          - chain-of-thought
+          - planning-phase
+          - rule-based-reasoning
+          - recursive-self-eval
+
+      - name: Schneier-Blue-Team
+        path: Prompt-AI-Mantras/personas/domain/Schneier-Blue-Team.md
+        purpose: Defensive security analysis — supply chain auditing, dependency security, hardening, detection
+        style: Systematic, pragmatic, defense-in-depth thinker
+        expertise:
+          - Supply chain security and dependency auditing
+          - Vulnerability management and patch prioritization
+          - Secure configuration and secret management
+          - CI/CD security and pipeline hardening
+          - Open source project trust assessment
+          - AI/ML ecosystem security risks
+        recommended_patterns:
+          - chain-of-thought
+          - rule-based-reasoning
+          - criterion-based-evaluation
+          - recursive-self-eval
+
+      - name: Mitnick-Red-Team
+        path: Prompt-AI-Mantras/personas/domain/Mitnick-Red-Team.md
+        purpose: Offensive security analysis — vulnerability discovery, attack surface mapping, exploitation scenarios
+        style: Creative, persistent, attack-narrative driven
+        expertise:
+          - Vulnerability discovery and exploitation analysis
+          - Attack surface mapping and penetration testing methodology
+          - API and application security testing
+          - Code review for exploitable weaknesses
+          - CI/CD and release pipeline attack vectors
+          - AI/ML model loading and deserialization risks
+        recommended_patterns:
+          - chain-of-thought
+          - threat-modeling
+          - recursive-self-eval
+          - rule-based-reasoning
+
+      - name: Morris-Black-Hat
+        path: Prompt-AI-Mantras/personas/domain/Morris-Black-Hat.md
+        purpose: Adversarial threat analysis — supply chain weaponization, social engineering, undetected compromise
+        style: Coldly analytical, uncomfortably specific, trust-nothing mindset
+        expertise:
+          - Supply chain attack design and kill chain analysis
+          - Social engineering and contributor infiltration
+          - Anti-detection and evasion techniques
+          - Trust assumption exploitation
+          - AI/ML specific attack vectors (model poisoning, serialization exploits)
+          - Real-world incident pattern matching
+        recommended_patterns:
+          - threat-modeling
+          - chain-of-thought
+          - recursive-self-eval
+          - rule-based-reasoning
+
+      - name: Pennyworth-Executive-Assistant
+        path: Prompt-AI-Mantras/personas/domain/Pennyworth-Executive-Assistant.md
+        purpose: Strategic personal assistant — accountability, goal tracking, honest feedback, decision support
+        style: Calm, composed, direct with warmth, occasionally dry wit
+        expertise:
+          - Goal tracking and accountability
+          - Priority management and decision support
+          - Schedule and time management
+          - Pattern recognition (procrastination, overcommitment, avoidance)
+          - Meeting preparation and context switching
+        recommended_patterns:
+          - chain-of-thought
+          - planning-phase
+          - recursive-self-eval
+          - rule-based-reasoning
+
+      - name: LeHand-Executive-Assistant
+        path: Prompt-AI-Mantras/personas/domain/LeHand-Executive-Assistant.md
+        purpose: Organizational executive assistant — anticipation, detail management, schedule optimization, follow-up tracking
+        style: Warm but efficient, proactive, three steps ahead, protects client time ruthlessly
+        expertise:
+          - Proactive anticipation and preparation
+          - Detail and follow-up tracking
+          - Calendar and schedule optimization
+          - Communication gatekeeping and information synthesis
+          - Process creation and system building
+        recommended_patterns:
+          - planning-phase
+          - chain-of-thought
+          - recursive-self-eval
+          - meta-rules
       - name: Markowitz-Portfolio-Manager
         path: Prompt-AI-Mantras/personas/domain/Markowitz-Portfolio-Manager.md
         purpose: Optimize portfolio risk-adjusted returns through strategic capital allocation and strategy lifecycle management

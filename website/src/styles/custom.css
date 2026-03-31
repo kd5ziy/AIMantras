@@ -1,32 +1,27 @@
 /* AI Mantras Custom Styles */
 
-/* Override Starlight defaults with brand colors */
+/* Override Starlight accent colors with blue for documentation readability.
+   Purple reserved for landing page components (scoped to .hero-section, .btn-primary, etc.)
+
+   Starlight convention:
+   - :root = dark mode base (default)
+   - :root[data-theme='light'] = light mode overrides
+
+   We use !important because Starlight sets these in @layer starlight.base,
+   and we need to guarantee our values win regardless of cascade order. */
+
+/* Dark mode (Starlight's :root is dark by default) */
 :root {
-  --sl-color-accent-low: #e0e7ff;
-  --sl-color-accent: #6366f1;
-  --sl-color-accent-high: #4f46e5;
-  --sl-color-white: #ffffff;
-  --sl-color-gray-1: #f8fafc;
-  --sl-color-gray-2: #e2e8f0;
-  --sl-color-gray-3: #94a3b8;
-  --sl-color-gray-4: #475569;
-  --sl-color-gray-5: #1e293b;
-  --sl-color-gray-6: #0f172a;
-  --sl-color-black: #020617;
+  --sl-color-accent-low: #1e3a5f !important;
+  --sl-color-accent: #60a5fa !important;
+  --sl-color-accent-high: #dbeafe !important;
 }
 
-:root[data-theme='dark'] {
-  --sl-color-accent-low: #312e81;
-  --sl-color-accent: #818cf8;
-  --sl-color-accent-high: #c7d2fe;
-  --sl-color-white: #0f172a;
-  --sl-color-gray-1: #1e293b;
-  --sl-color-gray-2: #334155;
-  --sl-color-gray-3: #64748b;
-  --sl-color-gray-4: #94a3b8;
-  --sl-color-gray-5: #e2e8f0;
-  --sl-color-gray-6: #f8fafc;
-  --sl-color-black: #ffffff;
+/* Light mode */
+:root[data-theme='light'] {
+  --sl-color-accent-low: #dbeafe !important;
+  --sl-color-accent: #2563eb !important;
+  --sl-color-accent-high: #1d4ed8 !important;
 }
 
 /* Landing page styles */
