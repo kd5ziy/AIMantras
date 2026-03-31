@@ -1,10 +1,11 @@
 /* AI Mantras Custom Styles */
 
 /* Override Starlight defaults with brand colors */
+/* Blue accent for documentation readability; purple reserved for landing page */
 :root {
-  --sl-color-accent-low: #e0e7ff;
-  --sl-color-accent: #6366f1;
-  --sl-color-accent-high: #4f46e5;
+  --sl-color-accent-low: #dbeafe;
+  --sl-color-accent: #2563eb;
+  --sl-color-accent-high: #1d4ed8;
   --sl-color-white: #ffffff;
   --sl-color-gray-1: #f8fafc;
   --sl-color-gray-2: #e2e8f0;
@@ -16,9 +17,9 @@
 }
 
 :root[data-theme='dark'] {
-  --sl-color-accent-low: #312e81;
-  --sl-color-accent: #818cf8;
-  --sl-color-accent-high: #c7d2fe;
+  --sl-color-accent-low: #1e3a5f;
+  --sl-color-accent: #60a5fa;
+  --sl-color-accent-high: #dbeafe;
   --sl-color-white: #0f172a;
   --sl-color-gray-1: #1e293b;
   --sl-color-gray-2: #334155;
