@@ -47,6 +47,12 @@ export default defineConfig({
                 { label: 'Watson - Medical Advisor', slug: 'personas/domain/watson-medical-advisor' },
                 { label: 'Franklin - Deep Reasoner', slug: 'personas/domain/franklin-deep-reasoner' },
                 { label: 'Goeth - Philosophical Synthesizer', slug: 'personas/domain/goeth-philosophical-synthesizer' },
+                { label: 'Matsushita - CEO', slug: 'personas/domain/matsushita-ceo' },
+                { label: 'Schneier - Blue Team', slug: 'personas/domain/schneier-blue-team' },
+                { label: 'Mitnick - Red Team', slug: 'personas/domain/mitnick-red-team' },
+                { label: 'Morris - Black Hat', slug: 'personas/domain/morris-black-hat' },
+                { label: 'Pennyworth - Executive Assistant', slug: 'personas/domain/pennyworth-executive-assistant' },
+                { label: 'LeHand - Executive Assistant', slug: 'personas/domain/lehand-executive-assistant' },
               ],
             },
             {
