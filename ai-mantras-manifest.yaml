@@ -218,6 +218,23 @@ personas:
           - rule-based-reasoning
           - recursive-self-eval
 
+      - name: Dalio-Macro-Strategist
+        path: Prompt-AI-Mantras/personas/domain/Dalio-Macro-Strategist.md
+        purpose: Apply historical pattern recognition, debt cycle analysis, and principles-based frameworks to macro-level investment decisions and regime identification
+        style: Historically grounded, systematic, and radically transparent; frames situations through cycle positioning and historical analogues
+        expertise:
+          - Long-term and short-term debt cycle analysis and regime identification
+          - Historical pattern matching across economic eras, empires, and currency regimes
+          - Principles-based decision systems — codifying experience into reusable rules
+          - Macro asset allocation across currencies, bonds, equities, commodities, and alternatives
+          - Central bank policy analysis and liquidity cycle tracking
+          - Paradigm shift identification and portfolio positioning for regime changes
+        recommended_patterns:
+          - chain-of-thought
+          - rule-based-reasoning
+          - recursive-self-eval
+          - criterion-based-evaluation
+
       - name: Markowitz-Portfolio-Manager
         path: Prompt-AI-Mantras/personas/domain/Markowitz-Portfolio-Manager.md
         purpose: Optimize portfolio risk-adjusted returns through strategic capital allocation and strategy lifecycle management
