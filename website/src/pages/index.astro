@@ -1,0 +1,351 @@
+---
+import Hero from '../components/Hero.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import StepCard from '../components/StepCard.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="AI Mantras - An AI prompt framework to help everyone think deeper and collaboratively. Features personas, patterns, principles, and skills for structured AI reasoning." />
+    <title>AI Mantras - Think Deeper, Collaborate Better</title>
+    <link rel="icon" type="image/jpeg" href="/logos/AIMantras-ChatBubble.jpeg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Inter', system-ui, sans-serif;
+        background: #0f172a;
+        color: #e2e8f0;
+        line-height: 1.6;
+      }
+      .btn-primary {
+        background: #6366f1;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-block;
+        transition: background 0.2s ease;
+      }
+      .btn-primary:hover {
+        background: #4f46e5;
+        text-decoration: none;
+      }
+      .btn-secondary {
+        background: transparent;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border: 2px solid rgba(255,255,255,0.8);
+        border-radius: 0.5rem;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-block;
+        transition: background 0.2s ease, color 0.2s ease;
+      }
+      .btn-secondary:hover {
+        background: white;
+        color: #1e1b4b;
+        text-decoration: none;
+      }
+      .section {
+        padding: 5rem 1.5rem;
+      }
+      .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 1rem;
+        color: #f1f5f9;
+      }
+      .section-subtitle {
+        text-align: center;
+        color: #94a3b8;
+        max-width: 600px;
+        margin: 0 auto 3rem;
+      }
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .tier-table {
+        max-width: 800px;
+        margin: 0 auto;
+        overflow-x: auto;
+      }
+      .tier-table table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .tier-table th,
+      .tier-table td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid #334155;
+      }
+      .tier-table th {
+        background: #0f172a;
+        font-weight: 600;
+        color: #e2e8f0;
+      }
+      .tier-table td {
+        color: #cbd5e1;
+      }
+      .tier-name {
+        color: #a5b4fc;
+        font-weight: 600;
+      }
+      .cta-section {
+        background: linear-gradient(135deg, #312e81 0%, #4338ca 100%);
+        text-align: center;
+      }
+      .cta-section .section-title {
+        color: white;
+      }
+      .cta-section .section-subtitle {
+        color: #c7d2fe;
+      }
+      .integration-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .integration-card {
+        background: #1e293b;
+        border: 1px solid #334155;
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        text-align: center;
+        text-decoration: none;
+        transition: border-color 0.2s ease, transform 0.2s ease;
+      }
+      .integration-card:hover {
+        border-color: #6366f1;
+        transform: translateY(-2px);
+      }
+      .integration-card h4 {
+        color: #f1f5f9;
+        margin: 0 0 0.5rem 0;
+        font-size: 1rem;
+      }
+      .integration-card p {
+        color: #94a3b8;
+        font-size: 0.875rem;
+        margin: 0;
+      }
+      .cta-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+      .btn-primary-light {
+        background: white;
+        color: #4338ca;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-block;
+        transition: background 0.2s ease, transform 0.2s ease;
+      }
+      .btn-primary-light:hover {
+        background: #f1f5f9;
+        transform: translateY(-2px);
+        text-decoration: none;
+      }
+      .section-dark {
+        background: #1e293b;
+      }
+      .get-started-btn {
+        text-align: center;
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <Hero
+      title="AI Mantras"
+      tagline="An AI prompt framework to help everyone think deeper and collaboratively."
+      subtitle="This framework makes it easier for the average person to engage in complex conversation or analysis with AI by doing some of the heavy lifting."
+    />
+
+    <!-- Four Pillars Section -->
+    <section class="section">
+      <h2 class="section-title">The Four Pillars</h2>
+      <p class="section-subtitle">
+        AI Mantras is built on four complementary pillars that enable consistent, high-quality AI collaboration.
+      </p>
+      <div class="feature-grid">
+        <FeatureCard
+          title="Personas"
+          question="WHO"
+          description="11 specialized identities with expertise, style, and constraints. From financial analysts to systems architects."
+          icon="👤"
+          pillar="personas"
+          link="/personas/"
+        />
+        <FeatureCard
+          title="Patterns"
+          question="HOW"
+          description="9 reusable reasoning structures and thinking templates for structured problem-solving."
+          icon="🧠"
+          pillar="patterns"
+          link="/patterns/"
+        />
+        <FeatureCard
+          title="Principles"
+          question="WHY"
+          description="Guiding values rooted in wisdom, justice, courage, and temperance that shape behavior."
+          icon="💡"
+          pillar="principles"
+          link="/principles/guiding-principles/"
+        />
+        <FeatureCard
+          title="Skills"
+          question="WHAT"
+          description="24 actionable capabilities that personas can invoke, from research to code review."
+          icon="⚡"
+          pillar="skills"
+          link="/skills/"
+        />
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section section-dark">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-subtitle">
+        The framework automatically triages your request to the right complexity tier.
+      </p>
+      <div class="tier-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Tier</th>
+              <th>Description</th>
+              <th>What Happens</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tier-name">Simple</td>
+              <td>Single question, factual, bounded</td>
+              <td>One persona answers directly</td>
+            </tr>
+            <tr>
+              <td class="tier-name">Moderate</td>
+              <td>Analysis, structured reasoning</td>
+              <td>Persona + patterns + self-review</td>
+            </tr>
+            <tr>
+              <td class="tier-name">Complex</td>
+              <td>Multi-domain, high stakes, ambiguous</td>
+              <td>Full orchestration workflow</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section class="section">
+      <h2 class="section-title">Separation of Powers</h2>
+      <p class="section-subtitle">
+        Different personas handle different responsibilities for consistent, high-quality results.
+      </p>
+      <div class="steps-grid">
+        <StepCard
+          number={1}
+          title="Orchestrators Plan"
+          description="Hopper, Bernstein, and Lovell coordinate workflows but don't execute or evaluate."
+        />
+        <StepCard
+          number={2}
+          title="Domain Experts Execute"
+          description="Clara, Kestra, Watson, and others execute work but don't self-evaluate."
+        />
+        <StepCard
+          number={3}
+          title="Evaluators Review"
+          description="Ada, Drucker, and Rickover assess quality but don't generate content."
+        />
+      </div>
+    </section>
+
+    <!-- Integration Methods Section -->
+    <section class="section section-dark">
+      <h2 class="section-title">Choose Your Integration</h2>
+      <p class="section-subtitle">
+        Multiple ways to use AI Mantras with your preferred AI tools.
+      </p>
+      <div class="integration-grid">
+        <div class="integration-card">
+          <h4>MCP Server</h4>
+          <p>Full Claude Code integration with native tools</p>
+        </div>
+        <div class="integration-card">
+          <h4>Claude Command</h4>
+          <p>Simple /Mantras command for quick access</p>
+        </div>
+        <div class="integration-card">
+          <h4>Manual Loading</h4>
+          <p>Works with ChatGPT, Gemini, local LLMs, and more</p>
+        </div>
+        <a href="https://chatgpt.com/g/g-6981945caaa08191ac4540d162a89cb2-ai-mantras" class="integration-card" target="_blank" rel="noopener">
+          <h4>ChatGPT Custom GPT</h4>
+          <p>Use AI Mantras directly inside ChatGPT</p>
+        </a>
+      </div>
+      <div class="get-started-btn">
+        <a href="/getting-started/quick-start/" class="btn-primary">Get Started</a>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+      <h2 class="section-title">Ready to Think Deeper?</h2>
+      <p class="section-subtitle">
+        Start using AI Mantras today and experience more structured, thoughtful AI collaboration.
+      </p>
+      <div class="cta-buttons">
+        <a href="/getting-started/quick-start/" class="btn-primary-light">
+          Read the Docs
+        </a>
+        <a href="https://chatgpt.com/g/g-6981945caaa08191ac4540d162a89cb2-ai-mantras" class="btn-secondary" target="_blank" rel="noopener">
+          Try on ChatGPT
+        </a>
+        <a href="https://github.com/kd5ziy/AIMantras" class="btn-secondary" target="_blank" rel="noopener">
+          Star on GitHub
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <Footer />
+  </body>
+</html>

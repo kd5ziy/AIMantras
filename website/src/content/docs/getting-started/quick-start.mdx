@@ -1,0 +1,96 @@
+---
+title: Quick Start
+description: Get started with AI Mantras in minutes with your preferred integration method.
+---
+
+import { Tabs, TabItem, Steps, Card, CardGrid } from '@astrojs/starlight/components';
+
+Choose your integration method based on your needs:
+
+| Method | Best For | Setup Time |
+|--------|----------|------------|
+| **[ChatGPT Custom GPT](https://chatgpt.com/g/g-6981945caaa08191ac4540d162a89cb2-ai-mantras)** | ChatGPT users wanting instant access | None |
+| **[MCP Server](/getting-started/mcp-server/)** | Claude Code users wanting full integration | 5 minutes |
+| **[Claude Command](#claude-command)** | Claude Code users wanting simple `/Mantras` command | 2 minutes |
+| **[Manual Loading](/getting-started/manual-setup/)** | Any AI model (Gemini, local LLMs, etc.) | Immediate |
+
+## Instant Start: ChatGPT Custom GPT
+
+The fastest way to try AI Mantras is through the [ChatGPT Custom GPT](https://chatgpt.com/g/g-6981945caaa08191ac4540d162a89cb2-ai-mantras). No setup required - just open the link and start chatting.
+
+## Quickest Start (Any AI)
+
+<Steps>
+1. Download or clone this repository
+   ```bash
+   git clone https://github.com/kd5ziy/AIMantras.git
+   ```
+
+2. Give your AI model access to the files
+
+3. Ask it to read `AIMantra.md` and follow its instructions
+
+4. Make your request - the framework handles the rest
+</Steps>
+
+## Claude Command
+
+A lightweight `/Mantras` command that loads the framework on demand.
+
+### Installation
+
+<Steps>
+1. Copy the command file to your Claude commands folder:
+   ```bash
+   # Global (works from any directory)
+   cp claude/commands/Mantras.md ~/.claude/commands/
+
+   # Or project-level (works only in this project)
+   mkdir -p .claude/commands
+   cp claude/commands/Mantras.md .claude/commands/
+   ```
+
+2. Edit the copied file to set the correct path to your AI Mantras installation
+
+3. Restart Claude Code or start a new session
+</Steps>
+
+### Usage
+
+```bash
+/Mantras Help me design a backup strategy for my homelab
+
+/Mantras Analyze whether I should invest in NVDA or SOXX
+
+/Mantras Review this code for security issues
+```
+
+The framework automatically:
+1. Triages your request (Simple, Moderate, or Complex)
+2. Loads the appropriate personas and patterns
+3. Processes your request using the framework
+
+## What Happens Next
+
+Once you're set up:
+
+<CardGrid>
+  <Card title="Try a Simple Request" icon="rocket">
+    Start with something straightforward to see how triage works.
+  </Card>
+  <Card title="Explore Personas" icon="user">
+    [Browse the 11 personas](/personas/) to find the right expert for your domain.
+  </Card>
+  <Card title="Learn Patterns" icon="puzzle">
+    [Study the 9 patterns](/patterns/) to understand how reasoning is structured.
+  </Card>
+  <Card title="Check Skills" icon="list-format">
+    [Review available skills](/skills/) to see what capabilities are available.
+  </Card>
+</CardGrid>
+
+## Getting Help
+
+- **Framework questions**: Use the `help` skill or read the documentation
+- **Bug reports**: [GitHub Issues](https://github.com/kd5ziy/AIMantras/issues)
+- **Contributions**: See [Contributing](/contributing/) guide

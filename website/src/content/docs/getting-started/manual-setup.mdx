@@ -1,0 +1,127 @@
+---
+title: Manual Setup
+description: Use AI Mantras with any AI model including ChatGPT, Gemini, and local LLMs.
+---
+
+import { Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
+
+Works with any AI model: ChatGPT, Gemini, Claude (web), local LLMs, or any other.
+
+## Setup
+
+<Steps>
+1. **Download the repository**
+   ```bash
+   git clone https://github.com/kd5ziy/AIMantras.git
+   ```
+   Or download as ZIP from GitHub and extract.
+
+2. **Give your AI access to the files**
+
+   Depending on your AI interface:
+   - **File upload**: Upload the entire `Prompt-AI-Mantras/` folder and `AIMantra.md`
+   - **Copy/paste**: Copy file contents into the conversation
+   - **Local LLM**: Point to the directory in your context
+</Steps>
+
+## Usage Methods
+
+<Tabs>
+  <TabItem label="Full Context Load">
+    For AI models with large context windows, load everything upfront:
+
+    ```
+    I'm going to give you the AI Mantras framework. Please read and internalize these files:
+
+    1. First, read AIMantra.md - this is your entry point and triage guide
+    2. Read Prompt-AI-Mantras/principles/guiding-principles.md - internalize these values
+    3. You now have access to personas in Prompt-AI-Mantras/personas/
+    4. You have access to patterns in Prompt-AI-Mantras/patterns/
+    5. You have access to skills in Prompt-AI-Mantras/skills/
+
+    Follow the AIMantra.md instructions to triage my requests and load only what you need.
+
+    My request: [YOUR REQUEST HERE]
+    ```
+  </TabItem>
+  <TabItem label="Guided Loading">
+    For AI models with limited context, load incrementally:
+
+    **Step 1**: Load the entry point
+    ```
+    Read this file and follow its instructions:
+    [Paste contents of AIMantra.md]
+
+    My request: [YOUR REQUEST HERE]
+    ```
+
+    **Step 2**: The AI will tell you what else to load based on your request complexity. Provide files as requested.
+  </TabItem>
+  <TabItem label="Direct Persona">
+    If you know which persona you need:
+
+    ```
+    You are Clara, a Financial Analyst. Read and embody this persona:
+    [Paste contents of Prompt-AI-Mantras/personas/domain/Clara-Financial-Analyst.md]
+
+    Also read and internalize these guiding principles:
+    [Paste contents of Prompt-AI-Mantras/principles/guiding-principles.md]
+
+    Use these patterns for your analysis:
+    [Paste contents of relevant patterns]
+
+    My request: Analyze whether I should increase my position in tech ETFs given current market conditions.
+    ```
+  </TabItem>
+</Tabs>
+
+## Tips for Manual Loading
+
+<Aside type="tip" title="Load Principles First">
+  Always load `guiding-principles.md` first - it shapes all persona behavior.
+</Aside>
+
+<Aside type="tip" title="Don't Summarize">
+  Load the full persona file - don't summarize. The details matter for consistent behavior.
+</Aside>
+
+<Aside type="tip" title="Include Recommended Patterns">
+  Each persona lists which patterns work best. Include those patterns for optimal results.
+</Aside>
+
+<Aside type="tip" title="Use the Manifest">
+  The `ai-mantras-manifest.yaml` file lists everything available in the framework.
+</Aside>
+
+## Choosing the Right Method
+
+| Situation | Recommended Method |
+|-----------|-------------------|
+| Daily Claude Code user | MCP Server |
+| Occasional Claude Code user | Claude Command |
+| Using ChatGPT, Gemini, or web Claude | Manual Loading |
+| Using local LLMs (Ollama, LM Studio) | Manual Loading |
+| Testing or evaluating the framework | Manual Loading |
+| Contributing to development | MCP Server (for testing) |
+
+## Troubleshooting
+
+<Aside type="caution" title="AI ignores instructions">
+  Load `guiding-principles.md` first; be explicit about following the framework.
+</Aside>
+
+<Aside type="caution" title="Context too large">
+  Use guided loading or load only the specific persona you need.
+</Aside>
+
+<Aside type="caution" title="Inconsistent behavior">
+  Ensure you're loading complete files, not summaries.
+</Aside>
+
+## Next Steps
+
+Once you're set up:
+1. Try a simple request to see how triage works
+2. Experiment with different personas for different domains
+3. Check `Prompt-AI-Mantras/skills/toolset.md` to see available capabilities
+4. Read `development/agents.md` if you want to contribute

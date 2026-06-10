@@ -1,0 +1,217 @@
+/* AI Mantras Custom Styles */
+
+/* Override Starlight accent colors with blue for documentation readability.
+   Purple reserved for landing page components (scoped to .hero-section, .btn-primary, etc.)
+
+   Starlight convention:
+   - :root = dark mode base (default)
+   - :root[data-theme='light'] = light mode overrides
+
+   We use !important because Starlight sets these in @layer starlight.base,
+   and we need to guarantee our values win regardless of cascade order. */
+
+/* Dark mode (Starlight's :root is dark by default) */
+:root {
+  --sl-color-accent-low: #1e3a5f !important;
+  --sl-color-accent: #60a5fa !important;
+  --sl-color-accent-high: #dbeafe !important;
+}
+
+/* Light mode */
+:root[data-theme='light'] {
+  --sl-color-accent-low: #dbeafe !important;
+  --sl-color-accent: #2563eb !important;
+  --sl-color-accent-high: #1d4ed8 !important;
+}
+
+/* Landing page styles */
+.hero-section {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
+  color: white;
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Feature cards */
+.feature-card {
+  background: var(--sl-color-gray-6);
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.2);
+}
+
+/* Pillar colors */
+.pillar-personas { border-left: 4px solid #6366f1; }
+.pillar-patterns { border-left: 4px solid #8b5cf6; }
+.pillar-principles { border-left: 4px solid #ec4899; }
+.pillar-skills { border-left: 4px solid #14b8a6; }
+
+/* CTA buttons */
+.btn-primary {
+  background: #6366f1;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #4f46e5;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid white;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: #1e1b4b;
+}
+
+/* Persona cards */
+.persona-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--sl-color-gray-6);
+  border-radius: 0.75rem;
+  border: 1px solid var(--sl-color-gray-5);
+}
+
+.persona-card .category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--sl-color-accent);
+  font-weight: 600;
+}
+
+.persona-card .name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--sl-color-gray-1);
+}
+
+.persona-card .description {
+  font-size: 0.875rem;
+  color: var(--sl-color-gray-3);
+}
+
+/* How it works steps */
+.step-number {
+  width: 3rem;
+  height: 3rem;
+  background: var(--sl-color-accent);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--sl-color-gray-6);
+  border-top: 1px solid var(--sl-color-gray-5);
+  padding: 3rem 0;
+}
+
+.site-footer a {
+  color: var(--sl-color-gray-3);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--sl-color-accent);
+}
+
+/* Code blocks in docs */
+pre {
+  border-radius: 0.75rem !important;
+}
+
+/* Fix code block colors for better contrast */
+:root[data-theme='light'] pre,
+:root[data-theme='light'] code {
+  background: #1e293b !important;
+  color: #e2e8f0 !important;
+}
+
+:root[data-theme='light'] .expressive-code {
+  --ec-codeBg: #1e293b !important;
+  --ec-codeFg: #e2e8f0 !important;
+}
+
+/* Inline code styling */
+:root[data-theme='light'] :not(pre) > code {
+  background: #e2e8f0 !important;
+  color: #1e293b !important;
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+
+:root[data-theme='dark'] :not(pre) > code {
+  background: #334155 !important;
+  color: #e2e8f0 !important;
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+
+/* Tables in docs */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--sl-color-gray-5);
+}
+
+th {
+  background: var(--sl-color-gray-6);
+  font-weight: 600;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--sl-color-accent);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: var(--sl-color-gray-3);
+}

@@ -1,0 +1,108 @@
+---
+title: Skills Overview
+description: Discover the 24 actionable capabilities available to AI Mantras personas.
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Skills are the **WHAT** of AI Mantras - actionable capabilities that personas can invoke to accomplish specific types of work. During orchestration, the orchestrator selects appropriate skills for each persona based on the task requirements.
+
+## Understanding Skills
+
+Skills complement the other pillars:
+
+| Pillar | Question | Purpose |
+|--------|----------|---------|
+| **Personas** | WHO | Define identity, expertise, style |
+| **Patterns** | HOW | Define reasoning structures |
+| **Principles** | WHY | Define ethics and values |
+| **Skills** | WHAT | Define tools and actions |
+
+## Skill Categories
+
+<CardGrid>
+  <LinkCard
+    title="Research Skills"
+    description="Information gathering: web search, document review, codebase exploration, literature review."
+    href="/skills/research/"
+  />
+  <LinkCard
+    title="Analysis Skills"
+    description="Analytical capabilities: data analysis, code review, financial modeling, risk assessment."
+    href="/skills/analysis/"
+  />
+  <LinkCard
+    title="Creation Skills"
+    description="Content generation: document generation, code generation, diagrams, plans, reports."
+    href="/skills/creation/"
+  />
+  <LinkCard
+    title="Evaluation Skills"
+    description="Assessment capabilities: quality check, security audit, compliance review, fact verification."
+    href="/skills/evaluation/"
+  />
+  <LinkCard
+    title="Orchestration Skills"
+    description="Workflow coordination: task decomposition, handoff, summarization, progress tracking."
+    href="/skills/orchestration/"
+  />
+  <LinkCard
+    title="Utility Skills"
+    description="Framework navigation: help and discovery."
+    href="/skills/utility/"
+  />
+</CardGrid>
+
+## Skill-Persona Affinity
+
+Each persona has primary and secondary skills that match their expertise:
+
+| Persona | Primary Skills | Secondary Skills |
+|---------|---------------|------------------|
+| **Clara** (Finance) | financial-modeling, risk-assessment, data-analysis | comparative-analysis, report-writing |
+| **Kestra** (Systems) | codebase-exploration, security-audit, code-review | diagram-creation, risk-assessment |
+| **Watson** (Medical) | literature-review, fact-verification, risk-assessment | document-review, report-writing |
+| **Goeth** (Philosophy) | comparative-analysis, document-review | summarization, report-writing |
+| **Franklin** (Reasoning) | comparative-analysis, risk-assessment, data-analysis | literature-review, fact-verification |
+| **Ada** (QA) | quality-check, fact-verification | code-review, compliance-review |
+| **Drucker** (Goals) | quality-check, progress-tracking | comparative-analysis |
+| **Rickover** (Safety) | security-audit, risk-assessment, compliance-review | fact-verification |
+| **Bernstein** (Orchestrator) | task-decomposition, handoff, constraint-gathering | progress-tracking, summarization |
+| **Hopper** (Planner) | task-decomposition, plan-drafting, constraint-gathering | risk-assessment |
+| **Lovell** (Crisis) | task-decomposition, risk-assessment, progress-tracking | handoff, constraint-gathering |
+
+## How Skills Are Used
+
+### During Planning Phase
+
+The orchestrator (Bernstein/Hopper) reviews the task and selects skills:
+
+```text
+For this infrastructure audit task:
+- Kestra will use: codebase-exploration, security-audit, risk-assessment
+- Patterns: threat-modeling, chain-of-thought
+- Deliverable: Security assessment report
+```
+
+### During Execution Phase
+
+Domain personas invoke skills as needed:
+
+```text
+[Kestra applying security-audit skill]
+Following security-audit.md protocol:
+1. Identify attack surface...
+2. Enumerate vulnerabilities...
+3. Assess impact and likelihood...
+```
+
+### During Evaluation Phase
+
+Evaluators use evaluation skills:
+
+```text
+[Ada applying quality-check skill]
+Reviewing against success criteria using quality-check.md:
+- Criterion 1: Coverage - PASS
+- Criterion 2: Accuracy - NEEDS REVISION
+```

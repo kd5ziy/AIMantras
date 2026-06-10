@@ -191,6 +191,12 @@ Reviewing against success criteria using quality-check.md:
 | **Orchestration Personas** | | |
 | Bernstein (Orchestrator) | task-decomposition, handoff, constraint-gathering | progress-tracking, summarization |
 | Hopper (Planner) | task-decomposition, plan-drafting, constraint-gathering | risk-assessment |
+| Matsushita (CEO) | plan-drafting, risk-assessment, comparative-analysis | constraint-gathering, report-writing, progress-tracking |
+| Schneier (Blue Team) | security-audit, risk-assessment, code-review | compliance-review, codebase-exploration, report-writing |
+| Mitnick (Red Team) | security-audit, code-review, risk-assessment | codebase-exploration, fact-verification, report-writing |
+| Morris (Black Hat) | security-audit, risk-assessment, code-review | codebase-exploration, fact-verification, report-writing |
+| Pennyworth (Assistant) | progress-tracking, task-decomposition, constraint-gathering | plan-drafting, summarization, comparative-analysis |
+| LeHand (Assistant) | progress-tracking, summarization, task-decomposition | plan-drafting, constraint-gathering, document-review |
 | Lovell (Crisis) | task-decomposition, risk-assessment, progress-tracking | handoff, constraint-gathering |
 
 ---

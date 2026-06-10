@@ -139,9 +139,19 @@ ai-personas-and-patterns/
 │   │
 │   └── projects/                # Applied recipes (per domain)
 │
-└── ai-mantras-mcp/              # MCP server implementation
-    ├── src/                     # TypeScript source
-    └── content/                 # Bundled framework content
+├── ai-mantras-mcp/              # MCP server implementation
+│   ├── src/                     # TypeScript source
+│   └── content/                 # Bundled framework content
+│
+└── website/                     # Documentation website (aimantras.org)
+    ├── src/
+    │   ├── content/docs/        # MDX documentation pages
+    │   ├── components/          # Astro components
+    │   ├── pages/               # Custom pages (landing)
+    │   └── styles/              # Custom CSS
+    ├── Dockerfile               # Multi-stage Docker build
+    ├── docker-compose.yml       # Container orchestration
+    └── DOCKER-DEPLOY.md         # Deployment guide
 ```
 
 ---
@@ -434,12 +444,27 @@ Agents should:
 * Comparison tables
 * Troubleshooting flows
 
-## Static Site Generation
+## Website & Documentation (Completed 2026-02-15)
 
-Use MkDocs + Material to:
-* Turn the wiki into a browsable website
-* Auto-generate navigation and search
-* Publish via GitHub Pages
+**Live at:** https://aimantras.org
+
+Built with Astro + Starlight documentation theme:
+* Modern, fast static site
+* Built-in search (Pagefind)
+* Auto-generated navigation from content structure
+* Dark/light theme support
+
+**Deployment Infrastructure:**
+* Docker container (nginx:alpine) for self-hosting
+* Cloudflare Tunnel for secure public access
+* Hosted on local LXC container
+* CI/CD ready (can also deploy via GitHub Pages)
+
+**Key Files:**
+* `website/` — Astro Starlight source
+* `website/Dockerfile` — Multi-stage build
+* `website/docker-compose.yml` — Container orchestration
+* `website/DOCKER-DEPLOY.md` — Deployment guide
 
 ## Multi-Agent Architecture
 
@@ -485,7 +510,7 @@ Plan:
 
 # 12. Next Steps
 
-## Completed (as of 2025-01-16)
+## Completed (as of 2026-02-15)
 - [x] Merge MCP skills branch to master (v1.1.0)
 - [x] Implement multi-agent architecture - MCP tools (v1.3.0)
   - `spawn_agent`, `get_agent_result`, `list_agents` tools
@@ -495,18 +520,28 @@ Plan:
   - 59 unit tests (15 content + 20 tools + 24 multi-agent)
 - [x] Merge feature/bootstrap-session-tool branch to master
 - [x] Update documentation (README, HowToUse, MCP README)
+- [x] Build documentation website with Astro Starlight
+  - Landing page with Four Pillars overview
+  - Full documentation for personas, patterns, skills, principles
+  - Getting started guides (MCP, Claude Command, Manual)
+- [x] Deploy website infrastructure
+  - Docker container with nginx
+  - Cloudflare Tunnel for public access
+  - Live at https://aimantras.org
 
 ## Immediate
 - [ ] Test multi-agent tools with live API keys
 - [ ] Publish MCP server to npm (`@ai-mantras/mcp-server`)
 - [ ] Continue persona voice differentiation
 - [ ] Create remaining placeholder skill files
+- [ ] Merge feature/website branch to master
 
 ## Short-term
 - [ ] Build orchestrator component (Bernstein as real service)
 - [ ] Build evaluation persona workflows and rubrics
 - [ ] Populate `projects/` with applied examples
 - [ ] Add remaining evaluation personas (Clarity, Efficiency, Evaluator-Orchestrator)
+- [ ] Set up GitHub Actions for website auto-deploy on push
 
 ## Long-term
 - [ ] Draft Microsoft Founders Hub application

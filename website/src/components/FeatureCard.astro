@@ -1,0 +1,84 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  question: string;
+  icon: string;
+  pillar: 'personas' | 'patterns' | 'principles' | 'skills';
+  link: string;
+}
+
+const { title, description, question, icon, pillar, link } = Astro.props;
+
+const pillarColors: Record<string, string> = {
+  personas: '#6366f1',
+  patterns: '#8b5cf6',
+  principles: '#ec4899',
+  skills: '#14b8a6'
+};
+
+const borderColor = pillarColors[pillar] || '#6366f1';
+---
+
+<a href={link} class="feature-card" style={`border-left: 4px solid ${borderColor};`}>
+  <div class="card-content">
+    <div class="card-icon">{icon}</div>
+    <div class="card-text">
+      <span class="card-question">{question}</span>
+      <h3 class="card-title">{title}</h3>
+      <p class="card-description">{description}</p>
+    </div>
+  </div>
+</a>
+
+<style>
+  .feature-card {
+    display: block;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.3);
+    border-color: #6366f1;
+    text-decoration: none;
+  }
+  .card-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .card-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .card-text {
+    flex: 1;
+  }
+  .card-question {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #a5b4fc;
+    margin-bottom: 0.25rem;
+  }
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin: 0 0 0.5rem 0;
+  }
+  .card-description {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    margin: 0;
+    line-height: 1.5;
+  }
+</style>

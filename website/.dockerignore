@@ -1,0 +1,33 @@
+# Dependencies
+node_modules
+
+# Build output (will be created in container)
+dist
+.astro
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker files (not needed in build context)
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# Documentation
+*.md
+!README.md
+
+# Logs
+*.log
+npm-debug.log*

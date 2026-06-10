@@ -1,0 +1,128 @@
+---
+title: Criterion-Based Evaluation
+description: Systematic assessment against predefined success criteria.
+---
+
+import { Aside, Badge } from '@astrojs/starlight/components';
+
+<Badge text="Layer 3: Evaluation" variant="caution" />
+
+## Purpose
+
+- Provides systematic framework for evaluating outputs against predefined success criteria
+- Ensures objective, traceable, evidence-based assessment
+- Enables consistent scoring across multiple evaluators
+- Creates audit trail mapping outputs to requirements
+
+## When to Use
+
+- Evaluation personas assessing domain or orchestration outputs
+- Quality assurance reviews requiring measurable judgments
+- Acceptance testing against stated objectives
+- Any assessment that requires traceability to original requirements
+- When evaluators need to provide scores, not just subjective opinions
+
+## Structure / Template
+
+```text
+[LOAD CRITERIA]
+- Import success criteria from orchestration plan or requirements
+- List each criterion with its scoring rubric (if provided)
+- Note any ambiguous criteria that need clarification
+
+[SYSTEMATIC EVALUATION]
+For each criterion:
+  [Criterion #X]: [Description]
+
+  [Evidence Review]
+  - What evidence in the output addresses this criterion?
+  - Direct quotes, references, or specific elements
+
+  [Assessment]
+  - Does it meet, partially meet, or not meet the criterion?
+  - Scoring (if rubric provided): X/Y points
+  - Justification with specific reasoning
+
+  [Gaps Identified]
+  - What's missing or incomplete?
+  - What would be needed to fully satisfy this criterion?
+
+[OVERALL EVALUATION]
+- Summary score or rating (Pass/Fail, X/10, or per rubric)
+- Criteria met: X of Y total
+- Critical failures vs. minor gaps
+- Overall recommendation (Approve / Revise / Reject)
+
+[TRACEABILITY MATRIX]
+- Map outputs back to original objectives
+- Identify orphaned outputs (not tied to any criterion)
+- Identify unaddressed criteria
+
+[ACTIONABLE FEEDBACK]
+- Prioritized list of gaps to address
+- Specific, concrete improvement recommendations
+- Do NOT prescribe how to fix (domain persona's job)
+- Focus on WHAT is missing, not HOW to add it
+```
+
+## Example
+
+### Technical (code review against requirements)
+
+```text
+[LOAD CRITERIA]
+[C1] API must support authentication via OAuth2
+[C2] Response time <200ms for 95th percentile
+[C3] All endpoints documented with OpenAPI spec
+[C4] Unit test coverage ≥80%
+
+[SYSTEMATIC EVALUATION]
+
+[C1]: OAuth2 authentication
+  Evidence: auth.py implements OAuth2 flow, token validation present
+  Assessment: ✅ MEETS (10/10)
+  Gaps: None
+
+[C2]: Response time <200ms
+  Evidence: Load test results show 95th percentile = 180ms
+  Assessment: ✅ MEETS (10/10)
+  Gaps: None
+
+[C3]: OpenAPI documentation
+  Evidence: openapi.yaml exists but missing 3 of 12 endpoints
+  Assessment: ⚠️ PARTIAL (6/10)
+  Gaps: POST /users, DELETE /sessions, GET /admin/logs undocumented
+
+[C4]: Unit test coverage
+  Evidence: Coverage report shows 72%
+  Assessment: ❌ NOT MET (7/10)
+  Gaps: 8% below requirement, missing tests for error handling paths
+
+[OVERALL EVALUATION]
+Score: 33/40 (82.5%)
+Criteria met: 2 of 4 fully, 2 partially
+Recommendation: REVISE - Address C3 and C4 before approval
+
+[ACTIONABLE FEEDBACK]
+Priority 1: Increase unit test coverage to ≥80% (currently 72%)
+Priority 2: Document 3 missing API endpoints in OpenAPI spec
+```
+
+## Combination Guidance
+
+| Pair With | When |
+|-----------|------|
+| [Rule-Based Reasoning](/patterns/rule-based-reasoning/) | Criteria are stated as explicit rules |
+| [Recursive Self-Eval](/patterns/recursive-self-eval/) | Evaluators check their own assessments |
+| [Chain of Thought](/patterns/chain-of-thought/) | Multi-stage evaluation reasoning |
+| [Meta Rules](/patterns/meta-rules/) | Set evaluation tone (strict vs. generous) |
+
+## Failure Modes to Avoid
+
+<Aside type="caution" title="Don't do these">
+- Vague judgments ("good" or "needs work") without evidence or scoring
+- Scope drift - evaluating against unstated criteria or personal preferences
+- Prescriptive fixes - telling HOW to fix instead of WHAT is missing
+- Rubber stamping - approving without genuine assessment
+- Missing evidence - failing to cite specific elements from the output
+</Aside>

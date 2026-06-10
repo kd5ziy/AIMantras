@@ -1,0 +1,131 @@
+---
+title: Contributing
+description: Learn how to contribute to the AI Mantras framework.
+---
+
+import { Aside, Steps, LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+Thank you for your interest in contributing to AI Mantras. This framework is built collaboratively with AI and human contributors working together. Your contributions help expand the cognitive toolkit available for AI collaboration.
+
+## Quick Links
+
+<CardGrid>
+  <LinkCard
+    title="Creating Personas"
+    description="Step-by-step guide to adding new domain experts, orchestrators, or evaluators."
+    href="https://github.com/kd5ziy/AIMantras/blob/master/developer-docs/creating-personas.md"
+  />
+  <LinkCard
+    title="Creating Patterns"
+    description="How to add new reasoning structures and thinking templates."
+    href="https://github.com/kd5ziy/AIMantras/blob/master/developer-docs/creating-patterns.md"
+  />
+  <LinkCard
+    title="Creating Skills"
+    description="How to add actionable capabilities for personas."
+    href="https://github.com/kd5ziy/AIMantras/blob/master/developer-docs/creating-skills.md"
+  />
+  <LinkCard
+    title="Extending MCP Server"
+    description="Technical guide for MCP modifications and enhancements."
+    href="https://github.com/kd5ziy/AIMantras/blob/master/developer-docs/extending-mcp-server.md"
+  />
+</CardGrid>
+
+## Getting Started
+
+<Steps>
+1. **Read the philosophy** - Understand how we build AI Mantras with AI
+2. **Review existing components** - Study 2-3 examples in the category you want to contribute to
+3. **Choose your contribution** - See "What We're Looking For" below
+4. **Follow the guide** - Use the appropriate developer documentation
+</Steps>
+
+## Branch Naming
+
+Create a branch for your contribution:
+
+```bash
+git checkout -b <type>/<description>
+```
+
+| Type | When to Use | Example |
+|------|-------------|---------|
+| `feature/` | New personas, patterns, or skills | `feature/new-persona-judge` |
+| `fix/` | Bug fixes or corrections | `fix/clara-typo` |
+| `docs/` | Documentation improvements | `docs/improve-readme` |
+| `refactor/` | Code restructuring | `refactor/mcp-tools` |
+
+## What We're Looking For
+
+### High Priority
+
+- **New personas** - Domain experts, orchestrators, or evaluators that fill gaps
+- **New patterns** - Reasoning structures that complement existing ones
+- **New skills** - Capabilities that expand what personas can do
+- **MCP improvements** - Tools, resources, or performance enhancements
+
+### Always Welcome
+
+- **Bug fixes** - Corrections to existing content
+- **Documentation** - Clarity and completeness improvements
+- **Examples** - Real-world usage examples
+- **Testing** - Validation scenarios and test coverage
+
+## Pull Request Process
+
+<Steps>
+1. **Create your branch** using the naming convention above
+2. **Make your changes** following the appropriate guide
+3. **Update related files** (manifest, indexes, etc.)
+4. **Test your changes**
+5. **Push and create PR** with a clear description
+</Steps>
+
+### PR Description Template
+
+```markdown
+## Summary
+[Brief description of what this PR adds/changes]
+
+## Type
+- [ ] New persona
+- [ ] New pattern
+- [ ] New skill
+- [ ] MCP enhancement
+- [ ] Bug fix
+- [ ] Documentation
+
+## Checklist
+- [ ] Followed the relevant creation guide
+- [ ] Updated manifest (if applicable)
+- [ ] Updated index files (if applicable)
+- [ ] Tested changes
+- [ ] All existing tests pass
+
+## Related Issues
+[Link any related issues]
+```
+
+## Code of Conduct
+
+We maintain a respectful, collaborative environment:
+
+- **Be constructive** - Feedback should help improve contributions
+- **Be inclusive** - Welcome contributors of all backgrounds
+- **Be patient** - Not everyone has the same context or experience
+- **Be honest** - If something doesn't work, say so kindly
+
+<Aside type="tip" title="Guiding Principles Apply">
+The guiding principles in the framework apply to our community interactions as well as to the framework itself.
+</Aside>
+
+## Questions?
+
+- **GitHub Issues** - For bugs, feature requests, or questions
+- **Pull Request Comments** - For contribution-specific discussions
+- **Email** - [kd5ziy@gmail.com](mailto:kd5ziy@gmail.com) for other inquiries
+
+## License
+
+By contributing, you agree that your contributions will be licensed under the [Mozilla Public License 2.0](https://github.com/kd5ziy/AIMantras/blob/master/LICENSE).

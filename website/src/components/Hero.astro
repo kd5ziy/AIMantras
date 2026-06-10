@@ -1,0 +1,139 @@
+---
+interface Props {
+  title: string;
+  tagline: string;
+  subtitle?: string;
+}
+
+const { title, tagline, subtitle } = Astro.props;
+---
+
+<section class="hero-section">
+  <div class="hero-content">
+    <img
+      src="/logos/AIMantras-ChatBubble.jpeg"
+      alt="AI Mantras"
+      class="hero-logo"
+    />
+    <h1 class="hero-title">{title}</h1>
+    <p class="hero-tagline">
+      {tagline}
+    </p>
+    {subtitle && (
+      <p class="hero-subtitle">
+        {subtitle}
+      </p>
+    )}
+    <div class="hero-buttons">
+      <a href="/getting-started/quick-start/" class="btn-primary">
+        Get Started
+      </a>
+      <a href="https://github.com/kd5ziy/AIMantras" class="btn-secondary" target="_blank" rel="noopener">
+        View on GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
+    color: white;
+    padding: 5rem 1.5rem;
+  }
+  .hero-content {
+    max-width: 64rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .hero-logo {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: white;
+  }
+  .hero-tagline {
+    font-size: 1.5rem;
+    color: #c7d2fe;
+    margin-bottom: 1rem;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-subtitle {
+    font-size: 1.125rem;
+    color: #a5b4fc;
+    margin-bottom: 2rem;
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .btn-primary {
+    background: #6366f1;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+  }
+  .btn-primary:hover {
+    background: #4f46e5;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+    text-decoration: none;
+    color: white;
+  }
+  .btn-primary:visited {
+    color: white;
+  }
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
+  .btn-secondary:hover {
+    background: white;
+    color: #1e1b4b;
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+  .btn-secondary:visited {
+    color: white;
+  }
+  .btn-secondary:visited:hover {
+    color: #1e1b4b;
+  }
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    .hero-tagline {
+      font-size: 1.25rem;
+    }
+  }
+</style>
