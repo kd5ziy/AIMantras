@@ -9,3 +9,7 @@ certs/
 
 # Website error screenshots
 website-errors/
+
+# Python
+__pycache__/
+*.pyc
