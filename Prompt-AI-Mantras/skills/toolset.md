@@ -53,6 +53,7 @@ Content and artifact creation capabilities.
 | Diagram Creation | `creation/diagram-creation.md` | Create visual diagrams and flowcharts |
 | Plan Drafting | `creation/plan-drafting.md` | Create project plans and roadmaps |
 | Report Writing | `creation/report-writing.md` | Write analytical reports |
+| Persona Creation | `creation/persona-creation.md` | Draft and register a new persona when a capability gap is found (human approves publication) |
 
 ### Evaluation Skills
 Review, assessment, and quality assurance capabilities.
@@ -189,7 +190,7 @@ Reviewing against success criteria using quality-check.md:
 | Drucker (Goals) | quality-check, progress-tracking | comparative-analysis |
 | Rickover (Safety) | security-audit, risk-assessment, compliance-review | fact-verification |
 | **Orchestration Personas** | | |
-| Bernstein (Orchestrator) | task-decomposition, handoff, constraint-gathering | progress-tracking, summarization |
+| Bernstein (Orchestrator) | task-decomposition, handoff, constraint-gathering | progress-tracking, summarization, persona-creation |
 | Hopper (Planner) | task-decomposition, plan-drafting, constraint-gathering | risk-assessment |
 | Matsushita (CEO) | plan-drafting, risk-assessment, comparative-analysis | constraint-gathering, report-writing, progress-tracking |
 | Schneier (Blue Team) | security-audit, risk-assessment, code-review | compliance-review, codebase-exploration, report-writing |
@@ -205,4 +206,5 @@ Reviewing against success criteria using quality-check.md:
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 1.1.0 | 2026-08-26 | Added persona-creation skill (agent library growth with human approval gate) |
 | 1.0.0 | 2025-01-09 | Initial skills framework |

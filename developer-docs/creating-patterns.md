@@ -22,7 +22,7 @@ A good pattern:
 
 Before creating a pattern:
 
-1. **Review existing patterns** - All 9 patterns in `Prompt-AI-Mantras/patterns/`
+1. **Review existing patterns** - All 11 patterns in `Prompt-AI-Mantras/patterns/`
 2. **Understand the layers** - Foundation (L1), Thinking (L2), Evaluation (L3)
 3. **Check persona needs** - What reasoning gap are personas experiencing?
 4. **Read guiding principles** - Patterns must align with framework values

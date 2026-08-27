@@ -161,6 +161,7 @@ Patterns are reusable thinking structures. Your persona file recommends which pa
 **Layer 1 (Foundational):**
 - `planning-phase.md` – Structure problem definition before execution
 - `orchestration.md` – Coordinate multi-persona workflows
+- `graph-orchestration.md` – Persona workflows as graphs: routing, fan-out/fan-in, joins
 - `recursive-self-eval.md` – Critique and refine your own outputs
 - `meta-rules.md` – Set tone, verbosity, caution level across personas
 
@@ -168,6 +169,7 @@ Patterns are reusable thinking structures. Your persona file recommends which pa
 - `chain-of-thought.md` – Show reasoning stages explicitly
 - `rule-based-reasoning.md` – Apply explicit rules with references
 - `guardrail-creative.md` – Balance creativity with hard constraints
+- `agentic-loop.md` – Iterate plan → act → observe → refine with explicit exit criteria
 
 ### How to Apply a Pattern
 

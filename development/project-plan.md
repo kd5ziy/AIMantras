@@ -120,7 +120,7 @@ ai-personas-and-patterns/
 │   │   ├── domain/              # Clara, Kestra, Watson, Goeth, Franklin
 │   │   └── evaluation/          # Ada, Drucker, Rickover
 │   │
-│   ├── patterns/                # HOW - 9 reasoning patterns
+│   ├── patterns/                # HOW - 11 reasoning patterns
 │   │   ├── (Layer 1)            # planning-phase, orchestration, recursive-self-eval, meta-rules
 │   │   ├── (Layer 2)            # chain-of-thought, rule-based-reasoning, guardrail-creative
 │   │   └── (Layer 3)            # criterion-based-evaluation, threat-modeling
@@ -128,7 +128,7 @@ ai-personas-and-patterns/
 │   ├── principles/              # WHY - Guiding values
 │   │   └── guiding-principles.md
 │   │
-│   ├── skills/                  # WHAT - 24 actionable capabilities
+│   ├── skills/                  # WHAT - 25 actionable capabilities
 │   │   ├── toolset.md           # Master index
 │   │   ├── research/
 │   │   ├── analysis/
