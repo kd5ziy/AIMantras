@@ -13,9 +13,9 @@ claude --resume AIMantrasDev
 
 AI Mantras is a cognitive framework for AI collaboration built on Four Pillars:
 - **Personas** (WHO) - 17 specialized identities
-- **Patterns** (HOW) - 9 reasoning structures
+- **Patterns** (HOW) - 11 reasoning structures
 - **Principles** (WHY) - Guiding values
-- **Skills** (WHAT) - 24 actionable capabilities
+- **Skills** (WHAT) - 25 actionable capabilities
 
 ## Key Locations
 

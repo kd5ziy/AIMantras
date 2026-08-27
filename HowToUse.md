@@ -226,6 +226,26 @@ My request: Analyze whether I should increase my position in tech ETFs given cur
 
 ---
 
+## Option 4: Standalone Python Agent (Run a Persona as an Agent)
+
+Any persona can run as its own standalone agent using the reference template in `templates/python-agent/`:
+
+```bash
+cd templates/python-agent
+
+# No dependencies or API key — inspect the assembled system prompt:
+python agent.py --persona ../../Prompt-AI-Mantras/personas/domain/Clara-Financial-Analyst.md --dry-run
+
+# Live agent (Anthropic or OpenAI):
+pip install -e ".[anthropic]"
+export ANTHROPIC_API_KEY=your-key
+python agent.py --persona ../../Prompt-AI-Mantras/personas/domain/Clara-Financial-Analyst.md --provider anthropic
+```
+
+The template loads the persona as the system prompt (with optional patterns and principles), talks to any provider through a small adapter interface, and includes a minimal tool-use loop to extend. See the [Building Agents guide](developer-docs/building-agents.md) for the full picture, including framework-free distribution and multi-agent orchestration.
+
+---
+
 ## Choosing the Right Method
 
 | Situation | Recommended Method |
@@ -236,6 +256,7 @@ My request: Analyze whether I should increase my position in tech ETFs given cur
 | Using local LLMs (Ollama, LM Studio) | Manual Loading |
 | Testing or evaluating the framework | Manual Loading |
 | Contributing to development | MCP Server (for testing) |
+| Running a persona as its own agent | Standalone Python Agent |
 
 ---
 

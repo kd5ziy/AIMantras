@@ -1,6 +1,6 @@
 # AI Mantras Framework Manifest
 # Purpose: Structured index for AI agents to navigate the framework
-# Last Updated: 2025-01-09
+# Last Updated: 2026-08-26
 
 metadata:
   name: AI Mantras
@@ -115,8 +115,10 @@ personas:
         style: Collaborative maestro with calm authority
         recommended_patterns:
           - orchestration
+          - graph-orchestration
           - planning-phase
           - meta-rules
+          - agentic-loop
 
       - name: Hopper-Project-Planner
         path: Prompt-AI-Mantras/personas/orchestration/Hopper-Project-Planner.md
@@ -495,6 +497,15 @@ patterns:
           - Traceability across phases is important
           - CLI agents need deterministic sections
 
+      - name: graph-orchestration
+        path: Prompt-AI-Mantras/patterns/graph-orchestration.md
+        purpose: Persona workflows as graphs with routing, fan-out/fan-in, and joins
+        when_to_use:
+          - Branches can run independently and merge
+          - Next persona depends on earlier results (conditional routing)
+          - More than three personas where a linear pipeline forces false ordering
+          - Handing a workflow to an orchestration runtime
+
       - name: recursive-self-eval
         path: Prompt-AI-Mantras/patterns/recursive-self-eval.md
         purpose: Structured critique and refinement loops
@@ -543,6 +554,15 @@ patterns:
           - Storytelling, educational content, UX copy
           - Creative tasks with topic/tone/structure requirements
           - Expressive personas needing boundaries
+
+      - name: agentic-loop
+        path: Prompt-AI-Mantras/patterns/agentic-loop.md
+        purpose: Iterative plan -> act -> observe -> refine cycles with explicit exit criteria
+        when_to_use:
+          - Acting on an environment and reacting to results (tests, tools, data)
+          - Output improves through critique cycles (evaluator-optimizer)
+          - Single-pass answers unlikely to be correct
+          - Autonomous agents working toward a goal across steps
 
   layer3_evaluation:
     description: Specialized assessment patterns
@@ -640,6 +660,10 @@ skills:
       - name: report-writing
         path: Prompt-AI-Mantras/skills/creation/report-writing.md
         purpose: Write analytical reports
+
+      - name: persona-creation
+        path: Prompt-AI-Mantras/skills/creation/persona-creation.md
+        purpose: Draft and register a new persona for a capability gap; human approves publication
 
   evaluation:
     description: Review, assessment, and quality assurance capabilities
@@ -884,9 +908,9 @@ project_structure:
     - path: Prompt-AI-Mantras/personas/evaluation
       contents: 3 evaluation personas
     - path: Prompt-AI-Mantras/patterns
-      contents: 9 patterns (4 Layer1 + 3 Layer2 + 2 Layer3)
+      contents: 11 patterns (5 Layer1 + 4 Layer2 + 2 Layer3)
     - path: Prompt-AI-Mantras/skills
-      contents: 24 skills across 6 categories (research, analysis, creation, evaluation, orchestration, utility)
+      contents: 25 skills across 6 categories (research, analysis, creation, evaluation, orchestration, utility)
     - path: Prompt-AI-Mantras/projects
       contents: Applied project examples
 
@@ -904,14 +928,14 @@ statistics:
   orchestration_personas: 3
   domain_personas: 11
   evaluation_personas: 3
-  total_patterns: 9
-  layer1_patterns: 4
-  layer2_patterns: 3
+  total_patterns: 11
+  layer1_patterns: 5
+  layer2_patterns: 4
   layer3_patterns: 2
-  total_skills: 24
+  total_skills: 25
   research_skills: 4
   analysis_skills: 5
-  creation_skills: 5
+  creation_skills: 6
   evaluation_skills: 4
   orchestration_skills: 5
   utility_skills: 1

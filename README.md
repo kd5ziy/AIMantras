@@ -62,12 +62,12 @@ Prompt-AI-Mantras/
 │   ├── orchestration/     # Plan & coordinate (Bernstein, Hopper, Lovell)
 │   ├── domain/            # Execute work (Clara, Kestra, Watson, Goeth, Franklin)
 │   └── evaluation/        # Review & approve (Ada, Drucker, Rickover)
-├── patterns/              # HOW - 9 reasoning patterns
+├── patterns/              # HOW - 11 reasoning patterns
 │   ├── Layer 1            # Foundational (planning, orchestration, self-eval, meta-rules)
 │   ├── Layer 2            # Thinking (chain-of-thought, rule-based, guardrail-creative)
 │   └── Layer 3            # Evaluation (criterion-based, threat-modeling)
 ├── principles/            # WHY - Guiding values (wisdom, justice, courage, temperance)
-├── skills/                # WHAT - 24 actionable capabilities
+├── skills/                # WHAT - 25 actionable capabilities
 │   ├── research/          # Information gathering
 │   ├── analysis/          # Analytical capabilities
 │   ├── creation/          # Content generation
@@ -141,6 +141,15 @@ AI Mantras now supports **true multi-agent execution** where each persona runs a
 - **Separation of Powers**: Enforced at the architecture level, not just prompting
 
 Enable with `MANTRAS_MULTI_AGENT_ENABLED=true`. See [HowToUse.md](HowToUse.md) for setup details.
+
+### Build Agents from Personas
+The framework's markdown organization doubles as an **agent-definition format**: a persona file is a complete agent identity (system prompt), patterns are its reasoning strategies, and skills describe its capabilities. Three ways to use this:
+
+- **Python agent template** (`templates/python-agent/`) — copy it, point it at any persona `.md`, and run that persona as a standalone chat agent with tool use. Provider-neutral (Anthropic, OpenAI, or extend the adapter).
+- **Framework-free distribution** (`standalone/`) — package a persona for an existing agent host (e.g., opencode) with no framework dependency.
+- **Growing the library** — orchestrators can draft missing personas mid-task using the [persona-creation skill](Prompt-AI-Mantras/skills/creation/persona-creation.md), staging them on a feature branch for human-approved publication.
+
+See the [Building Agents guide](developer-docs/building-agents.md). New patterns `agentic-loop` and `graph-orchestration` capture the reasoning structures behind agent runtimes.
 
 ## Next Steps
 - Dedicated orchestration service with queue-based communication
