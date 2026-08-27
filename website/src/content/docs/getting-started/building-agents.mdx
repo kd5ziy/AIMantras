@@ -1,0 +1,76 @@
+---
+title: Building Agents
+description: Turn any AI Mantras persona into a runnable agent — locally, in an agent host, or via the MCP server.
+---
+
+import { Card, CardGrid, Steps } from '@astrojs/starlight/components';
+
+The framework's markdown organization doubles as an **agent-definition format**. A persona file is a complete agent identity, patterns are its reasoning strategies, skills describe its capabilities, and the guiding principles form its alignment layer.
+
+| Framework component | Agent role |
+|---|---|
+| **Persona** | The agent's identity — loaded verbatim as the system prompt |
+| **Patterns** | Reasoning strategies appended to the system prompt |
+| **Skills** | Capability contracts — the specification for the agent's tools |
+| **Principles** | The alignment layer every agent inherits |
+| **Manifest** | The agent registry — what exists, where it lives, when to use it |
+
+A persona file needs **no modification** to become an agent: its Purpose, Rules & Constraints, and Output Expectations sections are already a system prompt.
+
+## Three Ways to Run a Persona as an Agent
+
+<CardGrid>
+  <Card title="Python Agent Template" icon="seti:python">
+    Copy `templates/python-agent/` from the repository, point it at any persona `.md`, and chat with that persona — provider-neutral (Anthropic, OpenAI, or add your own adapter), with a minimal tool-use loop to extend.
+  </Card>
+  <Card title="Framework-Free Distribution" icon="open-book">
+    Package a persona for an agent host you already use (opencode, Claude Code, custom harnesses): convert it to the host's agent-file format and install with a file copy. See `standalone/` in the repository.
+  </Card>
+  <Card title="MCP Multi-Agent Mode" icon="rocket">
+    With `MANTRAS_MULTI_AGENT_ENABLED=true`, the MCP server's `spawn_agent` tool runs any persona as an isolated one-shot agent from within a Claude Code session.
+  </Card>
+</CardGrid>
+
+## Quick Start with the Python Template
+
+<Steps>
+
+1. Clone the repository and enter the template:
+
+   ```bash
+   git clone https://github.com/kd5ziy/AIMantras.git
+   cd AIMantras/templates/python-agent
+   ```
+
+2. Inspect the assembled system prompt — no dependencies or API key needed:
+
+   ```bash
+   python agent.py --persona ../../Prompt-AI-Mantras/personas/domain/Kestra-Systems-Architect.md --dry-run
+   ```
+
+3. Install a provider and run the agent live:
+
+   ```bash
+   pip install -e ".[anthropic]"
+   export ANTHROPIC_API_KEY=your-key
+   python agent.py \
+     --persona ../../Prompt-AI-Mantras/personas/domain/Kestra-Systems-Architect.md \
+     --patterns ../../Prompt-AI-Mantras/patterns/agentic-loop.md \
+     --principles ../../Prompt-AI-Mantras/principles/guiding-principles.md \
+     --provider anthropic
+   ```
+
+</Steps>
+
+## Orchestrating Multiple Agents
+
+Two patterns capture the reasoning structures behind agent runtimes:
+
+- **[Agentic Loop](/patterns/agentic-loop/)** — how a single agent iterates: plan → act → observe → refine with explicit exit criteria and budgets.
+- **[Graph Orchestration](/patterns/graph-orchestration/)** — how multiple persona-agents compose: conditional routing, parallel fan-out/fan-in, and join nodes.
+
+The framework intentionally ships no orchestration runtime — the template is one persona, one loop. Multi-agent execution (queues, handoffs, persistence, model routing) belongs to a dedicated orchestration engine that consumes this framework as a dependency.
+
+## Growing the Persona Library
+
+Orchestrators can close capability gaps they discover mid-task using the **Persona Creation** skill (see [Creation Skills](/skills/creation/)): draft the missing persona, register it, stage it on a feature branch — then **stop**. A human reviews the diff and decides whether it is pushed and merged. Agents propose; humans curate.
