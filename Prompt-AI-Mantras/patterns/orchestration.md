@@ -52,6 +52,7 @@ Persona: QA Reviewer with Meta-Rules. Check clarity, style alignment, remove hyp
 - Start with `patterns/planning-phase.md` to feed the planner section.
 - Workers typically use specialized patterns (chain-of-thought, guardrail, etc.).
 - QA often layers `patterns/recursive-self-eval.md` for stronger critique.
+- For branching, parallel fan-out, or conditional routing beyond this linear pipeline, use `patterns/graph-orchestration.md`.
 
 ## Failure Modes
 - Missing explicit persona assignments, leading to AI default behavior.
