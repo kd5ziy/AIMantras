@@ -1,0 +1,87 @@
+---
+title: Graph Orchestration
+description: Persona workflows as graphs — conditional routing, parallel fan-out/fan-in, and join nodes.
+---
+
+import { Aside, Badge } from '@astrojs/starlight/components';
+
+<Badge text="Layer 1: Foundational" variant="tip" />
+
+## Purpose
+
+- Generalizes the linear Planner → Worker → QA pipeline ([Orchestration](/patterns/orchestration/)) into a graph: personas are nodes, handoffs are edges
+- Supports conditional routing (which persona runs next depends on results), parallel fan-out/fan-in, and explicit join nodes that synthesize branch outputs
+- Gives multi-agent workflows a deterministic, auditable shape that an orchestrator (human, LLM, or runtime engine) can execute
+
+## When to Use
+
+- Work decomposes into branches that can run independently and merge (research + analysis + review)
+- The next step depends on an earlier result (route to Blue Team vs Red Team based on findings)
+- More than three personas are involved and a linear pipeline would force artificial ordering
+- Handing a workflow to a runtime (e.g., an orchestration engine) that executes persona graphs
+
+## Structure / Template
+
+```text
+[GRAPH]
+- Nodes: persona + task + expected output for each.
+- Edges: for each node, where its output goes next.
+- Conditional edges: condition -> target node (else-branch required).
+- Entry node and terminal node(s) declared explicitly.
+
+[NODE SPEC] (one per node)
+- Node: <id>
+- Persona: <name> (+ pattern to apply)
+- Inputs: which nodes' outputs it receives
+- Output: deliverable + handoff format (see manifest handoff_template)
+
+[FAN-OUT / FAN-IN]
+- Fan-out: one node's output feeds N independent nodes (run in parallel).
+- Fan-in (join): a synthesis node that waits for all branches, reconciles
+  conflicts, and produces one merged deliverable.
+
+[EXECUTION LOG]
+- Record node order actually taken, conditions evaluated, and branch results
+  so the run is traceable after the fact.
+```
+
+## Examples
+
+### Technical (security assessment)
+
+```text
+Entry: plan (Hopper) -> fan-out:
+  n1: Schneier (Blue Team) - defensive review
+  n2: Mitnick (Red Team) - attack-surface probe
+Join: synth (Bernstein) - merge findings, dedupe, rank
+Conditional edge: if critical finding -> n3: Rickover (Safety) deep dive -> QA
+Else -> QA: Ada - final report review. Terminal: approved report.
+```
+
+### Creative (product launch content)
+
+```text
+Entry: brief (Hopper) -> fan-out:
+  n1: Goeth - narrative draft   n2: Clara - pricing one-pager
+Join: Bernstein - assemble launch kit, resolve tone conflicts
+-> QA: Ada with criterion-based-evaluation. Terminal: launch kit.
+```
+
+## Combination Guidance
+
+| Pair With | When |
+|-----------|------|
+| [Planning Phase](/patterns/planning-phase/) | Define the graph itself at the entry node before executing it |
+| [Agentic Loop](/patterns/agentic-loop/) | Worker nodes iterate internally; the graph sequences personas |
+| [Orchestration](/patterns/orchestration/) | Keep the linear pipeline for simple three-stage work — a graph is overhead when a pipeline fits |
+| [Criterion-Based Evaluation](/patterns/criterion-based-evaluation/) | Join nodes deciding between conflicting branch outputs |
+
+## Failure Modes to Avoid
+
+<Aside type="caution" title="Don't do these">
+- Graphs with cycles and no exit condition — loops belong inside a node (agentic-loop), not in the topology
+- Fan-out without a join: parallel branches produce outputs nobody reconciles
+- Conditional edges with no else-branch, stranding the workflow when the condition fails
+- Over-decomposition: ten nodes doing what three personas could, multiplying handoff loss
+- Branch personas silently seeing each other's context, breaking isolation and biasing the join
+</Aside>

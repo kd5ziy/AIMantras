@@ -9,6 +9,7 @@ Welcome to the AI Mantras developer documentation. This folder contains guides f
 | [Creating Personas](creating-personas.md) | Step-by-step guide to creating new personas | Primary - start here |
 | [Creating Patterns](creating-patterns.md) | How to create new reasoning patterns | Pattern developers |
 | [Creating Skills](creating-skills.md) | How to add new actionable skills | Skill developers |
+| [Building Agents](building-agents.md) | Turn personas into runnable agents | Agent builders |
 | [AI Collaborative Development](ai-collaborative-development.md) | Philosophy of building AI Mantras with AI | All contributors |
 | [Extending the MCP Server](extending-mcp-server.md) | Technical guide for MCP modifications | Server developers |
 | [Testing Guide](testing-guide.md) | How to validate new components | All contributors |
@@ -23,6 +24,10 @@ Welcome to the AI Mantras developer documentation. This folder contains guides f
 **For MCP server contributors:**
 1. [Extending the MCP Server](extending-mcp-server.md)
 2. [Testing Guide](testing-guide.md)
+
+**For agent builders:**
+1. [Building Agents](building-agents.md) - Personas as agent definitions
+2. [Creating Personas](creating-personas.md) - Authoring the identity itself
 
 ## Related Resources
 

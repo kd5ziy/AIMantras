@@ -36,13 +36,13 @@ ai-personas-and-patterns/
 │    │   ├── domain/            ├── Adding personas? Update manifest
 │    │   └── evaluation/        │
 │    │
-│    ├── patterns/              ← HOW (9 patterns)
+│    ├── patterns/              ← HOW (11 patterns)
 │    │   └── *.md               │
 │    │
 │    ├── principles/            ← WHY (guiding values)
 │    │   └── guiding-principles.md
 │    │
-│    └── skills/                ← WHAT (24 skills)
+│    └── skills/                ← WHAT (25 skills)
 │        ├── toolset.md         ← Master index
 │        ├── research/          │
 │        ├── analysis/          │
@@ -248,6 +248,26 @@ When modifying framework content that affects MCP:
 
 ## Recent Sessions
 
+### Session 2026-08-26: Agent-Building Support
+**Accomplishments:**
+- **Python Agent Template** (branch: `feature/agent-building`)
+  - `templates/python-agent/` — copyable, provider-neutral reference agent
+  - `LLMAdapter` protocol with Anthropic/OpenAI/mock adapters, zero base deps
+  - Loads any persona .md as system prompt (mirrors MCP prompt-builder order)
+  - `--dry-run` mode works with no SDK or API key
+- **Pattern Library Modernization:**
+  - Audit vs. current agentic practice: `development/pattern-audit-2026-08.md`
+  - New: `patterns/agentic-loop.md` (Layer 2) and `patterns/graph-orchestration.md` (Layer 1)
+  - Pattern count 9 → 11 (manifest, docs, website all updated)
+- **New Skill: persona-creation** (`skills/creation/persona-creation.md`)
+  - Orchestrators draft missing personas mid-task, stage on `feature/persona-<name>` branch
+  - Hard human-approval gate before any commit/push
+  - Skill count 24 → 25; toolset v1.1.0; Bernstein updated (skill + patterns)
+- **Documentation:** `developer-docs/building-agents.md`, README "Build Agents from Personas" section, HowToUse Option 4, website Building Agents page + 2 pattern pages
+- **MCP:** no source changes needed (content resolves via manifest); test-content.js +3 assertions; version 1.3.0 → 1.3.1
+
+**Known Gap (pre-existing, not addressed):** manifest/toolset advertise 25 skills but only 12 skill files exist on disk — 13 advertised skills (document-review, data-analysis, plan-drafting, etc.) have no files yet.
+
 ### Session 2026-02-15: Documentation Website & Docker Deployment
 **Accomplishments:**
 - **Built Documentation Website** (branch: `feature/website`)
@@ -369,7 +389,7 @@ When modifying framework content that affects MCP:
 **Accomplishments:**
 - **Created Skills Framework** - New capability layer for personas (Fourth Pillar)
   - `skills/toolset.md` - Master index of all skills
-  - 24 skills across 6 categories (research, analysis, creation, evaluation, orchestration, utility)
+  - 25 skills across 6 categories (research, analysis, creation, evaluation, orchestration, utility)
   - 12 fully implemented skill files with consistent template
   - Each persona updated with "Available Skills" section (primary + secondary)
 - **Updated Manifest** - `ai-mantras-manifest.yaml` v0.3.0 with full skills section

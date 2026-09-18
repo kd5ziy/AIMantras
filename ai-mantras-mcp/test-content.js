@@ -12,6 +12,7 @@ import {
   loadManifest,
   loadPersona,
   loadPattern,
+  loadSkill,
   getAllPersonas,
   getAllPatterns,
 } from './dist/utils/content-loader.js';
@@ -123,6 +124,25 @@ test('Load all patterns without errors', () => {
     }
   }
   assert(count >= 7, `Should load at least 7 patterns, got ${count}`);
+});
+
+test('Load agentic-loop pattern', () => {
+  const content = loadPattern('agentic-loop');
+  assert(content.length > 100, 'Should have substantial content');
+});
+
+test('Load graph-orchestration pattern', () => {
+  const content = loadPattern('graph-orchestration');
+  assert(content.length > 100, 'Should have substantial content');
+});
+
+// Skill Loading Tests
+console.log('\n--- Skill Loading ---');
+
+test('Load persona-creation skill', () => {
+  const content = loadSkill('persona-creation');
+  assert(content.length > 100, 'Should have substantial content');
+  assert(content.includes('human approval'), 'Should include the human approval gate');
 });
 
 // Persona Matcher Tests

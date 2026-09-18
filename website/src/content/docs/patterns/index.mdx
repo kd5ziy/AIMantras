@@ -1,6 +1,6 @@
 ---
 title: Patterns Overview
-description: Learn the 9 thinking patterns that structure AI reasoning in the AI Mantras framework.
+description: Learn the 11 thinking patterns that structure AI reasoning in the AI Mantras framework.
 ---
 
 import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
@@ -9,18 +9,18 @@ Patterns are the **HOW** of AI Mantras - reusable reasoning structures and think
 
 ## Pattern Layers
 
-AI Mantras includes 9 patterns organized into three layers based on their function:
+AI Mantras includes 11 patterns organized into three layers based on their function:
 
 <CardGrid>
   <Card title="Layer 1: Foundational" icon="setting">
     **Core workflow patterns**
 
-    Planning, orchestration, self-evaluation, and meta-rules that govern all work.
+    Planning, orchestration (linear and graph), self-evaluation, and meta-rules that govern all work.
   </Card>
   <Card title="Layer 2: Thinking" icon="puzzle">
     **Reasoning patterns**
 
-    Chain-of-thought, rule-based reasoning, and creative guardrails for execution.
+    Chain-of-thought, rule-based reasoning, agentic loops, and creative guardrails for execution.
   </Card>
   <Card title="Layer 3: Evaluation" icon="approve-check">
     **Assessment patterns**
@@ -43,6 +43,11 @@ These patterns establish the core workflow and communication structure.
     title="Orchestration"
     description="Coordinate planner, worker(s), and QA personas in a predictable pipeline."
     href="/patterns/orchestration/"
+  />
+  <LinkCard
+    title="Graph Orchestration"
+    description="Persona workflows as graphs — conditional routing, parallel fan-out/fan-in, and joins."
+    href="/patterns/graph-orchestration/"
   />
   <LinkCard
     title="Recursive Self-Eval"
@@ -76,6 +81,11 @@ These patterns structure how personas reason through problems.
     description="Balance creativity with explicit constraints and boundaries."
     href="/patterns/guardrail-creative/"
   />
+  <LinkCard
+    title="Agentic Loop"
+    description="Iterative plan → act → observe → refine cycles with explicit exit criteria."
+    href="/patterns/agentic-loop/"
+  />
 </CardGrid>
 
 ## Layer 3: Evaluation Patterns
@@ -107,6 +117,8 @@ Patterns work together in powerful combinations:
 | **Quality review** | Criterion-Based Evaluation + Recursive Self-Eval |
 | **Security assessment** | Threat Modeling + Rule-Based Reasoning |
 | **High-stakes work** | Any pattern + Recursive Self-Eval |
+| **Autonomous agents** | Agentic Loop + Criterion-Based Evaluation |
+| **Multi-agent workflows** | Graph Orchestration + Agentic Loop (per worker) |
 
 ## How to Use Patterns
 
