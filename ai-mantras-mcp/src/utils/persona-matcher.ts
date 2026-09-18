@@ -6,6 +6,17 @@ import { loadManifest, PersonaInfo } from './content-loader.js';
 
 // Domain keywords mapped to persona names
 const DOMAIN_MAPPINGS: Record<string, string[]> = {
+  // Dalio - Macro Strategist
+  'Dalio-Macro-Strategist': [
+    'macro', 'macroeconomic', 'macroeconomics', 'debt cycle', 'debt', 'deleveraging',
+    'monetary', 'fiscal', 'central bank', 'fed', 'federal reserve', 'inflation',
+    'deflation', 'stagflation', 'interest rate', 'interest rates', 'yield curve',
+    'currency', 'reserve currency', 'paradigm', 'regime', 'cycle', 'cycles',
+    'historical', 'history', 'empire', 'geopolitical', 'geopolitics', 'principles',
+    'money printing', 'qe', 'quantitative easing', 'stimulus', 'austerity',
+    'gdp', 'debt-to-gdp', 'long-term', 'big picture'
+  ],
+
   // Clara - Financial Analyst
   'Clara-Financial-Analyst': [
     'finance', 'financial', 'money', 'investment', 'investing', 'stock', 'stocks',
